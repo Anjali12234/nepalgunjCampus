@@ -13,13 +13,13 @@
                 <li 
                     data-index="rs-1688" 
                     data-transition="parallaxvertical" 
-                    data-thumb="{{ asset('assets/frontend/images/main-slider/image-1.jpg') }}" 
+                    data-thumb="{{ asset('assets/frontend1/images/main-slider/image-1.jpg') }}" 
                     data-title="Slide Title" 
                     data-description="Slide Description">
 
                     <!-- Background Image -->
                     <img 
-                        src="{{ asset('assets/frontend/images/main-slider/image-1.jpg') }}" 
+                        src="{{ asset('assets/frontend1/images/main-slider/image-1.jpg') }}" 
                         alt="Slide 1" 
                         class="rev-slidebg" 
                         data-bgfit="cover" 
@@ -74,13 +74,13 @@
                 <li 
                     data-index="rs-1689" 
                     data-transition="parallaxvertical" 
-                    data-thumb="{{ asset('assets/frontend/images/main-slider/image-2.jpg') }}" 
+                    data-thumb="{{ asset('assets/frontend1/images/main-slider/image-2.jpg') }}" 
                     data-title="Slide Title" 
                     data-description="Slide Description">
 
                     <!-- Background Image -->
                     <img 
-                        src="{{ asset('assets/frontend/images/main-slider/image-2.jpg') }}" 
+                        src="{{ asset('assets/frontend1/images/main-slider/image-2.jpg') }}" 
                         alt="Slide 2" 
                         class="rev-slidebg" 
                         data-bgfit="cover" 
@@ -170,7 +170,7 @@
                 <div class="inner-column">
                     <div class="video-box">
                         <figure class="image">
-                            <img src="{{ asset('assets/frontend/images/resource/video-img.jpg') }}" alt="">
+                            <img src="{{ asset('assets/frontend1/images/resource/video-img.jpg') }}" alt="">
                             <a href="https://www.youtube.com/watch?v=xc-4R5uJ-mI"
                                 class="lightbox-image
                           overlay-box"><span
@@ -199,7 +199,7 @@
                 <div class="inner-box">
                     <div class="image">
                         <a href="gallery.php#expertsession"><img
-                                src="{{ asset('assets/frontend/images/gallery/expert.jpg') }}" alt="" /></a>
+                                src="{{ asset('assets/frontend1/images/gallery/expert.jpg') }}" alt="" /></a>
                     </div>
                     <div class="lower-content">
                         <h3><a href="gallery.php">Expert-Session</a></h3>
@@ -211,7 +211,7 @@
                 <div class="inner-box">
                     <div class="image">
                         <a href="gallery.php#showButton"><img
-                                src="{{ asset('assets/frontend/images/gallery/farewell.JPG') }}" alt="" /></a>
+                                src="{{ asset('assets/frontend1/images/gallery/farewell.JPG') }}" alt="" /></a>
                     </div>
                     <div class="lower-content">
                         <h3><a href="#">Welcoming & Farewell</a></h3>
@@ -223,7 +223,7 @@
                 <div class="inner-box">
                     <div class="image">
                         <a href="gallery.php#ncmtday"><img
-                                src="{{ asset('assets/frontend/images/gallery/ncmt.png') }}" alt="" /></a>
+                                src="{{ asset('assets/frontend1/images/gallery/ncmt.png') }}" alt="" /></a>
                     </div>
                     <div class="lower-content">
                         <h3><a href="#"> NCMT-Days</a></h3>
@@ -235,7 +235,7 @@
                 <div class="inner-box">
                     <div class="image">
                         <a href="gallery.php#sportweek"><img
-                                src="{{ asset('assets/frontend/images/gallery/sport.JPG') }}" alt="" /></a>
+                                src="{{ asset('assets/frontend1/images/gallery/sport.JPG') }}" alt="" /></a>
                     </div>
                     <div class="lower-content">
                         <h3><a href="#">Sport-Weeks</a></h3>
@@ -247,7 +247,7 @@
                 <div class="inner-box">
                     <div class="image">
                         <a href="gallery.php#techevents"><img
-                                src="{{ asset('assets/frontend/images/gallery/tech.jpg') }}" alt="" /></a>
+                                src="{{ asset('assets/frontend1/images/gallery/tech.jpg') }}" alt="" /></a>
                     </div>
                     <div class="lower-content">
                         <h3><a href="#">
@@ -259,7 +259,7 @@
             <div class="services-block col-md-4 col-sm-6 col-xs-12">
                 <div class="inner-box">
                     <div class="image">
-                        <a href="gallery.php#tour"><img src="{{ asset('assets/frontend/images/gallery/tour.JPG') }}"
+                        <a href="gallery.php#tour"><img src="{{ asset('assets/frontend1/images/gallery/tour.JPG') }}"
                                 alt="" /></a>
                     </div>
                     <div class="lower-content">
@@ -271,7 +271,7 @@
     </div>
 </section>
 
-<section class="video-section" style="background-image: url('{{ asset('assets/frontend/images/background/11.jpeg') }}');
+<section class="video-section" style="background-image: url('{{ asset('assets/frontend1/images/background/11.jpeg') }}');
  background-size: cover; background-position: center;">
     <div class="auto-container">
         <div class="title ">How We Are Different From Others!</div>

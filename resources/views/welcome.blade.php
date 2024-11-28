@@ -6,23 +6,23 @@
 <head>
     <meta charset="utf-8">
     <title>Welcome to NCMT</title>
-    <link href="{{ asset('assets/frontend/css/bootstrap.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/frontend/plugins/revolution/css/settings.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ asset('assets/frontend/plugins/revolution/css/layers.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ asset('assets/frontend/plugins/revolution/css/navigation.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ asset('assets/frontend/css/style.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/frontend/css/responsive.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/frontend/css/color-switcher-design.css') }}" rel="stylesheet">
-    <link id="theme-color-file" href="{{ asset('assets/frontend/css/color-themes/default-theme.css') }}"
+    <link href="{{ asset('assets/frontend1/css/bootstrap.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/frontend1/plugins/revolution/css/settings.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('assets/frontend1/plugins/revolution/css/layers.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('assets/frontend1/plugins/revolution/css/navigation.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('assets/frontend1/css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/frontend1/css/responsive.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/frontend1/css/color-switcher-design.css') }}" rel="stylesheet">
+    <link id="theme-color-file" href="{{ asset('assets/frontend1/css/color-themes/default-theme.css') }}"
         rel="stylesheet">
-    <link rel="shortcut icon" href="{{ asset('assets/frontend/images/favicon.png') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('assets/frontend1/images/favicon.png') }}" type="image/x-icon">
 
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <link href="{{ asset('assets/frontend/assets/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/frontend/assets/vendor/icofont/icofont.min.css') }}" rel="stylesheet">
-    <link rel="icon" href="{{ asset('assets/frontend/images/favicon.png') }}" type="image/x-icon">
+    <link href="{{ asset('assets/frontend1/assets/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/frontend1/assets/vendor/icofont/icofont.min.css') }}" rel="stylesheet">
+    <link rel="icon" href="{{ asset('assets/frontend1/images/favicon.png') }}" type="image/x-icon">
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
