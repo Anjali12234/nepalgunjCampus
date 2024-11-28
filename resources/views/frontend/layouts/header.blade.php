@@ -24,7 +24,7 @@ aria-hidden="true">
     background-repeat: round;object-fit: cover!important;">
                                         <a href="">
                                             <img
-                                                src="{{ asset('assets/frontend/images/1608813353corona-5002341_1920.jpg') }}" /></a>
+                                                src="{{ asset('assets/frontend1/images/1608813353corona-5002341_1920.jpg') }}" /></a>
                                     </div>
                                     <div class="lower-content">
                                         <div class="upper-box clearfix">
@@ -63,7 +63,7 @@ aria-hidden="true">
             <div class="pull-left logo-outer">
                 <div class="logo"><a href="index.php"><img
                             style="width: 150px; background-size:cover;background-position:center"
-                            src="{{asset('assets/frontend/images/logo1.jpg')}}" alt="campus_logo" title=""></a></div>
+                            src="{{asset('assets/frontend1/images/logo1.jpg')}}" alt="campus_logo" title=""></a></div>
             </div>
             <div class="pull-right upper-right clearfix">
                 <div class="upper-column info-box">
@@ -177,7 +177,7 @@ aria-hidden="true">
         <div class="auto-container">
             <div class="sticky-inner-container clearfix">
                 <div class="logo pull-left">
-                    <a href="index.php" class="img-responsive"><img src="{{asset('assets/frontend/images/logo1.jpg')}}"
+                    <a href="index.php" class="img-responsive"><img src="{{asset('assets/frontend1/images/logo1.jpg')}}"
                             style="width: 200px; background-size:cover;background-position:center"
                             alt="" title=""></a>
                 </div>
