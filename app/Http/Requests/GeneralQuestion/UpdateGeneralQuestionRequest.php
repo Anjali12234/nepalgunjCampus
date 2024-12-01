@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\About;
+namespace App\Http\Requests\GeneralQuestion;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreAboutRequest extends FormRequest
+class UpdateGeneralQuestionRequest extends FormRequest
 {
     public function authorize(): bool
     {
@@ -16,8 +16,6 @@ class StoreAboutRequest extends FormRequest
     {
         return [
             'title' => ['required', 'string'],
-            'video_url' => ['required', 'url'],
-            'image' => ['required', 'image'],
             'description' => ['required'],
         ];
     }

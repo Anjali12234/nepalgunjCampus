@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\About;
+namespace App\Http\Requests\Gallery;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreAboutRequest extends FormRequest
+class StoreGalleryRequest extends FormRequest
 {
     public function authorize(): bool
     {
@@ -16,9 +16,8 @@ class StoreAboutRequest extends FormRequest
     {
         return [
             'title' => ['required', 'string'],
-            'video_url' => ['required', 'url'],
-            'image' => ['required', 'image'],
-            'description' => ['required'],
+            'files' => ['required', 'array'],
+            'files.*' => ['mimes:png,jpg,jpeg,pdf,jfif'],
         ];
     }
 }

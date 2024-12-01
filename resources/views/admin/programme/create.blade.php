@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-md-6 col-sm-12">
                     <div class="title">
-                        <h4>About</h4>
+                        <h4>Programme</h4>
                     </div>
                     <nav aria-label="breadcrumb" role="navigation">
                         <ol class="breadcrumb">
@@ -13,7 +13,7 @@
                                 <a href="{{ route('admin.dashboard') }}">Home</a>
                             </li>
                             <li class="breadcrumb-item active" aria-current="page">
-                                About
+                                Programme
                             </li>
                         </ol>
                     </nav>
@@ -31,7 +31,7 @@
                     </ul>
                 </div>
             @endif
-            <form method="post" action="{{ route('admin.about.store') }}" enctype="multipart/form-data">
+            <form method="post" action="{{ route('admin.programme.store') }}" enctype="multipart/form-data">
                 @csrf
                 <div class="col-md-12 row">
 
@@ -46,45 +46,11 @@
                             @enderror
                         </span>
                     </div>
-                    <div class="form-group col-md-6">
-                        <label for="video_url">Video Url</label>
-
-                        <input class="form-control" id="video_url" name="video_url" type="url"
-                            value="{{ old('video_url') }}" />
-                        <span class="text-warning">
-                            @error('video_url')
-                                {{ $message }}
-                            @enderror
-                        </span>
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="image">Image</label>
-
-                        <input class="form-control" id="image" name="image" type="file"
-                            value="{{ old('image') }}" />
-                        <span class="text-warning">
-                            @error('image')
-                                {{ $message }}
-                            @enderror
-                        </span>
-                    </div>
-
-
-                </div>
-                <div class="col-md-12 row">
-
-                    <div class="form-group col-md-12">
-                        <label for="title">Description</label>
-                        <textarea name="description" id="editor" cols="50" rows="10">{{ old('description') }}</textarea>
-                        <span class="text-warning">
-                            @error('title')
-                                {{ $message }}
-                            @enderror
-                        </span>
-                    </div>
                     
 
+
                 </div>
+                
                 
                 <div>
                     <button class="btn btn-danger" type="submit">Submit</button>
@@ -94,7 +60,7 @@
         </div>
         <div class="pd-20 card-box mb-30">
             <div class="pd-20">
-                <h4 class="text-blue h4">about  List</h4>
+                <h4 class="text-blue h4">programme  List</h4>
 
             </div>
             <div class="pb-20">
@@ -102,17 +68,15 @@
                     <thead>
                     <tr>
                         <th class="table-plus datatable-nosort">S.No</th>
-                        <th>Image</th>
                         <th>Title </th>
                         <th>Action</th>
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach ($abouts as $key => $about)
+                    @foreach ($programmes as $key => $programme)
                         <tr>
                             <td class="table-plus">{{ $loop->iteration }}</td>
-                            <td><img src="{{ $about?->image }}" height="150" width="100" alt=""></td>
-                            <td>{{ $about->title }}</td>
+                            <td>{{ $programme->title }}</td>
                             <td>
                                 <div class="dropdown">
                                     <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle"
@@ -121,10 +85,10 @@
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
                                         <a class="dropdown-item"
-                                            href="{{ route('admin.about.edit', $about) }}"><i
+                                            href="{{ route('admin.programme.edit', $programme) }}"><i
                                                 class="dw dw-edit2"></i> Edit</a>
 
-                                        <form action="{{ route('admin.about.destroy', $about) }}" method="post"
+                                        <form action="{{ route('admin.programme.destroy', $programme) }}" method="post"
                                             style="display: inline">
                                             @csrf
                                             @method('DELETE')
@@ -141,7 +105,7 @@
 
                     </tbody>
                 </table>
-                {{ $abouts->links() }}
+                {{ $programmes->links() }}
             </div>
         </div>
 
