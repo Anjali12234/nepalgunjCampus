@@ -32,49 +32,32 @@
                 </li>
                 <li class="dropdown">
                     <a href="{{route('admin.about.create')}}" class="dropdown-toggle no-arrow">
-                        <span class="micon bi bi-table"></span><span class="mtext">About</span>
+                        <span class="micon bi bi-calendar4-week"></span><span class="mtext">About</span>
+                    </a>
+
+                </li>
+                <li class="dropdown">
+                    <a href="{{route('admin.gallery.create')}}" class="dropdown-toggle no-arrow">
+                        <span class="micon bi bi-command"></span><span class="mtext">Gallery</span>
+                    </a>
+
+                </li>
+                <li class="dropdown">
+                    <a href="{{route('admin.generalQuestion.index')}}" class="dropdown-toggle no-arrow">
+                        <span class="micon bi bi-pie-chart"></span><span class="mtext">GeneralQuestion</span>
                     </a>
 
                 </li>
                 <li class="dropdown">
                     <a href="javascript:;" class="dropdown-toggle">
-                        <span class="micon bi bi-calendar4-week"></span><span class="mtext">Product</span>
+                        <span class="micon bi bi-file-earmark-text"></span
+                        ><span class="mtext">Our Programme</span>
                     </a>
                     <ul class="submenu">
-                        <li><a href="">Product Category </a>
-                        </li>
-                        <li><a href="">Product</a></li>
-
+                        <li><a href="{{route('admin.programme.create')}}">Programme</a></li>
+                        <li><a href="login.html">Semester</a></li>
+                        <li><a href="forgot-password.html">Couse Content</a></li>
                     </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="javascript:;" class="dropdown-toggle">
-                        <span class="micon bi bi-calendar4-week"></span><span class="mtext">Color</span>
-                    </a>
-                    <ul class="submenu">
-                        <li><a href="">Color Category </a>
-                        </li>
-                        <li><a href="">Color List</a></li>
-
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="" class="dropdown-toggle no-arrow">
-                        <span class="micon bi bi-archive"></span><span class="mtext">Services</span>
-                    </a>
-
-                </li>
-                <li class="dropdown">
-                    <a href="" class="dropdown-toggle no-arrow">
-                        <span class="micon bi bi-archive"></span><span class="mtext">Enquiry Messages</span>
-                    </a>
-
-                </li>
-                <li class="dropdown">
-                    <a href="" class="dropdown-toggle no-arrow">
-                        <span class="micon bi bi-archive"></span><span class="mtext">Why Choose Us</span>
-                    </a>
-
                 </li>
 
 

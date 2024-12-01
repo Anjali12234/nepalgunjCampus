@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-md-6 col-sm-12">
                     <div class="title">
-                        <h4>About</h4>
+                        <h4>Programme</h4>
                     </div>
                     <nav aria-label="breadcrumb" role="navigation">
                         <ol class="breadcrumb">
@@ -13,7 +13,7 @@
                                 <a href="{{ route('admin.dashboard') }}">Home</a>
                             </li>
                             <li class="breadcrumb-item active" aria-current="page">
-                                About
+                                Programme
                             </li>
                         </ol>
                     </nav>
@@ -31,7 +31,7 @@
                     </ul>
                 </div>
             @endif
-            <form method="post" action="{{ route('admin.about.update',$about) }}" enctype="multipart/form-data">
+            <form method="post" action="{{ route('admin.programme.update',$programme) }}" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <div class="col-md-12 row">
@@ -40,52 +40,19 @@
                         <label for="title">Title</label>
 
                         <input class="form-control" id="title" name="title" type="text"
-                            value="{{ old('title',$about->title) }}" />
+                            value="{{ old('title',$programme->title) }}" />
                         <span class="text-warning">
                             @error('title')
                                 {{ $message }}
                             @enderror
                         </span>
                     </div>
-                    <div class="form-group col-md-6">
-                        <label for="video_url">Video Url</label>
-
-                        <input class="form-control" id="video_url" name="video_url" type="url"
-                            value="{{ old('video_url',$about->video_url) }}" />
-                        <span class="text-warning">
-                            @error('video_url')
-                                {{ $message }}
-                            @enderror
-                        </span>
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="image">Image</label>
-
-                        <input class="form-control" id="image" name="image" type="file"
-                            value="{{ old('image') }}" />
-                        <span class="text-warning">
-                            @error('image')
-                                {{ $message }}
-                            @enderror
-                        </span>
-                    </div>
+                   
+                   
 
 
                 </div>
-                <div class="col-md-12 row">
-
-                    <div class="form-group col-md-12">
-                        <label for="description">Description</label>
-                        <textarea name="description" id="editor" cols="50" rows="10">{{ old('description',$about->description) }}</textarea>
-                        <span class="text-warning">
-                            @error('description')
-                                {{ $message }}
-                            @enderror
-                        </span>
-                    </div>
-                    
-
-                </div>
+                
                 
                 <div>
                     <button class="btn btn-danger" type="submit">Submit</button>

@@ -6,25 +6,27 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-  
+    /**
+     * Run the migrations.
+     */
     public function up(): void
     {
-        Schema::create('abouts', function (Blueprint $table) {
+        Schema::create('general_questions', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('description');
-            $table->string('image');
-            $table->string('video_url');
+            $table->longText('title');
+            $table->longText('description');
             $table->string('slug')->nullable();
-            $table->string('position');
+            $table->string('position')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });
     }
 
-   
+    /**
+     * Reverse the migrations.
+     */
     public function down(): void
     {
-        Schema::dropIfExists('abouts');
+        Schema::dropIfExists('genreal_questions');
     }
 };

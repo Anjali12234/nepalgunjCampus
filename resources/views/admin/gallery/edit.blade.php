@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-md-6 col-sm-12">
                     <div class="title">
-                        <h4>About</h4>
+                        <h4>Gallery</h4>
                     </div>
                     <nav aria-label="breadcrumb" role="navigation">
                         <ol class="breadcrumb">
@@ -13,7 +13,7 @@
                                 <a href="{{ route('admin.dashboard') }}">Home</a>
                             </li>
                             <li class="breadcrumb-item active" aria-current="page">
-                                About
+                                Gallery
                             </li>
                         </ol>
                     </nav>
@@ -31,16 +31,14 @@
                     </ul>
                 </div>
             @endif
-            <form method="post" action="{{ route('admin.about.update',$about) }}" enctype="multipart/form-data">
+            <form method="post" action="{{ route('admin.gallery.update', $gallery) }}" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <div class="col-md-12 row">
-
                     <div class="form-group col-md-6">
                         <label for="title">Title</label>
-
                         <input class="form-control" id="title" name="title" type="text"
-                            value="{{ old('title',$about->title) }}" />
+                            value="{{ old('title', $gallery->title) }}" />
                         <span class="text-warning">
                             @error('title')
                                 {{ $message }}
@@ -48,21 +46,9 @@
                         </span>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="video_url">Video Url</label>
+                        <label for="image">Gallery Image</label>
 
-                        <input class="form-control" id="video_url" name="video_url" type="url"
-                            value="{{ old('video_url',$about->video_url) }}" />
-                        <span class="text-warning">
-                            @error('video_url')
-                                {{ $message }}
-                            @enderror
-                        </span>
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="image">Image</label>
-
-                        <input class="form-control" id="image" name="image" type="file"
-                            value="{{ old('image') }}" />
+                        <input class="form-control" id="files" type="file" name="files[]" multiple>
                         <span class="text-warning">
                             @error('image')
                                 {{ $message }}
@@ -71,29 +57,36 @@
                     </div>
 
 
-                </div>
-                <div class="col-md-12 row">
-
-                    <div class="form-group col-md-12">
-                        <label for="description">Description</label>
-                        <textarea name="description" id="editor" cols="50" rows="10">{{ old('description',$about->description) }}</textarea>
-                        <span class="text-warning">
-                            @error('description')
-                                {{ $message }}
-                            @enderror
-                        </span>
-                    </div>
-                    
 
                 </div>
-                
+
+
                 <div>
                     <button class="btn btn-danger" type="submit">Submit</button>
                 </div>
             </form>
 
+            <div class="grid grid-cols-4 gap-2 mt-10">
+                <div class="col-md-12 row">
+                    @foreach ($gallery->files as $file)
+                        <div class="col-md-3 d-flex flex-column align-items-center mb-4">
+                            <img src="{{ $file->file_url }}" height="200" width="200" alt=""
+                                class="rounded shadow mb-3">
+                            <form action="{{ route('file.destroy', $file) }}" method="post" style="display: inline;">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger d-flex align-items-center"
+                                    onclick="return confirm('Are you sure you want to delete this file?')">
+                                    <i class="fas fa-trash-alt me-2"></i> Delete
+                                </button>
+                            </form>
+                        </div>
+                    @endforeach
+                </div>
+
+
+            </div>
         </div>
-       
 
     </div>
 @endsection
