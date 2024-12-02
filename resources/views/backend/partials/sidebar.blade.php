@@ -55,14 +55,10 @@
                     </a>
                     <ul class="submenu">
                         <li><a href="{{route('admin.programme.create')}}">Programme</a></li>
-                        <li><a href="login.html">Semester</a></li>
-                        <li><a href="forgot-password.html">Couse Content</a></li>
+                        <li><a href="{{route('admin.semester.create')}}">Semester</a></li>
+                        <li><a href="{{route('admin.course.index')}}">Couse Content</a></li>
                     </ul>
                 </li>
-
-
-
-
             </ul>
         </div>
     </div>

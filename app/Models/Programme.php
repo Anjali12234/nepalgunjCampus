@@ -34,4 +34,8 @@ class Programme extends Model
             $programme->position = static::max('position') + 1;
         });
     }
+    public function semesters()
+    {
+        return $this->hasMany(Semester::class);
+    }
 }
