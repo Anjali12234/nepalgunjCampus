@@ -6,13 +6,19 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Semester extends Model
+class Course extends Model
 {
     use HasFactory, SoftDeletes;
 
     protected $fillable = [
-        'title',
-        'programme_id',
+        'course_title',
+        'course_code',
+        'course_pdf',
+        'credit_hr',
+        'lecture_hr',
+        'tution_hr',
+        'lab_hr',
+        'semester_id',
         'slug',
         'position',
     ];
@@ -22,7 +28,7 @@ class Semester extends Model
     {
         return [
             'slug' => [
-                'source' => 'title'
+                'source' => 'course_title'
             ]
         ];
     }
@@ -31,18 +37,14 @@ class Semester extends Model
     {
         parent::boot();
 
-        static::creating(function ($semester) {
-            $semester->position = static::max('position') + 1;
+        static::creating(function ($course) {
+            $course->position = static::max('position') + 1;
         });
     }
 
-    public function programme()
+    
+    public function semester()
     {
-        return $this->belongsTo(Programme::class);
-    }
-
-    public function courses()
-    {
-        return $this->hasMany(Course::class);
+        return $this->belongsTo(Semester::class);
     }
 }
