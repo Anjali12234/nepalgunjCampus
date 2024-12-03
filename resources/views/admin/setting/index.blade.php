@@ -71,6 +71,16 @@
                         </span>
                     </div>
                     <div class="form-group col-md-6">
+                        <label for="telephone_number">Telephone Number</label>
+                        <input class="form-control" id="telephone_number" name="telephone_number" type="text"
+                            value="{{ old('telephone_number', $systemSetting?->telephone_number) }}" placeholder="Phone Number" />
+                        <span class="text-warning">
+                            @error('telephone_number')
+                                {{ $message }}
+                            @enderror
+                        </span>
+                    </div>
+                    <div class="form-group col-md-6">
                         <label for="email">Email</label>
                         <input class="form-control" id="email" name="email" type="email"
                             value="{{ old('email', $systemSetting?->email) }}" placeholder="Email" />
@@ -80,6 +90,7 @@
                             @enderror
                         </span>
                     </div>
+                  
 
                 </div>
 
@@ -169,6 +180,15 @@
                             @enderror
                         </span>
                     </div>
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="footer_description">Footer Description</label>
+                   <textarea name="footer_description" id="editor" cols="30" rows="10">{{old('footer_description',$systemSetting?->footer_description)}}</textarea>
+                    <span class="text-warning">
+                        @error('footer_description')
+                            {{ $message }}
+                        @enderror
+                    </span>
                 </div>
                 <div>
                     <button class="btn btn-danger" type="submit">Submit</button>

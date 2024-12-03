@@ -1,17 +1,18 @@
 <?php
 
 use App\Http\Controllers\FileController;
+use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UploadController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::controller(FrontendController::class)->group(function () {
+    Route::get('/', 'index')->name('welcome');
+    Route::get('aboutus', 'aboutUs')->name('aboutus'); // Specify the method name here
+    Route::get('mission', 'mission')->name('mission'); // Specify the method name here
+    Route::get('whyNcmt', 'whyNcmt')->name('whyNcmt'); // Specify the method name here
+});
 Route::post('upload', [UploadController::class, 'store'])->name('upload');
 
 Route::middleware('auth')->group(function () {

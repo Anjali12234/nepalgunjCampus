@@ -49,6 +49,12 @@
 
                 </li>
                 <li class="dropdown">
+                    <a href="{{route('admin.contact.index')}}" class="dropdown-toggle no-arrow">
+                        <span class="micon bi bi-pie-chart"></span><span class="mtext">Contact Messages</span>
+                    </a>
+
+                </li>
+                <li class="dropdown">
                     <a href="javascript:;" class="dropdown-toggle">
                         <span class="micon bi bi-file-earmark-text"></span
                         ><span class="mtext">Our Programme</span>

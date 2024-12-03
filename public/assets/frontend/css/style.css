@@ -50,14 +50,14 @@ font-family: 'Montserrat', sans-serif;*/
 @import url('jquery-ui.css');
 @import url('jquery.fancybox.min.css');
 @import url('jquery.bootstrap-touchspin.css');
-/*** 
+/***
 
 ====================================================================
 	Reset
 ====================================================================
 
  ***/
- 
+
 * {
 	margin:0px;
 	padding:0px;
@@ -65,7 +65,7 @@ font-family: 'Montserrat', sans-serif;*/
 	outline:none;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Global Settings
@@ -109,7 +109,7 @@ input,button,select,textarea{
 }
 
 textarea{
-	overflow:hidden;	
+	overflow:hidden;
 }
 
 .theme_color{
@@ -118,12 +118,12 @@ textarea{
 
 p,.text{
 	position:relative;
-	line-height:1.8em;	
+	line-height:1.8em;
 	font-family: 'Open Sans', sans-serif;
 }
 
 .strike-through{
-	text-decoration:line-through;	
+	text-decoration:line-through;
 }
 
 .auto-container{
@@ -147,7 +147,7 @@ p,.text{
 ul,li{
 	list-style:none;
 	padding:0px;
-	margin:0px;	
+	margin:0px;
 }
 
 .theme-btn{
@@ -160,7 +160,7 @@ ul,li{
 }
 
 .centered{
-	text-align:center;	
+	text-align:center;
 }
 
 /*List Style One*/
@@ -397,10 +397,10 @@ ul,li{
 img{
 	display:inline-block;
 	max-width:100%;
-	height:auto;	
+	height:auto;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Fancy Box
@@ -449,7 +449,7 @@ img{
 .fancybox-next:hover span:before,
 .fancybox-prev:hover span:before{
 	background-color:#ffffff !important;
-	color:#000000;	
+	color:#000000;
 }
 
 .fancybox-type-image .fancybox-close{
@@ -458,18 +458,18 @@ img{
 	width:45px;
 	height:45px;
 	background:url(../images/icons/icon-cross.png) center center no-repeat;
-	background-color:rgba(17,17,17,0.50) !important;	
+	background-color:rgba(17,17,17,0.50) !important;
 }
 
 .fancybox-type-image .fancybox-close:hover{
-	background-color:#000000 !important;	
+	background-color:#000000 !important;
 }
 
 .fancybox-type-image .fancybox-skin{
-	padding:0px !important;	
+	padding:0px !important;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Social Icon One
@@ -510,7 +510,7 @@ img{
 	border-color:#f2d046;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Social Icon Two
@@ -544,7 +544,7 @@ img{
 	color:#fbd848;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Social Icon Three
@@ -578,7 +578,7 @@ img{
 	color:#fbd848;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Scroll To Top style
@@ -605,7 +605,7 @@ img{
 	-ms-transition:all 300ms ease;
 	-o-transition:all 300ms ease;
 	-moz-transition:all 300ms ease;
-	transition:all 300ms ease;		
+	transition:all 300ms ease;
 }
 
 .scroll-to-top:hover{
@@ -613,7 +613,7 @@ img{
 	background:#f2d046;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Main Header style
@@ -676,7 +676,7 @@ img{
 }
 
 .main-header .header-top .top-left .links li:last-child:after{
-	display:none;	
+	display:none;
 }
 
 .main-header .header-top .top-left .links li .icon{
@@ -697,12 +697,12 @@ img{
 	-webkit-transition:all 500ms ease;
 	-ms-transition:all 500ms ease;
 	-o-transition:all 500ms ease;
-	transition:all 500ms ease;	
+	transition:all 500ms ease;
 	font-family: 'Poppins', sans-serif;
 }
 
 .main-header .header-top .top-left .links li:first-child a{
-	font-size:18px;	
+	font-size:18px;
 }
 
 .header-style-two .header-top .top-left .links li a{
@@ -733,7 +733,7 @@ img{
 .header-top .social-icon li{
 	position:relative;
 	float:left;
-	margin-left:18px;	
+	margin-left:18px;
 }
 
 .header-top .social-icon li a{
@@ -795,7 +795,7 @@ img{
 	-ms-transition:all 300ms ease;
 	-o-transition:all 300ms ease;
 	-moz-transition:all 300ms ease;
-	transition:all 300ms ease;	
+	transition:all 300ms ease;
 }
 
 .main-header .nav-toggler{
@@ -875,7 +875,7 @@ img{
 	top:52px;
 	right:0px;
 	padding:0px;
-	width:280px;	
+	width:280px;
 	border-radius:0px;
 	border-top:3px solid #f2d046;
 }
@@ -887,12 +887,12 @@ img{
 }
 
 .main-header .search-panel .form-container{
-	padding:25px 20px;	
+	padding:25px 20px;
 }
 
 .main-header .search-panel .form-group{
 	position:relative;
-	margin:0px;	
+	margin:0px;
 }
 
 .main-header .search-panel input[type="text"],
@@ -904,7 +904,7 @@ img{
 	height:40px;
 	color:#000000;
 	line-height:24px;
-	background:#ffffff;	
+	background:#ffffff;
 	border:1px solid #e0e0e0;
 	padding:7px 40px 7px 15px;
 	-webkit-transition:all 300ms ease;
@@ -916,7 +916,7 @@ img{
 
 .main-header .search-panel input:focus,
 .main-header .search-panel select:focus{
-	border-color:#f2d046;	
+	border-color:#f2d046;
 }
 
 .main-header .search-panel .search-btn{
@@ -945,7 +945,7 @@ img{
 }
 
 .main-menu .navbar-collapse{
-	padding:0px;	
+	padding:0px;
 }
 
 .main-menu .navigation{
@@ -1018,7 +1018,7 @@ img{
 
 .main-menu .navigation > li > ul.from-right{
 	left:auto;
-	right:0px;	
+	right:0px;
 }
 
 .main-menu .navigation > li > ul > li{
@@ -1028,7 +1028,7 @@ img{
 }
 
 .main-menu .navigation > li > ul > li:last-child{
-	border-bottom:none;	
+	border-bottom:none;
 }
 
 .main-menu .navigation > li > ul > li > a{
@@ -1066,7 +1066,7 @@ img{
 	font-size:16px;
 	font-weight:normal;
 	text-align:center;
-	z-index:5;	
+	z-index:5;
 }
 
 .main-menu .navigation > li > ul > li.dropdown:hover > a:after{
@@ -1095,7 +1095,7 @@ img{
 }
 
 .main-menu .navigation > li > ul > li > ul > li:last-child{
-	border-bottom:none;	
+	border-bottom:none;
 }
 
 .main-menu .navigation > li > ul > li  > ul > li > a{
@@ -1123,7 +1123,7 @@ img{
 .main-menu .navigation > li.dropdown:hover > ul{
 	visibility:visible;
 	opacity:1;
-	top:100%;	
+	top:100%;
 }
 
 .main-menu .navigation li > ul > li.dropdown:hover > ul{
@@ -1134,7 +1134,7 @@ img{
 	-moz-transition:all 500ms ease;
 	-webkit-transition:all 500ms ease;
 	-ms-transition:all 500ms ease;
-	-o-transition:all 500ms ease;	
+	-o-transition:all 500ms ease;
 }
 
 .main-menu .navigation li.dropdown .dropdown-btn{
@@ -1460,7 +1460,7 @@ img{
 	-moz-animation-iteration-count: 1;
 	-op-animation-iteration-count: 1;
 	-webkit-animation-iteration-count: 1;
-	animation-iteration-count: 1;	
+	animation-iteration-count: 1;
 }
 
 .main-header .sticky-header .right-col .outer-box{
@@ -1492,7 +1492,7 @@ img{
 	position:relative;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Main Slider style
@@ -1510,7 +1510,7 @@ img{
 }
 
 .main-slider .tp-dottedoverlay{
-	background:none !important;	
+	background:none !important;
 }
 
 .main-slider .btns-box .theme-btn{
@@ -1546,10 +1546,10 @@ img{
 
 .main-slider .tp-bannertimer,
 .main-slider .tp-bullets{
-	display:none !important;	
+	display:none !important;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Section Title
@@ -1642,7 +1642,7 @@ img{
 	position:relative;
 	top:2px;
 	text-indent:0px;
-	color:#333333;	
+	color:#333333;
 }
 
 .form-group .ui-button .ui-icon:before{
@@ -1673,7 +1673,7 @@ img{
 }
 
 .ui-menu .ui-menu-item:last-child{
-	border:none;	
+	border:none;
 }
 
 .ui-state-active, .ui-widget-content .ui-state-active{
@@ -1692,7 +1692,7 @@ img{
 .ui-menu-item:hover{
 }
 
-/*** 
+/***
 
 ====================================================================
 	Call To Action
@@ -1735,7 +1735,7 @@ img{
 	text-decoration:none;
 }
 
-/*** 
+/***
 
 ====================================================================
 	About Section
@@ -1825,7 +1825,7 @@ img{
 	display:block;
 }
 
-/*** 
+/***
 
 ====================================================================
 	We Do Section
@@ -1867,9 +1867,9 @@ img{
 
 .services-block .inner-box:hover .image img{
 	opacity:0.7;
-	-webkit-transform:scale(1.1);	
-	-ms-transform:scale(1.1);	
-	-moz-transform:scale(1.1);	
+	-webkit-transform:scale(1.1);
+	-ms-transform:scale(1.1);
+	-moz-transform:scale(1.1);
 	transform:scale(1.1);
 }
 
@@ -1918,7 +1918,7 @@ img{
 	color:#f2d046;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Project Section
@@ -2047,7 +2047,7 @@ img{
 	text-decoration:underline;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Approach Section
@@ -2127,7 +2127,7 @@ img{
 	font-size:16px;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Testimonial Section
@@ -2142,7 +2142,7 @@ img{
 }
 
 .testimonial-section .owl-theme{
-	position:static;	
+	position:static;
 }
 
 .testimonial-block{
@@ -2233,7 +2233,7 @@ img{
 	-ms-transition:all 300ms ease;
 	-o-transition:all 300ms ease;
 	-moz-transition:all 300ms ease;
-	transition:all 300ms ease;	
+	transition:all 300ms ease;
 }
 
 .testimonial-section .owl-nav .owl-prev{
@@ -2281,7 +2281,7 @@ img{
 	background-color:#ffffff;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Clients Section
@@ -2344,7 +2344,7 @@ img{
 	opacity:0.7;
 }
 
-/*** 
+/***
 
 ====================================================================
 	News Section
@@ -2391,7 +2391,7 @@ img{
 	opacity:0.7;
 	-webkit-transform:scale(1.1);
 	-ms-transform:scale(1.1);
-	-moz-transform:scale(1.1);	
+	-moz-transform:scale(1.1);
 	transform:scale(1.1);
 }
 
@@ -2516,7 +2516,7 @@ img{
 	color:#ffffff;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Subscribe Section
@@ -2610,7 +2610,7 @@ img{
 	-moz-transition:all 300ms ease;
 	transition:all 300ms ease;
 	border-radius:50px;
-	font-family: 'Poppins', sans-serif;	
+	font-family: 'Poppins', sans-serif;
 }
 
 .subscribe-section .subscribe-form .form-group input[type="submit"],
@@ -2629,7 +2629,7 @@ img{
 	background:#f8de32;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Video Section
@@ -2708,7 +2708,7 @@ img{
 	line-height:1em;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Main Footer
@@ -2829,7 +2829,7 @@ img{
 	font-family: 'Poppins', sans-serif;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Company Section
@@ -2918,7 +2918,7 @@ img{
 	background-color:#fbd848;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Services Section
@@ -2934,7 +2934,7 @@ img{
 
 .services-section .owl-theme .owl-stage-outer{
 	padding:10px 10px 0px;
-	margin:-10px -10px 0px;	
+	margin:-10px -10px 0px;
 }
 
 .services-block-three{
@@ -2965,10 +2965,10 @@ img{
 
 .services-block-three .inner-box:hover .image img{
 	opacity:0.7;
-	-webkit-transform:scale(1.1);	
-	-ms-transform:scale(1.1);	
-	-moz-transform:scale(1.1);		
-	transform:scale(1.1);	
+	-webkit-transform:scale(1.1);
+	-ms-transform:scale(1.1);
+	-moz-transform:scale(1.1);
+	transform:scale(1.1);
 }
 
 .services-block-three .inner-box .lower-content{
@@ -3040,7 +3040,7 @@ img{
 	border-color:#f2d046;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Fluid Section One
@@ -3068,7 +3068,7 @@ img{
 	margin-left:-150px;
 	background-repeat:no-repeat;
 	background-position:center center;
-	background-size:cover;	
+	background-size:cover;
 }
 
 .fluid-section-one .image-column:before{
@@ -3084,7 +3084,7 @@ img{
 
 .fluid-section-one .image-column .image-box{
 	position:relative;
-	display:none;	
+	display:none;
 }
 
 .fluid-section-one .image-column .image-box img{
@@ -3231,7 +3231,7 @@ img{
 	margin-top:20px;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Call Back Section
@@ -3286,7 +3286,7 @@ img{
 	transition:all 500ms ease;
 	-webkit-transition:all 500ms ease;
 	-ms-transition:all 500ms ease;
-	-o-transition:all 500ms ease;	
+	-o-transition:all 500ms ease;
 }
 
 .call-back-form .form-group .submit-btn{
@@ -3301,7 +3301,7 @@ img{
 	font-family: 'Poppins', sans-serif;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Services Section Two
@@ -3337,7 +3337,7 @@ img{
 	margin-bottom:20px;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Team Section
@@ -3463,7 +3463,7 @@ img{
 .team-block .social-icons li{
 	position:relative;
 	display:inline-block;
-	margin:0px 10px;	
+	margin:0px 10px;
 }
 
 .team-block .social-icons li a{
@@ -3476,11 +3476,11 @@ img{
 	-moz-transition:all 0.3s ease;
 	-webkit-transition:all 0.3s ease;
 	-ms-transition:all 0.3s ease;
-	-o-transition:all 0.3s ease;	
+	-o-transition:all 0.3s ease;
 }
 
 .team-block .social-icons li a:hover{
-	opacity:0.70;	
+	opacity:0.70;
 }
 
 .team-block .inner-box .lower-box{
@@ -3544,7 +3544,7 @@ img{
 	font-family: 'Lora', serif;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Map Section Style
@@ -3575,7 +3575,7 @@ img{
 	height:480px;
 }
 
-/*** 
+/***
 
 ====================================================================
 	About Section Two
@@ -3690,7 +3690,7 @@ img{
 	border:2px solid #ffffff;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Default Section
@@ -3751,7 +3751,7 @@ img{
 	padding-left:30px;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Accordion Style
@@ -3838,7 +3838,7 @@ img{
 }
 
 .accordion-box .block .acc-content.current{
-	display:block;	
+	display:block;
 }
 
 .accordion-box .block .content{
@@ -3850,12 +3850,12 @@ img{
 .accordion-box .block .content .text{
 	margin-bottom:20px;
 	line-height:1.8em;
-	font-size:16px;	
+	font-size:16px;
 	color:#797979;
 }
 
 .accordion-box .block .content p:last-child{
-	margin-bottom:0px;	
+	margin-bottom:0px;
 }
 
 /*Accordian Faq Form*/
@@ -3924,7 +3924,7 @@ img{
 	margin-bottom:5px;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Fluid Section Two
@@ -3950,7 +3950,7 @@ img{
 	height:100%;
 	background-repeat:no-repeat;
 	background-position:center center;
-	background-size:cover;	
+	background-size:cover;
 }
 
 .fluid-section-two .image-column:before{
@@ -3966,7 +3966,7 @@ img{
 
 .fluid-section-two .image-column .image-box{
 	position:relative;
-	display:none;	
+	display:none;
 }
 
 .fluid-section-two .image-column .image-box img{
@@ -3996,7 +3996,7 @@ img{
 	margin-bottom:24px;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Default Form
@@ -4037,7 +4037,7 @@ img{
 .default-form .form-group input[type="tel"]:focus,
 .default-form .form-group input[type="email"]:focus,
 .default-form .form-group textarea:focus{
-	
+
 }
 
 .default-form .form-group textarea{
@@ -4136,7 +4136,7 @@ img{
 }
 
 
-/*** 
+/***
 
 ====================================================================
 	Shop Banner
@@ -4167,19 +4167,19 @@ img{
 
 .shop-banner .auto-container{
 	position:relative;
-	z-index:1;	
+	z-index:1;
 }
 
 .shop-banner .text-column,
 .shop-banner .image-column{
 	position:relative;
-	margin-bottom:50px;	
+	margin-bottom:50px;
 }
 
 .shop-banner .text-column .inner{
 	position:relative;
 	max-width:520px;
-	padding:160px 0px 110px 50px;	
+	padding:160px 0px 110px 50px;
 }
 
 .shop-banner .image-column .inner{
@@ -4207,7 +4207,7 @@ img{
 	font-family:'Poppins', sans-serif;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Page Title Style
@@ -4274,7 +4274,7 @@ img{
 	font-size:16px;
 	color:#272727;
 	line-height:24px;
-	font-weight:700;	
+	font-weight:700;
 }
 
 .page-info .bread-crumb{
@@ -4310,7 +4310,7 @@ img{
 }
 
 .page-info .bread-crumb li:last-child:after{
-	display:none;	
+	display:none;
 }
 
 .page-info .bread-crumb li a{
@@ -4323,7 +4323,7 @@ img{
 }
 
 .page-info .bread-crumb li a:hover{
-	color:#febe28;	
+	color:#febe28;
 }
 
 .page-info .text{
@@ -4332,7 +4332,7 @@ img{
 	font-size:15px;
 }
 
-/*** 
+/***
 
 ====================================================================
 	History Section
@@ -4407,7 +4407,7 @@ img{
 }
 
 
-/*** 
+/***
 
 ====================================================================
 	Sidebar Page Container
@@ -4434,7 +4434,7 @@ img{
 
 .sidebar .search-box .form-group{
 	position:relative;
-	margin:0px;	
+	margin:0px;
 }
 
 .sidebar .search-box .form-group input[type="text"],
@@ -4644,7 +4644,7 @@ img{
 .sidebar .popular-tags a:hover{
 	border-color:#fbd848;
 	background-color:#fbd848;
-	color:#242424;	
+	color:#242424;
 }
 
 .our-blog.padding-right,
@@ -4692,9 +4692,9 @@ img{
 
 .news-block-three .inner-box:hover .image img{
 	opacity:0.7;
-	-webkit-transform:scale(1.1);	
-	-ms-transform:scale(1.1);	
-	-moz-transform:scale(1.1);	
+	-webkit-transform:scale(1.1);
+	-ms-transform:scale(1.1);
+	-moz-transform:scale(1.1);
 	transform:scale(1.1);
 }
 
@@ -4825,7 +4825,7 @@ img{
 }
 
 
-/*** 
+/***
 
 ====================================================================
 	Styled Pagination
@@ -4872,7 +4872,7 @@ img{
 	background-color:#4349d9;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Comments Area
@@ -4990,7 +4990,7 @@ img{
 .sidebar-page-container .comments-area .comment-info{
 	color:#3e5773;
 	line-height:24px;
-	font-size:13px;	
+	font-size:13px;
 }
 
 .sidebar-page-container .comments-area .comment-box strong{
@@ -5047,7 +5047,7 @@ img{
 	margin-bottom:50px;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Comment Form
@@ -5187,7 +5187,7 @@ img{
 	display:inline-block;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Countdown style
@@ -5260,7 +5260,7 @@ img{
 	-ms-transition:all 300ms ease;
 	-o-transition:all 300ms ease;
 	-moz-transition:all 300ms ease;
-	transition:all 300ms ease;	
+	transition:all 300ms ease;
 }
 
 .comming-soon .emailed-form .form-group input[type="submit"],
@@ -5272,7 +5272,7 @@ img{
 	padding:12px 40px;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Contact Section
@@ -5379,7 +5379,7 @@ img{
 .contact-form input.error,
 .contact-form select.error,
 .contact-form textarea.error{
-	border-color:#ff0000 !important;	
+	border-color:#ff0000 !important;
 }
 
 .contact-form label.error{
@@ -5390,7 +5390,7 @@ img{
 	text-transform:uppercase;
 	font-size:11px;
 	color:#ff0000;
-	font-weight:500;	
+	font-weight:500;
 }
 
 .contact-section .info-column{
@@ -5449,7 +5449,7 @@ img{
 
 .faq-search-box .form-group{
 	position:relative;
-	margin:0px;	
+	margin:0px;
 }
 
 .faq-search-box .form-group input[type="text"],
@@ -5492,10 +5492,10 @@ img{
 }
 
 .faq-search-box .form-group input:focus{
-	border-color:#e7c330;	
+	border-color:#e7c330;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Faq Form Section
@@ -5600,7 +5600,7 @@ img{
 	margin-top:10px;
 }
 
-/*** 
+/***
 
 ====================================================================
 	History Page Section
@@ -5740,7 +5740,7 @@ img{
 	display:block;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Project Fullwidth Section
@@ -5778,7 +5778,7 @@ img{
 
 .gallery-item .image-box{
 	position:relative;
-	display:block;	
+	display:block;
 }
 
 .gallery-item .image-box img{
@@ -5893,7 +5893,7 @@ img{
 	text-align:center;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Project Grid Section
@@ -6069,7 +6069,7 @@ img{
 	margin-bottom:0px;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Services Page Section
@@ -6415,7 +6415,7 @@ img{
 	margin-bottom:20px;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Shop Features Section
@@ -6468,7 +6468,7 @@ img{
 	line-height:1.6em;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Shop Section
@@ -6511,9 +6511,9 @@ img{
 
 .shop-item .inner-box:hover .image img{
 	opacity:0.7;
-	-webkit-transform:scale(1.1);	
-	-ms-transform:scale(1.1);	
-	-moz-transform:scale(1.1);	
+	-webkit-transform:scale(1.1);
+	-ms-transform:scale(1.1);
+	-moz-transform:scale(1.1);
 	transform:scale(1.1);
 }
 
@@ -6563,7 +6563,7 @@ img{
 	margin-top:-23px;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Products Section
@@ -6686,7 +6686,7 @@ img{
 
 
 
-/*** 
+/***
 
 ====================================================================
 	Shop Single Section
@@ -6774,18 +6774,18 @@ img{
 	line-height:24px;
 	padding:10px 15px !important;
 	height:46px !important;
-	box-shadow:none !important;	
+	box-shadow:none !important;
 }
 
 .product-details .basic-details .bootstrap-touchspin .input-group-btn-vertical > .btn,
 .cart-section .bootstrap-touchspin .input-group-btn-vertical > .btn{
 	padding:11px 10px;
-	background:#f4f5f6;	
+	background:#f4f5f6;
 }
 
 .product-details .bootstrap-touchspin .input-group-btn-vertical i,
 .cart-section .bootstrap-touchspin .input-group-btn-vertical i{
-	top:6px;	
+	top:6px;
 }
 
 .product-details .basic-details .item-quantity{
@@ -6816,7 +6816,7 @@ img{
 	font-size:18px;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Product Tabs Style
@@ -6831,7 +6831,7 @@ img{
 
 .shop-single .product-details .prod-tabs .tab-btns{
 	position:relative;
-	z-index:1;	
+	z-index:1;
 	border-bottom:1px solid #e2e2e2;
 }
 
@@ -6906,7 +6906,7 @@ img{
 }
 
 .shop-single .product-details .prod-tabs .tabs-content .tab.active-tab{
-	display:block;	
+	display:block;
 }
 
 .shop-single .product-details .prod-tabs .tabs-content .tab .content{
@@ -6931,7 +6931,7 @@ img{
 	font-family: 'Montserrat', sans-serif;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Comments Area
@@ -6981,11 +6981,11 @@ img{
 }
 
 .shop-single .comments-area .comment-box:nth-child(1){
-	padding-top:0px;	
+	padding-top:0px;
 }
 
 .shop-single .comments-area .comment-box:hover{
-	border-color:#eb5310;	
+	border-color:#eb5310;
 }
 
 .shop-single .comments-area .comment{
@@ -7027,7 +7027,7 @@ img{
 	position:relative;
 	color:#232527;
 	line-height:24px;
-	font-size:16px;	
+	font-size:16px;
 	font-weight:600;
 	font-family: 'Montserrat', sans-serif;
 }
@@ -7187,7 +7187,7 @@ img{
 .shop-comment-form input:focus,
 .shop-comment-form select:focus,
 .shop-comment-form textarea:focus{
-	border-color:#fbd848;	
+	border-color:#fbd848;
 }
 
 
@@ -7202,7 +7202,7 @@ img{
 
 .checkout-page .default-links{
 	position:relative;
-	margin-bottom:40px;	
+	margin-bottom:40px;
 }
 
 .checkout-page .default-links li{
@@ -7232,11 +7232,11 @@ img{
 
 .shop-form .form-group{
 	position:relative;
-	margin-bottom:20px;	
+	margin-bottom:20px;
 }
 
 .billing-details .shop-form .form-group{
-	margin-bottom:20px;	
+	margin-bottom:20px;
 }
 
 .billing-details .shop-form .form-group.sec-title{
@@ -7249,7 +7249,7 @@ img{
 	line-height:24px;
 	margin-bottom:8px;
 	text-transform:capitalize;
-	color:#797979;	
+	color:#797979;
 	font-size:15px;
 	font-weight:600;
 }
@@ -7257,7 +7257,7 @@ img{
 .shop-form .form-group .field-label sup{
 	position:relative;
 	top:0px;
-	color:#797979;	
+	color:#797979;
 	font-size:16px;
 }
 
@@ -7304,19 +7304,19 @@ img{
 }
 
 .shop-form select option{
-	text-indent:15px;	
+	text-indent:15px;
 }
 
 .shop-form textarea{
 	resize:none;
 	height:100px !important;
-	overflow:hidden;	
+	overflow:hidden;
 }
 
 .shop-form input:focus,
 .shop-form select:focus,
 .shop-form textarea:focus{
-	border-color:#fbd848;	
+	border-color:#fbd848;
 }
 
 /*Shop Order Box*/
@@ -7362,16 +7362,16 @@ img{
 .payment-options{
 	position:relative;
 	margin-top:20px;
-	margin-bottom:20px;	
+	margin-bottom:20px;
 }
 
 .checkout-page .payment-options li{
 	position:relative;
-	margin-bottom:15px;	
+	margin-bottom:15px;
 }
 
 .checkout-page .payment-options li .radio-option{
-	position:relative;		
+	position:relative;
 }
 
 .checkout-page .payment-options li .radio-option label{
@@ -7396,7 +7396,7 @@ img{
 .checkout-page .payment-options li .radio-option input[type="radio"]{
 	position:absolute;
 	left:0px;
-	top:3px;	
+	top:3px;
 }
 
 .checkout-page .payment-options li .radio-option #payment-3{
@@ -7446,7 +7446,7 @@ img{
 	top:-3px;
 	display:inline-block;
 	max-width:100%;
-	padding-left:30px;	
+	padding-left:30px;
 }
 
 .checkout-page .payment-options li .radio-option label img{
@@ -7454,10 +7454,10 @@ img{
 	top:-3px;
 	display:inline-block;
 	max-width:100%;
-	padding-left:30px;	
+	padding-left:30px;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Cart Section style
@@ -7471,11 +7471,11 @@ img{
 }
 
 .cart-outer{
-	position:relative;	
+	position:relative;
 }
 
 .checkout-page .cart-outer{
-	margin-bottom:40px;	
+	margin-bottom:40px;
 }
 
 .cart-outer .table-outer{
@@ -7486,7 +7486,7 @@ img{
 
 .cart-outer .cart-table{
 	width:100%;
-	min-width:900px;	
+	min-width:900px;
 }
 
 .cart-table .cart-header{
@@ -7511,7 +7511,7 @@ img{
 }
 
 .cart-table thead tr th .fa{
-	font-size:18px;	
+	font-size:18px;
 }
 
 .cart-table thead tr th.prod-column{
@@ -7529,7 +7529,7 @@ img{
 }
 
 .cart-table tbody tr .qty .quantity-spinner{
-	background:#ffffff;	
+	background:#ffffff;
 }
 
 .cart-table tbody tr .prod-column .column-box{
@@ -7539,7 +7539,7 @@ img{
 
 .cart-table tbody tr .prod-column .column-box .prod-thumb{
 	position:relative;
-	width:120px;	
+	width:120px;
 }
 
 .cart-table tbody tr .prod-column .column-box .prod-thumb img{
@@ -7591,7 +7591,7 @@ img{
 }
 
 .cart-table tbody tr{
-	border-bottom:1px solid #e9e9e9;	
+	border-bottom:1px solid #e9e9e9;
 }
 
 .cart-table tbody tr td{
@@ -7628,7 +7628,7 @@ img{
 
 .cart-table tbody .available-info{
 	position:relative;
-	padding-left:50px;	
+	padding-left:50px;
 }
 
 .cart-table tbody .available-info .icon{
@@ -7661,7 +7661,7 @@ img{
 .cart-section .apply-coupon .form-group{
 	position:relative;
 	float:left;
-	margin-right:10px;	
+	margin-right:10px;
 }
 
 .cart-section .apply-coupon .form-group input[type="text"]{
@@ -7704,7 +7704,7 @@ img{
 .cart-section .totals-table li{
 	line-height:24px;
 	padding:14px 22px;
-	border-bottom:1px solid #ebebeb;	
+	border-bottom:1px solid #ebebeb;
 }
 
 .cart-section .totals-table li:first-child{

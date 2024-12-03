@@ -73,7 +73,7 @@
                 </div>
             </form>
 
-            <div class="grid grid-cols-4 gap-2 mt-10">
+            <div class="grid grid-cols-4 gap-2" style="margin-top:30px;">
                 <div class="col-md-12 row">
                     @foreach ($gallery->files as $file)
                         <div class="col-md-3 d-flex flex-column align-items-center mb-4">

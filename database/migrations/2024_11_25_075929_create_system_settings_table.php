@@ -20,8 +20,10 @@ return new class extends Migration
             $table->text('youtube_url')->nullable();
             $table->text('map_url')->nullable();
             $table->string('name');
+            $table->longText('footer_description');
             $table->string('address');
             $table->string('phone_number');
+            $table->string('telephone_number');
             $table->string('email');
             $table->string('logo2')->nullable();
             $table->softDeletes();

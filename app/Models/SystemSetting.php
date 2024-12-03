@@ -21,8 +21,10 @@ class SystemSetting extends Model
         'name',
         'address',
         'phone_number',
+        'telephone_number',
         'email',
         'logo2',
+        'footer_description',
     ];
 
     protected function logo1(): Attribute
