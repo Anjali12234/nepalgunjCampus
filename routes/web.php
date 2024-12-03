@@ -1,17 +1,23 @@
 <?php
 
 use App\Http\Controllers\FileController;
+use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UploadController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+// Route::get('contact', function () {
+//     return view('frontend.contact');
+// })->name('contact');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::controller(FrontendController::class)->group(function () {
+    Route::get('/', 'index')->name('welcome');
+    Route::get('/about-us')->name('aboutus');
+    
+});
 Route::post('upload', [UploadController::class, 'store'])->name('upload');
 
 Route::middleware('auth')->group(function () {

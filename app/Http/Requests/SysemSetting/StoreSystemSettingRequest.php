@@ -17,7 +17,9 @@ class StoreSystemSettingRequest extends FormRequest
         return [
             'name' => ['required', 'string'],
             'address' => ['required', 'string'],
+            'footer_description' => ['required'],
             'phone_number' => ['required', 'string'],
+            'telephone_number' => ['required', 'string'],
             'email' => ['required', 'email'],
             'logo1' => ['required', 'image'],
             'logo2' => ['required', 'image'],

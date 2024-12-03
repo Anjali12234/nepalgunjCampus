@@ -27,7 +27,7 @@ class GalleryController extends Controller
             foreach ($request->validated(['files']) as $file) {
                 $gallery->files()->create([
                     'file_name' => $file->getClientOriginalName(),
-                    'file' => $file->store('colors/' . STR::slug($request->input('title'), '_'), 'public'),
+                    'file' => $file->store('gallerys/' . STR::slug($request->input('title'), '_'), 'public'),
                     'size' => $file->getSize(),
                     'extension' => $file->getClientOriginalExtension()
                 ]);
@@ -49,7 +49,7 @@ class GalleryController extends Controller
             foreach ($request->file('files') as $file) {
                 $gallery->files()->create([
                     'file_name' => $file->getClientOriginalName(),
-                    'file' => $file->store('colors/' . Str::slug($request->input('title'), '_'), 'public'),
+                    'file' => $file->store('galleries/' . Str::slug($request->input('title'), '_'), 'public'),
                     'size' => $file->getSize(),
                     'extension' => $file->getClientOriginalExtension()
                 ]);
@@ -57,7 +57,7 @@ class GalleryController extends Controller
         }
         $gallery->update($request->validated());
         Alert::success('File updated successfully');
-        return redirect(route('admin.color.create'));
+        return redirect(route('admin.gallery.create'));
     }
 
     public function destroy(Gallery $gallery)
