@@ -17,12 +17,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     @vite('resources/css/app.css')
+    @vite('resources/js/app.js')
 </head>
 
 <body class="font-poppins">
     @include('frontend.layouts.header')
     @yield('content')
     @include('frontend.layouts.footer')
+    <script src="./node_modules/preline/dist/preline.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             var popup = document.getElementById("popup");
