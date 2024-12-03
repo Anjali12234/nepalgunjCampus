@@ -1,6 +1,6 @@
 <div class="flex items-center justify-around bg-white py-4 px-6 mx-1">
     <div class="flex ml-36 justify-end items-end h-full top-0 z-50 sticky">
-        <img src="{{ asset('assets/frontend/images/logo1.jpg') }}" alt="NCMT Logo" class="h-11 w-36" />
+        <img src="{{ setting()->logo1 }}" alt="NCMT Logo" class="h-11 w-36" />
     </div>
 
     <div class="flex items-center space-x-4">
@@ -15,7 +15,7 @@
 
         </div>
         <div>
-            <p class="text-gray-800">Ganeshman Chowk, Surkhet Road -Banke Nepalgunj</p>
+            <p class="text-gray-800">{{ setting()->address }}</p>
             <p class="text-gray-800 ">Sunday - Friday, 6 AM to 12PM</p>
         </div>
 
@@ -32,8 +32,8 @@
 
         </div>
         <div>
-            <p class="text-gray-800 font-medium">+9779848022391</p>
-            <p class="text-gray-800 font-medium">&nbsp;081-532883</p>
+            <p class="text-gray-800 font-medium">{{ setting()->phone_number }}</p>
+            <p class="text-gray-800 font-medium">&nbsp;{{ setting()->telephone_number }}</p>
         </div>
         <button
             class="bg-[#FFC315] mr-4 hover:bg-white border border-transparent hover:border-[#FFC315] hover:border-1 hover:text-[#FFC315] text-black font-medium py-2 px-4 rounded-full">
@@ -51,21 +51,23 @@
                 <a href="#"
                     class="hover:text-yellow-500 relative after:content-['|'] after:ml-6 after:text-gray-500">Home</a>
 
-                    <div class="relative group">
-                        <button
-                            class="hover:text-yellow-500 focus:outline-none after:content-['|']  after:ml-6 after:text-gray-500">
-                            Who We Are</button>
-                        <div
-                            class="absolute hidden group-hover:block group-focus-within:block bg-black text-gray-500 py-2 mt-4 shadow-lg  w-48">
-                            <a href="{{ route('aboutus') }}" class="block px-4 py-2 hover:bg-[#FFC315] hover:text-black">About Us</a>
-                            <a href="#" class="block px-4 py-2 hover:bg-[#FFC315] hover:text-black">Mission & Vision</a>
+                <div class="relative group">
+                    <button
+                        class="hover:text-yellow-500 focus:outline-none after:content-['|']  after:ml-6 after:text-gray-500">
+                        Who We Are</button>
+                    <div
+                        class="absolute hidden group-hover:block group-focus-within:block bg-black text-gray-500 py-2 mt-4 shadow-lg  w-48">
+                        <a href="{{ route('aboutus') }}"
+                            class="block px-4 py-2 hover:bg-[#FFC315] hover:text-black">About Us</a>
+                        <a href="{{route('mission')}}" class="block px-4 py-2 hover:bg-[#FFC315] hover:text-black">Mission &
+                            Vision</a>
 
-                        </div>
                     </div>
+                </div>
 
 
 
-                <a href="#"
+                <a href="{{route('whyNcmt')}}"
                     class="hover:text-yellow-500 relative after:content-['|'] after:ml-6 after:text-gray-500">Why
                     NCMT</a>
 

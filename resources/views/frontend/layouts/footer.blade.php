@@ -4,14 +4,12 @@
         <div>
             <div class="flex items-center">
                 <div class=" h-40 w-40 rounded-full flex items-center justify-center">
-                    <img src="{{ asset('assets/frontend/images/favicon.png') }}" alt="">
+                    <img src="{{ setting()->logo1 }}" alt="">
                 </div>
 
             </div>
             <p class="text-gray-400 text-justify">
-                NCMT has interdisciplinary teams with flat hierarchies and opportunities to learn and grow. High
-                individual responsibility and possibility to let own ideas thrive. Our internal processes and software
-                enable to work fully remote in distributed teams but keeping closely in touch in day to day work
+                {!! setting()->footer_description !!}
             </p>
         </div>
 
@@ -49,9 +47,9 @@
                 <div class="ml-2 w-5 h-[3px] bg-yellow-500"></div>
             </h3>
             <ul class="text-gray-400 space-y-2">
-                <li class="text-[18px]">081-532883</li>
-                <li class="text-[18px]">+9779848022391</li>
-                <li>Ganeshman Chowk, Surkhet Road - Banke Nepalgunj</li>
+                <li class="text-[18px]">{{setting()->telephone_number}}</li>
+                <li class="text-[18px]">{{setting()->phone_number}}</li>
+                <li>{{setting()->address}}</li>
                 <li>Sunday - Friday, 6 AM to 12 PM</li>
             </ul>
             <!-- Social Media -->
@@ -83,7 +81,8 @@
     <div class="mt-4 mb-4">
         <hr class="text-gray-500">
         <div class="text-sm flex justify-between justify-items-end">
-            <p class="mt-2">© Copyright <span class="text-[#FFC315]"><a href="">NCMT</a></span> 2020. All right reserved.</p>
+            <p class="mt-2">© Copyright <span class="text-[#FFC315]"><a href="">NCMT</a></span> 2020. All right
+                reserved.</p>
             <p class="mt-2">Developed by <span class="text-[#FFC315]"><a href="">NCMT</a></span></p>
         </div>
     </div>
