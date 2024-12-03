@@ -48,7 +48,7 @@
         <div class="flex items-center justify-between h-16">
             <!-- Left Navigation Links -->
             <div class="flex space-x-6">
-                <a href="#"
+                <a href="{{route('welcome')}}"
                     class="hover:text-yellow-500 relative after:content-['|'] after:ml-6 after:text-gray-500">Home</a>
 
                 <div class="relative group">
