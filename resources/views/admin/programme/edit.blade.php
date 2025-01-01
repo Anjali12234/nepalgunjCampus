@@ -44,12 +44,45 @@
                 <div class="col-md-12 row">
 
                     <div class="form-group col-md-6">
-                        <label for="title">Title</label>
+                        <label for="programme_short_name">Programme</label>
 
-                        <input class="form-control" id="title" name="title" type="text"
-                            value="{{ old('title',$programme->title) }}" />
+                        <input class="form-control" id="programme_short_name" name="programme_short_name" type="text"
+                            value="{{ old('programme_short_name',$programme->programme_short_name) }}" />
                         <span class="text-warning">
-                            @error('title')
+                            @error('programme_short_name')
+                                {{ $message }}
+                            @enderror
+                        </span>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="programme_full_name">Programme</label>
+
+                        <input class="form-control" id="programme_full_name" name="programme_full_name" type="text"
+                            value="{{ old('programme_full_name',$programme->programme_full_name) }}" />
+                        <span class="text-warning">
+                            @error('programme_full_name')
+                                {{ $message }}
+                            @enderror
+                        </span>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="university">University</label>
+
+                        <input class="form-control" id="university" name="university" type="text"
+                            value="{{ old('university',$programme->university) }}" />
+                        <span class="text-warning">
+                            @error('university')
+                                {{ $message }}
+                            @enderror
+                        </span>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="years">Years</label>
+
+                        <input class="form-control" id="years" name="years" type="number"
+                            value="{{ old('years',$programme->years) }}" />
+                        <span class="text-warning">
+                            @error('years')
                                 {{ $message }}
                             @enderror
                         </span>

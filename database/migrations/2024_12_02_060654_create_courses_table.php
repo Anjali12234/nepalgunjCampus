@@ -17,10 +17,10 @@ return new class extends Migration
             $table->string('course_title');
             $table->string('course_code');
             $table->string('course_pdf');
-            $table->string('credit_hr');
-            $table->string('lecture_hr');
-            $table->string('tution_hr');
-            $table->string('lab_hr');
+            $table->string('credit_hr')->nullable();
+            $table->string('lecture_hr')->nullable();
+            $table->string('tution_hr')->nullable();
+            $table->string('lab_hr')->nullable();
             $table->string('slug')->nullable();
             $table->string('position');
             $table->softDeletes();

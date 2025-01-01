@@ -13,7 +13,10 @@ return new class extends Migration
     {
         Schema::create('programmes', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
+            $table->string('programme_short_name');
+            $table->string('programme_full_name');
+            $table->string('university');
+            $table->string('years');
             $table->string('slug')->nullable();
             $table->string('position');
             $table->softDeletes();

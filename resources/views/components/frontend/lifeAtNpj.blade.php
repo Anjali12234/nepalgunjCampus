@@ -1,12 +1,14 @@
 @props(['galleries'])
 
-<div class="bg-gray-100 py-12 sm:py-16">
+<div class="bg-gray-100 py-12 sm:py-16 ">
     <div class="max-w-7xl mx-auto  sm:px-6 lg:px-8">
         <div class="text-center">
-            <h2 class="text-2xl font-medium text-gray-900 sm:text-3xl">Life At Nepalgunj Campus <span
-                    class="text-[#FFC315] font-bold">___</span> <span class="text-base"><button
-                        class="bg-[#FFC315] rounded-full px-8 py-3 hover:bg-transparent border border-1 hover:text-[#FFC315] hover:border-[#FFC315]">Welcome
-                        to Our Nepalgunj Campus of Management &
+            <h2 class="text-2xl font-medium text-gray-900 sm:text-3xl">Life at Nepalgunj Campus <span
+                    class="text-[#FFC315] font-bold">___</span> <span class="text-base">
+                        <button
+                        class="mt-5 bg-[#FFC315] text-xl font-semibold  rounded-full px-8 py-3 hover:bg-transparent border border-1 hover:text-[#FFC315] 
+                        hover:border-[#FFC315]">Welcome
+                        to Our NepalGunj Campus of Management &
                         Technology</button></span></h2>
 
         </div>
@@ -40,24 +42,24 @@
             class="absolute inset-0 w-full h-full object-cover parallax-img">
 
         <!-- Overlay -->
-        <div class="absolute inset-0 bg-gray-700 opacity-65"></div>
+        <div class="absolute inset-0 bg-gray-500 opacity-45"></div>
 
         <!-- Content -->
         <div class="relative z-10 flex flex-col text-white">
-            <div class="relative flex items-center justify-start pl-24 mt-10">
+            <div class="relative flex items-center justify-start pl-5 md:pl-24  mt-10">
                 <!-- Heading -->
-                <h1 class="text-[22px] font-lora">How We Are Different From Others!</h1>
+                <h1 class="font-medium italic font-lora text-2xl">How We Are Different From Others!</h1>
                 <div class="w-[45px] h-[2px] bg-[#FFC315] ml-8"></div>
             </div>
-            <div class="pl-24 mt-4">
-                <p class="font-lora text-[18px] leading-10">Student Club
+            <div class="pl-5 md:pl-24  mt-3">
+                <p class=" text-xl font-medium leading-10 font-poppins ">Student Club
                     <br>CENTERS AND LABS <br>EVENTS AND ACTIVITIES <br> EXCHANGE & EXPOSURE
                 </p>
             </div>
-            <div class="pl-24 mt-4 flex gap-4">
+            <div class="pl-5 md:pl-24  mt-4 flex gap-4">
                 <!-- Play Button -->
                 <div class="flex items-center justify-center">
-                    <div class="relative bg-transparent rounded-full p-4 border-r-2 border-b-4 border-l-2 border-[#FFC315] cursor-pointer"
+                    <div class="relative bg-transparent rounded-full p-0 md:p-4 border-r-2 border-b-4 border-l-2 border-[#FFC315] cursor-pointer"
                         id="playButton">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-[#FFC315]" viewBox="0 0 24 24"
                             fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
@@ -92,7 +94,7 @@
                     </div>
                 </div>
 
-                <p class="font-lora text-[18px] mt-3 leading-8">Watch Intro Video
+                <p class=" text-[18px] mt-3 leading-8">Watch Intro Video
                     <br>About us
                 </p>
             </div>

@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('general_questions', function (Blueprint $table) {
             $table->id();
             $table->longText('title');
+            $table->longText('type');
             $table->longText('description');
             $table->string('slug')->nullable();
             $table->string('position')->nullable();

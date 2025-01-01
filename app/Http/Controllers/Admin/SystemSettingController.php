@@ -13,7 +13,7 @@ class SystemSettingController extends Controller
 {
     public function index()
     {
-    $systemSetting = setting();
+    $systemSetting = systemSetting();
         return view('admin.setting.index',compact('systemSetting'));
     }
 
@@ -31,7 +31,7 @@ class SystemSettingController extends Controller
         } else {
             SystemSetting::create($request->validated());
         }
-        Alert::success('Setting added successfully');
+        Alert::success('File added successfully');
         Cache::forget('systemSetting');
         return back();
     }

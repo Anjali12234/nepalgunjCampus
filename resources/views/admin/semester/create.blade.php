@@ -40,7 +40,7 @@
                             style="width: 100%; height: 38px">
                             <option value="" >Choose Programme</option>
                                 @foreach ($programmes as $programme)
-                                    <option value="{{ $programme->id }}">{{ $programme->title }}</option>
+                                    <option value="{{ $programme->id }}">{{ $programme->programme_short_name }}</option>
                                 @endforeach
 
 
@@ -95,7 +95,7 @@
                             <tr>
                                 <td class="table-plus">{{ $loop->iteration }}</td>
                                
-                                <td>{{ $semester->programme->title }}</td>
+                                <td>{{ $semester->programme->programme_short_name }}</td>
                                 <td>{{ $semester->title }}</td>
                                 <td>
                                     <div class="dropdown">

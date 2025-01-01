@@ -2,13 +2,14 @@
 
 namespace App\Models;
 
+use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Semester extends Model
 {
-    use HasFactory, SoftDeletes;
+    use HasFactory, SoftDeletes, Sluggable;
 
     protected $fillable = [
         'title',
@@ -17,7 +18,7 @@ class Semester extends Model
         'position',
     ];
 
-  
+
     public function sluggable(): array
     {
         return [
@@ -36,6 +37,7 @@ class Semester extends Model
         });
     }
 
+    
     public function programme()
     {
         return $this->belongsTo(Programme::class);

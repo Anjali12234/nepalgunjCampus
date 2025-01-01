@@ -17,6 +17,9 @@
         "vite": "^5.0"
     },
     "dependencies": {
+        "@fontsource/lora": "^5.1.0",
+        "@fontsource/poppins": "^5.1.0",
+        "@fontsource/slabo-27px": "^5.1.0",
         "preline": "^2.5.1"
     }
 }
