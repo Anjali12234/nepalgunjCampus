@@ -36,12 +36,45 @@
                 <div class="col-md-12 row">
 
                     <div class="form-group col-md-6">
-                        <label for="title">Title</label>
+                        <label for="programme_short_name">Programme Short Name</label>
 
-                        <input class="form-control" id="title" name="title" type="text"
-                            value="{{ old('title') }}" />
+                        <input class="form-control" id="programme_short_name" name="programme_short_name" type="text"
+                            value="{{ old('programme_short_name') }}" />
                         <span class="text-warning">
-                            @error('title')
+                            @error('programme_short_name')
+                                {{ $message }}
+                            @enderror
+                        </span>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="programme_full_name">Programme Full Name</label>
+
+                        <input class="form-control" id="programme_full_name" name="programme_full_name" type="text"
+                            value="{{ old('programme_full_name') }}" />
+                        <span class="text-warning">
+                            @error('programme_full_name')
+                                {{ $message }}
+                            @enderror
+                        </span>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="university">University</label>
+
+                        <input class="form-control" id="university" name="university" type="text"
+                            value="{{ old('university') }}" />
+                        <span class="text-warning">
+                            @error('university')
+                                {{ $message }}
+                            @enderror
+                        </span>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="years">Years</label>
+
+                        <input class="form-control" id="years" name="years" type="number"
+                            value="{{ old('years') }}" />
+                        <span class="text-warning">
+                            @error('years')
                                 {{ $message }}
                             @enderror
                         </span>
@@ -76,7 +109,7 @@
                     @foreach ($programmes as $key => $programme)
                         <tr>
                             <td class="table-plus">{{ $loop->iteration }}</td>
-                            <td>{{ $programme->title }}</td>
+                            <td>{{ $programme->programme_short_name }}</td>
                             <td>
                                 <div class="dropdown">
                                     <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle"

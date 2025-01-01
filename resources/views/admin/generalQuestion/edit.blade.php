@@ -54,7 +54,23 @@
                             @enderror
                         </span>
                     </div>
-                    
+                    <div class="form-group col-md-6">
+                        <label>Type</label>
+                        <select class="custom-select2 form-control" name="type" style="width: 100%; height: 38px">
+                            <option value="">Type</option>
+                            @foreach(\App\QuestionType::cases() as $case)
+                            <option value="{{ $case->value }}" 
+                                {{old('type',$generalQuestion->type)==$case->value ? 'selected':''}}>
+                            {{ $case->label() }}
+                        </option>
+                            @endforeach
+                        </select>
+                        <span class="text-warning">
+                            @error('type')
+                                {{ $message }}
+                            @enderror
+                        </span>
+                    </div>
 
 
                 </div>

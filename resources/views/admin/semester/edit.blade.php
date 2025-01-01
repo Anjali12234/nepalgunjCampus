@@ -49,7 +49,7 @@
                             @foreach ($programmes as $programme)
                             <option value="{{ $programme->id }}"
                                 {{ old('programme_id', $semester->programme_id) == $programme->id ? 'selected' : '' }}>
-                                {{ $programme->title }}
+                                {{ $programme->programme_short_name }}
 
                             </option>
                             @endforeach

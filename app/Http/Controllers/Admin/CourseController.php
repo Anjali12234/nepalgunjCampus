@@ -41,7 +41,11 @@ class CourseController extends Controller
 
     public function update(UpdateCourseRequest $request, Course $course)
     {
-
+            if ($request->hasFile('course_pdf') && $coursePdf = $course->getRawOriginal('course_pdf')) {
+                $this->deleteFile($coursePdf);
+            }
+         
+       
         $course->update($request->validated());
         Alert::success('File updated successfully');
         return redirect(route('admin.course.create'));

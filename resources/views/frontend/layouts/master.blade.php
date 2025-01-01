@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
 
-<!-- Mirrored from t.commonsupport.com/nortech/index-3.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 20 Feb 2020 06:20:46 GMT -->
-
 <head>
     <meta charset="utf-8">
     <title>Welcome to NCMT</title>
@@ -22,10 +20,12 @@
 
 <body class="font-poppins">
     @include('frontend.layouts.header')
+
     @yield('content')
+
+
     @include('frontend.layouts.footer')
-    <script src="./node_modules/preline/dist/preline.js"></script>
-    <script>
+     <script>
         document.addEventListener("DOMContentLoaded", function() {
             var popup = document.getElementById("popup");
             var closeButton = document.getElementById("close-btn");

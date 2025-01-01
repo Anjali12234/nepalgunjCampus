@@ -13,8 +13,10 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
-                
+                // sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                popins:['Poppins 300','sens-serif'],
+                slabo:['Slabo ','sens-serif'],
+                lora:['Lora','serif']
             },
         },
     },

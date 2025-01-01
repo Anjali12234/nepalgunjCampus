@@ -2,16 +2,20 @@
 
 namespace App\Models;
 
+use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Programme extends Model
 {
-    use HasFactory, SoftDeletes;
+    use HasFactory, SoftDeletes, Sluggable;
 
     protected $fillable = [
-        'title',
+        'programme_short_name',
+        'programme_full_name',
+        'university',
+        'years',
         'slug',
         'position',
     ];
@@ -21,7 +25,7 @@ class Programme extends Model
     {
         return [
             'slug' => [
-                'source' => 'title'
+                'source' => 'programme_short_name'
             ]
         ];
     }

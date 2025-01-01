@@ -18,10 +18,10 @@ class StoreCourseRequest extends FormRequest
             'course_title' => ['required', 'string'],
             'course_code' => ['required', 'string'],
             'course_pdf' => ['required','mimes:png,jpg,jpeg,pdf,jfif'],
-            'credit_hr' => ['required'],
-            'lecture_hr' => ['required'],
-            'tution_hr' => ['required'],
-            'lab_hr' => ['required'],
+            'credit_hr' => ['nullable'],
+            'lecture_hr' => ['nullable'],
+            'tution_hr' => ['nullable'],
+            'lab_hr' => ['nullable'],
             'semester_id' => ['required', 'string'],
         ];
     }

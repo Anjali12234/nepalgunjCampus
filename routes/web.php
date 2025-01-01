@@ -12,6 +12,9 @@ Route::controller(FrontendController::class)->group(function () {
     Route::get('aboutus', 'aboutUs')->name('aboutus'); // Specify the method name here
     Route::get('mission', 'mission')->name('mission'); // Specify the method name here
     Route::get('whyNcmt', 'whyNcmt')->name('whyNcmt'); // Specify the method name here
+    Route::get('contact', 'contact')->name('contact'); // Specify the method name here
+    Route::get('programme/{programme:slug}','programme')->name('programme');
+    Route::get('semester/{semester:slug}','semester')->name('semester');
 });
 Route::post('upload', [UploadController::class, 'store'])->name('upload');
 

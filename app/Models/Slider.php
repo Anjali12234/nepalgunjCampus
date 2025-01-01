@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\QuestionType;
+use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -10,7 +12,7 @@ use Illuminate\Support\Facades\Storage;
 
 class Slider extends Model
 {
-    use HasFactory, SoftDeletes;
+    use HasFactory, SoftDeletes, Sluggable;
 
     protected $fillable = [
         'title',
@@ -18,7 +20,9 @@ class Slider extends Model
         'slug',
         'position',
     ];
-
+    protected $casts = [
+        'type' => QuestionType::class,
+    ];
     protected function image(): Attribute
     {
         return Attribute::make(

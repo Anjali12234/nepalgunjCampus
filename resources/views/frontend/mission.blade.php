@@ -1,29 +1,11 @@
 @extends('frontend.layouts.master')
 @section('content')
-    <section>
-        <div class="relative">
-            <!-- Background Image -->
-            <img src="{{ asset('assets/frontend/images/background/4.jpg') }}" alt="Mission & Vision"
-                class="w-full h-96 object-cover">
+    <x-frontend.hero-component image="{{ asset('assets/frontend/images/background/4.jpg') }}" heading="Mission & Vision" />
 
-            <!-- Overlay for About Us Text -->
-            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center">
-                <div class="py-7 px-32">
-                    <h2 class="text-white text-4xl md:text-5xl font-bold mb-4">Mission & Vision</h2>
-                </div>
-            </div>
-        </div>
-    </section>
+
+    <x-frontend.bread-crum heading="Mission & Vision" />
 
     <section>
-        <!-- Breadcrumb -->
-        <div class="bg-gray-200 border-t py-5">
-            <div class="max-w-7xl mx-auto flex items-center space-x-2 text-lg">
-                <a href="#" class="text-yellow-500 font-semibold hover:underline">Home</a>
-                <span class="text-gray-400 font-semibold">></span>
-                <span class="text-gray-500 font-semibold">Mission & Vision</span>
-            </div>
-        </div>
 
         <!-- Content Section -->
         <div class="bg-gray-50 py-10 px-6">
@@ -158,7 +140,7 @@
                             there is something for everyone to enrich their college experience and forge lifelong
                             friendships.
                         </p>
-                        
+
                     </div>
                 </div>
 

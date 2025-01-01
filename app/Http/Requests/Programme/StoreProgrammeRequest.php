@@ -15,7 +15,10 @@ class StoreProgrammeRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => ['required', 'string'],
+            'programme_short_name' => ['required', 'string'],
+            'programme_full_name' => ['required', 'string'],
+            'university' => ['required', 'string'],
+            'years' => ['required'],
         ];
     }
 }
