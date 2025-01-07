@@ -1,8 +1,8 @@
 <div class="flex flex-wrap lg:items-center lg:justify-around bg-white py-4  ">
     <!-- Logo Section -->
     <div class="ml-[7.5rem] lg:ml-0 w-full lg:w-auto justify-center  lg:justify-end items-end h-full top-0 z-50 ">
-       <a href="{{ route('welcome') }}"> <img src="{{ systemSetting()?->logo1 }}" alt="{{ systemSetting()?->name }}" 
-        class="h-11 w-36 lg:h-11 lg:w-44" /></a>
+        <a href="{{ route('welcome') }}"> <img src="{{ systemSetting()?->logo1 }}" alt="{{ systemSetting()?->name }}"
+                class="h-11 w-36 lg:h-11 lg:w-44" /></a>
     </div>
 
     <!-- Address Section -->
@@ -17,8 +17,8 @@
             </svg>
         </div>
         <div class="text-center lg:text-left ">
-            <p class="text-gray-800 text-lg font-medium ">{{ systemSetting()?->address }}</p>
-            <p class="text-gray-800 text-lg font-medium ">Sunday - Friday, 6 AM to 12PM</p>
+            <p class="text-gray-800 text-sm font-semibold ">{{ systemSetting()?->address }}</p>
+            <p class="text-gray-800 text-sm font-semibold ">Sunday - Friday, 6 AM to 12PM</p>
         </div>
         <div class="border-l border-gray-400 h-12 hidden md:flex"></div>
         <div class="flex justify-center lg:justify-start ">
@@ -30,22 +30,22 @@
         </div>
 
         <div class="text-center lg:text-left">
-            <p class="text-gray-800 text-lg font-medium">{{ systemSetting()?->phone_number }}</p>
-            <p class="text-gray-800 text-lg font-medium">&nbsp;{{ systemSetting()?->telephone_number }}</p>
+            <p class="text-gray-800 text-sm font-semibold">{{ systemSetting()?->phone_number }}</p>
+            <p class="text-gray-800 text-sm font-semibold">&nbsp;{{ systemSetting()?->telephone_number }}</p>
         </div>
         <button
-            class="bg-[#FFC315] hover:bg-white border border-transparent hover:border-[#FFC315] hover:border-1 hover:text-[#FFC315] text-neutral-700 text-xl font-bold py-2 px-4 rounded-full lg:w-auto w-full">
+            class="bg-[#FFC315] hover:bg-white border border-transparent hover:border-[#FFC315] hover:border-1 hover:text-[#FFC315] text-neutral-700 text-lg font-semibold py-2 px-4 rounded-full lg:w-auto w-full font-popins">
             Request a call back
         </button>
     </div>
 </div>
 
 <!-- Navigation Bar -->
-<nav id="navbar" class="bg-black text-white top-0 z-50 sticky py-4">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16 gap-5">
+<nav id="navbar" class="bg-black text-white top-0 z-50 sticky">
+    <div class="max-w-9xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16 gap-5">
         <!-- Navbar Logo -->
-       <a href="{{ route('welcome') }}"><img id="navbar-logo" src="{{ systemSetting()?->logo1 }}" alt="{{ systemSetting()?->name }}"
-            class="hidden  h-8 w-24 lg:h-10 lg:w-28" /></a> 
+        <a href="{{ route('welcome') }}"><img id="navbar-logo" src="{{ systemSetting()?->logo1 }}"
+                alt="{{ systemSetting()?->name }}" class="hidden  h-8 w-24 lg:h-10 lg:w-28" /></a>
 
         <!-- Mobile Menu Button -->
         <div class="flex md:hidden">
@@ -58,32 +58,21 @@
         </div>
 
         <!-- Links -->
-        <div id="menu" class="hidden md:flex md:space-x-8 font-semibold text-lg">
+        <div id="menu" class="hidden md:flex md:space-x-8 font-semibold ">
             <a href="{{ route('welcome') }}"
                 class="hover:text-yellow-500 relative after:content-['|'] after:ml-6 after:text-gray-500">Home</a>
-            {{-- <div class="relative group">
-                <button
-                    class="hover:text-yellow-500 focus:outline-none after:content-['|'] after:ml-6 after:text-gray-500">Who
-                    We Are</button>
-                <div class="absolute hidden group-hover:block bg-black text-gray-500 py-2 mt-4 shadow-lg w-48">
-                    <a href="{{ route('aboutus') }}" class="block px-4 py-2 hover:bg-[#FFC315] hover:text-black">About
-                        Us</a>
-                    <a href="{{ route('mission') }}" class="block px-4 py-2 hover:bg-[#FFC315] hover:text-black">Mission
-                        & Vision</a>
-                </div>
-            </div> --}}
+          
             <div class="relative group">
                 <button
                     class="hover:text-yellow-500 focus:outline-none after:content-['|'] after:ml-6 after:text-gray-500">Who
                     We Are</button>
                 <div
                     class="absolute hidden group-hover:block group-focus-within:block bg-black text-gray-500 py-2 mt-4 shadow-lg w-48">
-                        <a href="{{ route('aboutus') }}"
-                            class="block px-4 py-2 hover:bg-[#FFC315] hover:text-black">About
-                            Us</a>
-                        <a href="{{ route('mission') }}"
-                            class="block px-4 py-2 hover:bg-[#FFC315] hover:text-black">Mission
-                            & Vision</a>
+                    <a href="{{ route('aboutus') }}" class="block px-4 py-2 hover:bg-[#FFC315] hover:text-black">About
+                        Us</a>
+                    <a href="{{ route('mission') }}"
+                        class="block px-4 py-2 hover:bg-[#FFC315] hover:text-black">Mission
+                        & Vision</a>
                 </div>
             </div>
 
@@ -101,6 +90,19 @@
                     @foreach (programmes() as $programme)
                         <a href="{{ route('programme', $programme) }}"
                             class="block px-4 py-2 hover:bg-[#FFC315] hover:text-black">{{ $programme->programme_short_name }}</a>
+                    @endforeach
+                </div>
+            </div>
+            <div class="relative group">
+                <button
+                    class="hover:text-yellow-500 focus:outline-none after:content-['|'] after:ml-6 after:text-gray-500">Our
+                    Teacher</button>
+                <div
+                    class="absolute hidden group-hover:block group-focus-within:block bg-black text-gray-500 py-2 mt-4 shadow-lg w-48">
+                    @foreach (teachers() as $teacher)
+                        <a href="{{ route('teacher', ['slug' => $teacher->slug]) }}"
+                            class="block px-4 py-2 hover:bg-[#FFC315]
+                             hover:text-black">{{ $teacher->teacher_name }}</a>
                     @endforeach
                 </div>
             </div>
@@ -142,43 +144,71 @@
     </div>
 
     <!-- Mobile Dropdown Menu -->
-    <div id="mobile-menu" class="md:hidden flex flex-col space-y-4 mt-4 bg-gradient-to-b from-gray-900 to-gray-700 text-gray-200 px-5 py-4 rounded-lg shadow-lg">
-        <a href="{{ route('welcome') }}" class="hover:text-yellow-400 text-lg font-medium tracking-wide transition-colors duration-300">Home</a>
-    
+    <div id="mobile-menu"
+        class="md:hidden flex flex-col space-y-4 mt-4 bg-gradient-to-b from-gray-900 to-gray-700 text-gray-200 px-5 py-4 rounded-lg shadow-lg">
+        <a href="{{ route('welcome') }}"
+            class="hover:text-yellow-400 text-lg font-medium tracking-wide transition-colors duration-300">Home</a>
+
         <div>
-            <button 
-                class="w-full text-left flex justify-between items-center hover:text-yellow-400 text-lg font-medium tracking-wide transition-colors duration-300" 
+            <button
+                class="w-full text-left flex justify-between items-center hover:text-yellow-400 text-lg font-medium tracking-wide transition-colors duration-300"
                 onclick="toggleDropdown('who-we-are-dropdown')">
                 Who We Are
                 <i id="who-we-are-icon" class="ti ti-chevron-up transform transition-transform duration-300"></i>
             </button>
             <div id="who-we-are-dropdown" class="hidden bg-gray-800 text-gray-300 mt-2 rounded-lg shadow-md">
-                <a href="{{ route('aboutus') }}" class="block px-4 py-2 hover:bg-yellow-400 hover:text-gray-900 rounded-t-md transition-colors duration-300">About Us</a>
-                <a href="{{ route('mission') }}" class="block px-4 py-2 hover:bg-yellow-400 hover:text-gray-900 rounded-b-md transition-colors duration-300">Mission & Vision</a>
+                <a href="{{ route('aboutus') }}"
+                    class="block px-4 py-2 hover:bg-yellow-400 hover:text-gray-900 rounded-t-md transition-colors duration-300">About
+                    Us</a>
+                <a href="{{ route('mission') }}"
+                    class="block px-4 py-2 hover:bg-yellow-400 hover:text-gray-900 rounded-b-md transition-colors duration-300">Mission
+                    & Vision</a>
             </div>
         </div>
-        
-    
-        <a href="{{ route('whyNcmt') }}" class="hover:text-yellow-400 text-lg font-medium tracking-wide transition-colors duration-300">Why NCMT</a>
-    
+
+
+        <a href="{{ route('whyNcmt') }}"
+            class="hover:text-yellow-400 text-lg font-medium tracking-wide transition-colors duration-300">Why NCMT</a>
+
         <div>
-            <button 
-                class="w-full text-left flex justify-between items-center hover:text-yellow-400 text-lg font-medium tracking-wide transition-colors duration-300" 
+            <button
+                class="w-full text-left flex justify-between items-center hover:text-yellow-400 text-lg font-medium tracking-wide transition-colors duration-300"
                 onclick="toggleDropdown('programme-dropdown')">
                 Our Programme
                 <i id="programme-icon" class="ti ti-chevron-up transform transition-transform duration-300"></i>
             </button>
             <div id="programme-dropdown" class="hidden bg-gray-800 text-gray-300 mt-2 rounded-lg shadow-md">
                 @foreach (programmes() as $programme)
-                <a href="{{ route('programme', $programme) }}" class="block px-4 py-2 hover:bg-yellow-400 hover:text-gray-900 rounded-t-md transition-colors duration-300">{{ $programme->programme_short_name }}T</a>
-            @endforeach
+                    <a href="{{ route('programme', $programme) }}"
+                        class="block px-4 py-2 hover:bg-yellow-400 hover:text-gray-900 rounded-t-md transition-colors duration-300">{{ $programme->programme_short_name }}</a>
+                @endforeach
             </div>
         </div>
-    
-        <a href="#" class="hover:text-yellow-400 text-lg font-medium tracking-wide transition-colors duration-300">Career Counselling</a>
-        <a href="#" class="hover:text-yellow-400 text-lg font-medium tracking-wide transition-colors duration-300">Contact Us</a>
+        <div>
+            <button
+                class="w-full text-left flex justify-between items-center hover:text-yellow-400 text-lg font-medium tracking-wide transition-colors duration-300"
+                onclick="toggleDropdown('teacher-dropdown')">
+                Teacher
+                <i id="programme-icon" class="ti ti-chevron-up transform transition-transform duration-300"></i>
+            </button>
+            <div id="teacher-dropdown" class="hidden bg-gray-800 text-gray-300 mt-2 rounded-lg shadow-md">
+                @foreach (teachers() as $teacher)
+                    <a href="{{ route('teacher', ['slug' => $teacher->slug]) }}"
+                        class="block px-4 py-2 hover:bg-yellow-400
+                         hover:text-gray-900 rounded-t-md transition-colors
+                          duration-300">{{ $teacher->teacher_name }}</a>
+                @endforeach
+            </div>
+        </div>
+
+        <a href="#"
+            class="hover:text-yellow-400 text-lg font-medium tracking-wide transition-colors duration-300">Career
+            Counselling</a>
+        <a href="{{route('contact')}}"
+            class="hover:text-yellow-400 text-lg font-medium tracking-wide transition-colors duration-300">Contact
+            Us</a>
     </div>
-    
+
 </nav>
 
 <script>

@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Contact extends Model
 {
     use HasFactory;
-    use SoftDeletes, Sluggable;
+    use SoftDeletes;
 
     protected $fillable = [
         'name',

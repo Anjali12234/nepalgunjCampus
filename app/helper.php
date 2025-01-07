@@ -2,6 +2,7 @@
 
 use App\Models\Programme;
 use App\Models\SystemSetting;
+use App\Models\Teacher;
 use Illuminate\Support\Facades\Cache;
 
 
@@ -19,5 +20,11 @@ if (!function_exists('programmes')) {
     function programmes()
     {
         return Programme::all();
+    }
+}
+if (!function_exists('teachers')) {
+    function teachers()
+    {
+        return Teacher::all();
     }
 }

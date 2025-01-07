@@ -9,12 +9,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::controller(FrontendController::class)->group(function () {
     Route::get('/', 'index')->name('welcome');
-    Route::get('aboutus', 'aboutUs')->name('aboutus'); // Specify the method name here
-    Route::get('mission', 'mission')->name('mission'); // Specify the method name here
-    Route::get('whyNcmt', 'whyNcmt')->name('whyNcmt'); // Specify the method name here
-    Route::get('contact', 'contact')->name('contact'); // Specify the method name here
+    Route::get('aboutus', 'aboutUs')->name('aboutus'); 
+    Route::get('mission', 'mission')->name('mission'); 
+    Route::get('whyNcmt', 'whyNcmt')->name('whyNcmt'); 
+    Route::get('contact', 'contact')->name('contact'); 
     Route::get('programme/{programme:slug}','programme')->name('programme');
     Route::get('semester/{semester:slug}','semester')->name('semester');
+    Route::get('teacher/{slug}', 'teacher')->name('teacher');
+    Route::post('/rate-teacher', 'rateTeacher');
+
 });
 Route::post('upload', [UploadController::class, 'store'])->name('upload');
 

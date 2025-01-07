@@ -27,22 +27,10 @@
 
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/backend/vendors/styles/style.css') }}" />
     <link rel="stylesheet" href="https://cdn.ckeditor.com/ckeditor5/43.1.0/ckeditor5.css">
-    @livewireStyles
 </head>
 
 <body>
-    {{-- <div class="pre-loader">
-        <div class="pre-loader-box">
-            <div class="loader-logo">
-                <img src="{{ asset('assets/backend/vendors/images/deskapp-logo.svg') }}" alt="" />
-            </div>
-            <div class="loader-progress" id="progress_div">
-                <div class="bar" id="bar1"></div>
-            </div>
-            <div class="percent" id="percent1">0%</div>
-            <div class="loading-text">Loading...</div>
-        </div>
-    </div> --}}
+    
     @include('sweetalert::alert')
     @include('backend.partials.header')
     @include('backend.partials.sidebar')
@@ -50,11 +38,12 @@
     <div class="main-container">
         <div class="pd-ltr-20">
 
-           @yield('container')
+            @yield('container')
             @include('backend.partials.footer')
         </div>
     </div>
     @stack('script')
+
     <!-- js -->
     <script src="{{ asset('assets/backend/vendors/scripts/core.js') }}"></script>
     <script src="{{ asset('assets/backend/vendors/scripts/script.min.js') }}"></script>
@@ -69,14 +58,13 @@
         ClassicEditor
             .create(document.querySelector('#editor'), {
                 ckfinder: {
-                    uploadUrl: '{{ route("upload") }}?_token={{ csrf_token() }}'
+                    uploadUrl: '{{ route('upload') }}?_token={{ csrf_token() }}'
                 }
             })
             .catch(error => {
                 console.error(error);
             });
     </script>
- @livewireScripts
 </body>
 
 </html>

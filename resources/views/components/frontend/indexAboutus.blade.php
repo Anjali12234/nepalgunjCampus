@@ -7,15 +7,15 @@
             <h2 class="text-3xl font-bold text-gray-900 mb-4">About Us <span class="text-[#FFC315] font-bold">____</span>
             </h2>
             <h3 class="text-3xl font-semibold text-gray-600 mb-6">{{ $about?->title }}</h3>
-            <p class="text-lg text-gray-500 leading-relaxed mb-6 text-justify" style="letter-spacing: 0.05em;">
+            <p class="text-base text-gray-500 leading-relaxed mb-6 text-justify" style="letter-spacing: 0.05em;">
                 {!! Str::limit(strip_tags($about?->description), 800, '...') !!}
             </p>
 
-            <button
+            <a href="{{route('aboutus')}}"
                 class="mt-4 bg-[#FFC315] hover:text-[#FFC315] text-black py-3 px-9 rounded-full font-semibold  hover:border-[#FFC315]
                  hover:bg-transparent border hover:border-1 transition duration-300 text-2xl">
                 Know more about us
-            </button>
+            </a>
 
         </div>
 

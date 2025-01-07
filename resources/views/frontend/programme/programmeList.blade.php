@@ -1,12 +1,13 @@
 @extends('frontend.layouts.master')
 @section('content')
+    {{-- <x-frontend.hero-component image="{{ asset('assets/frontend/images/background/9.jpg') }}"
+        heading="{{ $programme->programme_full_name }}" /> --}}
     <x-frontend.hero-component image="{{ asset('assets/frontend/images/background/9.jpg') }}"
         heading="{{ $programme->programme_full_name }}" />
 
-
     <x-frontend.bread-crum heading="{{ $programme->programme_full_name }}" />
 
-
+    
 
     <section>
         <div class="py-7 px-3  md:px-28">
@@ -15,17 +16,17 @@
 
                 <!-- Left Section -->
                 <div class=" hidden md:block">
-                    <div class="mb-4">
+                    <div class="mb-4 font-slabo">
                         <!-- Tabs -->
                         <div class=" p-2 ">
                             @foreach ($programmes as $prog)
                                 <div class="flex mt-1 mb-1">
-                                    <div class="bg-gray-400 hover:bg-gray-600 w-3  md:w-1"></div>
+                                    <div class="bg-gray-400 hover:bg-gray-600 "></div>
                                     <a href="{{ route('programme', $prog->slug) }}">
                                         <div
-                                            class="text-black w-72 pr-80 md:w-72 font-bold tracking-wider
-                                             p-4 bg-gray-300 hover:bg-[#FFC315]  border-gray-500 
-                                    {{ request()->is($prog->slug) ? 'alert(hello)' : 'alert(bye)' }}">
+                                            class="text-black w-72 text-lg  font-bold tracking-wider
+                                             p-4  hover:bg-[#FFC315]  border-gray-500
+                                              {{ request()->is("programme/".$prog->slug) ? 'bg-[#FFC315]' : 'bg-gray-300' }}">
                                             {{ $prog->programme_short_name }}</div>
                                     </a>
                                 </div>
@@ -73,10 +74,11 @@
                     </div>
 
                     <!-- Contact Info -->
-                    <div class="mt-8">
-                        <h2
-                            class="relative text-[22px] font-semibold text-black mb-6 before:content-[''] before:absolute before:left-0 before:top-9 before:transform before:-translate-y-1/2 before:h-[3px] before:w-10 before:bg-yellow-400">
+                    <div class="mt-8 w-[19rem]">
+                       
+                        <h2 class="text-xl font-bold text-gray-800 ">
                             For More Information
+                            <span class="hidden md:flex text-[#FFC315] font-extrabold">_____</span>
                         </h2>
 
                         <ul class="space-y-2 text-gray-700 mt-4">
@@ -208,7 +210,8 @@
                                 <path d="M11 15v6h1a2 2 0 0 0 2 -2v-2a2 2 0 0 0 -2 -2h-1z" />
                             </svg>
                             <button
-                                class="bg-[#FFC315] mt-5 hover:bg-transparent border hover:border-1 hover:text-[#FFC315] motion-ease-in  hover:border-[#FFC315] text-black px-10 py-3 tracking-wider rounded-full  transition-all duration-300 font-semibold">
+                                class="bg-[#FFC315] mt-5 hover:bg-transparent border hover:border-1 hover:text-[#FFC315] motion-ease-in 
+                                 hover:border-[#FFC315] text-black px-10 py-3 tracking-wider rounded-full  transition-all duration-300 font-semibold">
                                 CURRICULAR STRUCTURE OF ALL SEMESTER
                             </button>
                         </div>
@@ -236,23 +239,22 @@
                             @foreach ($programmes as $index => $prog)
                                 <div class="flex mt-1 mb-1">
                                     <div class="bg-gray-400 hover:bg-gray-600 w-3 md:w-1"></div>
+                                 
                                     <a href="{{ route('programme', $prog->slug) }}">
                                         <div
-                                            class="w-96 pr-80 font-bold tracking-wider p-4 
-                                            {{ $index % 2 == 0 ? 'bg-black text-white' : 'bg-yellow-400 text-black' }} 
-                                            hover:bg-[#FFC315] border-gray-500">
-                                            {{ $prog->programme_short_name }}
-                                        </div>
+                                            class="w-[21rem] pr-80 font-bold tracking-wider p-4
+                                             {{ request()->is("programme/".$prog->slug) ? 'bg-[#FFC315]' : 'bg-gray-300 hover:bg-[#FFC315]' }} hover:bg-[#FFC315] border-gray-500">
+                                            {{ $prog->programme_short_name }}</div>
                                     </a>
                                 </div>
                             @endforeach
                         </div>
                     </div>
-                    
+
 
                     <!-- Download Buttons -->
                     <div class="space-y-4">
-                        <button class="flex items-center justify-between w-[386px]  bg-black text-white px-4 py-2">
+                        <button class="flex items-center justify-between w-[350px]  bg-black text-white px-4 py-2">
                             <span class="flex items-center gap-3 p-2 font-bold tracking-wide text-[18px]">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="text-[#FFC315]" width="24"
                                     height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -269,7 +271,7 @@
                                 PDF. Download
                             </span>
                         </button>
-                        <button class="flex items-center justify-between w-[386px]  bg-black text-white px-4 py-2">
+                        <button class="flex items-center justify-between w-[350px]  bg-black text-white px-4 py-2">
                             <span class="flex p-2 items-center gap-2 text-[18px] tracking-wide font-bold">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="text-[#FFC315]" width="24"
                                     height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -291,11 +293,10 @@
 
                     <!-- Contact Info -->
                     <div class="mt-8">
-                        <h2
-                            class="relative text-3xl font-semibold text-black mb-6 before:content-[''] before:absolute before:left-0 before:top-9 before:transform before:-translate-y-1/2 before:h-[3px] before:w-10 before:bg-yellow-400">
+                        <h2 class="text-xl font-bold text-gray-800 ">
                             For More Information
                         </h2>
-
+                        <span class=" text-[#FFC315] font-extrabold">_____</span>
                         <ul class="space-y-2 text-gray-700 mt-4">
                             <li class="flex text-lg gap-1 leading-6 font-semibold p-2 items-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -336,6 +337,24 @@
                 </div>
             </div>
     </section>
+
+    {{-- <section>
+        <div class="grid grid-cols-4 gap-4 px-6 md:px-[5.5rem] mt-24">
+            <div class="border-lg">
+                <a href="">
+                    <div
+                        class="text-black  font-bold tracking-wider
+                     p-4 bg-gray-300 hover:bg-[#FFC315]  border-gray-500">
+                        BCA</div>
+                </a>
+            </div>
+            <div class="col-span-2">
+
+            </div>
+
+        </div>
+
+    </section> --}}
 
     <script>
         function toggleAccordion(key) {
