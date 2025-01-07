@@ -1,4 +1,4 @@
-<footer class="bg-black text-gray-200 py-4 px-5 md:px-36  text-center md:text-left font-poppins">
+<footer class="bg-black text-gray-200 py-4 px-5 md:px-28  text-center md:text-left font-poppins">
     <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         <!-- About Section -->
         <div class="mt-5 md:mt-12 w-80">
@@ -6,18 +6,18 @@
                 <img src="{{ systemSetting()?->logo2 }}" class="h-34 w-34" alt="">
             </div>
 
-            <div class="text-gray-400 text-justify text-lg mt-10">
+            <div class="text-gray-400 text-justify text-base mt-10">
                 {!! systemSetting()?->footer_description !!}
             </div>
         </div>
 
         <!-- Quick Links -->
-        <div class="mt-5 ml-0 md:ml-10 md:mt-12 ">
-            <h3 class="text-2xl font-semibold mb-4  flex items-center justify-center md:justify-start">
+        <div class="mt-5 ml-0 md:ml-16 md:mt-12 ">
+            <h3 class="text-xl font-semibold mb-4  flex items-center justify-center md:justify-start">
                 Quick Links
                 <div class="ml-2 w-10 h-[1px] bg-yellow-500 mt-3"></div>
             </h3>
-            <ul class="text-gray-400 space-y-2 text-lg">
+            <ul class="text-gray-400 space-y-2 text-base">
                 <li><a href="{{ route('welcome') }}" class="hover:text-yellow-500">Home</a></li>
                 <li><a href="{{ route('aboutus') }}" class="hover:text-yellow-500">About Us</a></li>
                 <li><a href="{{ route('whyNcmt') }}" class="hover:text-yellow-500">Why NCMT</a></li>
@@ -28,11 +28,11 @@
 
         <!-- Our Programme -->
         <div class="mt-5 md:mt-12 ">
-             <h3 class="text-2xl font-semibold mb-4  flex items-center justify-center md:justify-start">
+             <h3 class="text-xl font-semibold mb-4  flex items-center justify-center md:justify-start">
                 Our Programme
                 <div class="ml-2 w-10 h-[1px] bg-yellow-500 mt-3"></div>
             </h3>
-            <ul class="text-gray-400 space-y-2 text-lg">
+            <ul class="text-gray-400 space-y-2 text-base">
                 @foreach (programmes() as $programme)
                     <li><a href="{{ route('programme', $programme) }}" class="hover:text-yellow-500">{{ $programme->programme_short_name }}</a></li>
                 @endforeach
@@ -41,7 +41,7 @@
 
         <!-- Get In Touch -->
         <div class="mt-5 md:mt-12">
-             <h3 class="text-2xl font-semibold mb-4  flex items-center justify-center md:justify-start ">
+             <h3 class="text-xl font-semibold mb-4  flex items-center justify-center md:justify-start ">
                 Get In Touch
                 <div class="ml-2 w-10 h-[1px] bg-yellow-500 mt-3"></div>
             </h3>

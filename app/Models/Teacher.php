@@ -9,35 +9,32 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\Storage;
 
-class Course extends Model
+class Teacher extends Model
 {
     use HasFactory, SoftDeletes, Sluggable;
 
     protected $fillable = [
-        'course_title',
-        'course_code',
-        'course_pdf',
-        'credit_hr',
-        'lecture_hr',
-        'tution_hr',
-        'lab_hr',
-        'semester_id',
+        'teacher_name',
+        'faculty_name',
+        'status',
         'slug',
+        'image',
         'position',
+        'description'
     ];
 
-    protected function coursePdf(): Attribute
+    protected function image(): Attribute
     {
         return Attribute::make(
             get: fn(?string $value) => $value ? Storage::disk('public')->url($value) : null,
-            set: fn($value) => $value ? $value->store('courses', 'public') : null,
+            set: fn($value) => $value ? $value->store('teachers', 'public') : null,
         );
     }
     public function sluggable(): array
     {
         return [
             'slug' => [
-                'source' => 'course_title'
+                'source' => 'teacher_name'
             ]
         ];
     }
@@ -46,14 +43,13 @@ class Course extends Model
     {
         parent::boot();
 
-        static::creating(function ($course) {
-            $course->position = static::max('position') + 1;
+        static::creating(function ($teacher) {
+            $teacher->position = static::max('position') + 1;
         });
     }
 
-
-    public function semester()
+    public function teacherRating()
     {
-        return $this->belongsTo(Semester::class);
+        return $this->hasOne(TeacherRating::class);
     }
 }

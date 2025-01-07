@@ -1,32 +1,35 @@
 @props(['galleries'])
 
 <div class="bg-gray-100 py-12 sm:py-16 ">
-    <div class="max-w-7xl mx-auto  sm:px-6 lg:px-8">
+    <div class="max-w-8xl mx-auto  sm:px-6 lg:px-8">
         <div class="text-center">
             <h2 class="text-2xl font-medium text-gray-900 sm:text-3xl">Life at Nepalgunj Campus <span
                     class="text-[#FFC315] font-bold">___</span> <span class="text-base">
-                        <button
+                    <button
                         class="mt-5 bg-[#FFC315] text-xl font-semibold  rounded-full px-8 py-3 hover:bg-transparent border border-1 hover:text-[#FFC315] 
                         hover:border-[#FFC315]">Welcome
                         to Our NepalGunj Campus of Management &
                         Technology</button></span></h2>
-
+            <h2 class="text-lg font-medium text-gray-500 mt-5">At NCMT, every event and engagement program has been
+                designed to provide our students ample learning
+                opportunities that will strengthen their overall evolution as decision makers.</h2>
         </div>
         <div class="mt-10 space-y-10 sm:space-y-0 sm:grid sm:grid-cols-3 sm:gap-x-6 sm:gap-y-10">
-            
-            @foreach($galleries as $gallery)
-            <div class=" group">
-                <div class="flex items-center text-white">
-                    <img src="{{count($gallery->files)>0 ? $gallery->files?->random()->file_url : ''}}" alt=""
-                        class="h-72 w-[23rem] transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 border border-b-[3px] border-b-[#FFC315]">
+
+            @foreach ($galleries as $gallery)
+                <div class=" group">
+                    <div class="flex items-center text-white">
+                        <img src="{{ count($gallery->files) > 0 ? $gallery->files?->random()->file_url : '' }}"
+                            alt=""
+                            class="h-72 w-[23rem] transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 border border-b-[3px] border-b-[#FFC315]">
+                    </div>
+                    <h3 class="mt-3 text-lg font-medium hover:text-[#FFC315] text-gray-900">{{ $gallery->title }}</h3>
+                    <div
+                        class=" mt-2 h-[3px] w-10 bg-gray-400 font-bold  transition-all duration-300 group-hover:w-full group-hover:bg-[#FFC315]">
+                    </div>
                 </div>
-                <h3 class="mt-3 text-lg font-medium hover:text-[#FFC315] text-gray-900">{{$gallery->title}}</h3>
-                <div
-                    class=" mt-2 h-[3px] w-10 bg-gray-400 font-bold  transition-all duration-300 group-hover:w-full group-hover:bg-[#FFC315]">
-                </div>
-            </div>
             @endforeach
-            
+
 
         </div>
     </div>

@@ -20,6 +20,7 @@
         "@fontsource/lora": "^5.1.0",
         "@fontsource/poppins": "^5.1.0",
         "@fontsource/slabo-27px": "^5.1.0",
+        "aos": "^3.0.0-beta.6",
         "preline": "^2.5.1"
     }
 }

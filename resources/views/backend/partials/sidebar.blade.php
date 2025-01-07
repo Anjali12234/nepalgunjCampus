@@ -31,8 +31,20 @@
 
                 </li>
                 <li class="dropdown">
+                    <a href="{{route('admin.notice.index')}}" class="dropdown-toggle no-arrow">
+                        <span class="micon bi bi-table"></span><span class="mtext">Notice</span>
+                    </a>
+
+                </li>
+                <li class="dropdown">
                     <a href="{{route('admin.about.create')}}" class="dropdown-toggle no-arrow">
                         <span class="micon bi bi-calendar4-week"></span><span class="mtext">About</span>
+                    </a>
+
+                </li>
+                <li class="dropdown">
+                    <a href="{{route('admin.teacher.index')}}" class="dropdown-toggle no-arrow">
+                        <span class="micon bi bi-calendar4-week"></span><span class="mtext">Teacher</span>
                     </a>
 
                 </li>
