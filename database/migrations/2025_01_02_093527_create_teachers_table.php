@@ -18,6 +18,11 @@ return new class extends Migration
             $table->string('status')->nullable();
             $table->string('slug')->nullable();
             $table->string('image');
+            $table->string('email')->nulllable();
+            $table->string('phone_number')->nullable();
+            $table->string('address')->nullable();
+            $table->string('facebook_url')->nullable();
+            $table->string('instagram_url')->nullable();
             $table->string('position')->nullable();
             $table->longText('description');
             $table->softDeletes();

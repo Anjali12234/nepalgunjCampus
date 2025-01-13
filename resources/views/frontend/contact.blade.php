@@ -38,13 +38,13 @@
                                     <input type="text" name="name"
                                         class="py-3 px-4 w-full border-gray-200 rounded-lg text-lg focus:ring-2 
                                         focus:ring-blue-500 focus:outline-none"
-                                        placeholder="Your Name">
+                                        placeholder="Your Name *">
                                 </div>
                                 <div>
                                     <input type="text" name="email"
                                         class="py-3 px-4 w-full border-gray-200 rounded-lg text-lg focus:ring-2 
                                         focus:ring-blue-500 focus:outline-none"
-                                        placeholder="Your Email">
+                                        placeholder="Your Email *">
                                 </div>
                             </div>
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-5">
@@ -52,19 +52,19 @@
                                     <input type="text" name="phone_number"
                                         class="py-3 px-4 w-full border-gray-200 rounded-lg text-lg focus:ring-2 
                                         focus:ring-blue-500 focus:outline-none"
-                                        placeholder="Your Phone Number">
+                                        placeholder="Your Phone Number *">
                                 </div>
                                 <div>
                                     <input type="text" name="address"
                                         class="py-3 px-4 w-full border-gray-200 rounded-lg text-lg focus:ring-2 
                                         focus:ring-blue-500 focus:outline-none"
-                                        placeholder="Your Address">
+                                        placeholder="Your Address *">
                                 </div>
                             </div>
                             <div class="mt-5">
                                 <textarea name="message"
                                     class="py-3 px-4 w-full border-gray-200 rounded-lg text-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                                    placeholder="Your Message"></textarea>
+                                    placeholder="Your Message*"></textarea>
                                 <div class="mt-4">
                                     <input type="submit" value="Submit"
                                         class="bg-[#FFC315] text-neutral-800 font-bold px-12 py-3 rounded-full hover:bg-white 

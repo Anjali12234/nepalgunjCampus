@@ -36,7 +36,7 @@
                 <div class="col-md-12 row">
 
                     <div class="form-group col-md-6">
-                        <label for="programme_short_name">Programme Short Name</label>
+                        <label for="programme_short_name">Programme Short Name<span style="color: red; margin-left: 5px;">*</span></label>
 
                         <input class="form-control" id="programme_short_name" name="programme_short_name" type="text"
                             value="{{ old('programme_short_name') }}" />
@@ -47,7 +47,7 @@
                         </span>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="programme_full_name">Programme Full Name</label>
+                        <label for="programme_full_name">Programme Full Name<span style="color: red; margin-left: 5px;">*</span></label>
 
                         <input class="form-control" id="programme_full_name" name="programme_full_name" type="text"
                             value="{{ old('programme_full_name') }}" />
@@ -58,7 +58,7 @@
                         </span>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="university">University</label>
+                        <label for="university">University<span style="color: red; margin-left: 5px;">*</span></label>
 
                         <input class="form-control" id="university" name="university" type="text"
                             value="{{ old('university') }}" />
@@ -69,7 +69,7 @@
                         </span>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="years">Years</label>
+                        <label for="years">Years<span style="color: red; margin-left: 5px;">*</span></label>
 
                         <input class="form-control" id="years" name="years" type="number"
                             value="{{ old('years') }}" />

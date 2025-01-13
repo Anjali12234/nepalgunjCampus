@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\GeneralQuestion\StoreGeneralQuestionRequest;
 use App\Http\Requests\GeneralQuestion\UpdateGeneralQuestionRequest;
 use App\Models\GeneralQuestion;
+use App\Models\Programme;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -18,8 +19,8 @@ class GeneralQuestionController extends Controller
     }
     public function create()
     {
-       
-        return view('admin.generalQuestion.create');
+       $programmes = Programme::all();
+        return view('admin.generalQuestion.create',compact('programmes'));
     }
     
     public function store(StoreGeneralQuestionRequest $request)
@@ -31,7 +32,8 @@ class GeneralQuestionController extends Controller
 
     public function edit(GeneralQuestion $generalQuestion)
     {
-        return view('admin.generalQuestion.edit',compact('generalQuestion'));
+        $programmes = Programme::all();
+        return view('admin.generalQuestion.edit',compact('generalQuestion','programmes'));
     }
 
     public function update(UpdateGeneralQuestionRequest $request, GeneralQuestion $generalQuestion)

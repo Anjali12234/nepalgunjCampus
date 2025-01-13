@@ -38,7 +38,7 @@
 
 
                     <div class="form-group col-md-6">
-                        <label for="name">Name</label>
+                        <label for="name">Name<span style="color: red; margin-left: 5px;">*</span></label>
                         <input class="form-control" id="name" name="name"
                             value="{{ old('name', $systemSetting?->name) }}" placeholder="Title" type="text" />
                         <span class="text-warning">
@@ -48,7 +48,7 @@
                         </span>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="address">Address </label>
+                        <label for="address">Address<span style="color: red; margin-left: 5px;">*</span> </label>
                         <input class="form-control" id="address" name="address" type="text"
                             value="{{ old('address', $systemSetting?->address) }}" placeholder="Address" />
                         <span class="text-warning">
@@ -61,7 +61,7 @@
 
                 <div class="col-md-12 row">
                     <div class="form-group col-md-6">
-                        <label for="phone_number">Phone Number</label>
+                        <label for="phone_number">Phone Number<span style="color: red; margin-left: 5px;">*</span></label>
                         <input class="form-control" id="phone_number" name="phone_number" type="text"
                             value="{{ old('phone_number', $systemSetting?->phone_number) }}" placeholder="Phone Number" />
                         <span class="text-warning">
@@ -71,7 +71,7 @@
                         </span>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="telephone_number">Telephone Number</label>
+                        <label for="telephone_number">Telephone Number<span style="color: red; margin-left: 5px;">*</span></label>
                         <input class="form-control" id="telephone_number" name="telephone_number" type="text"
                             value="{{ old('telephone_number', $systemSetting?->telephone_number) }}" placeholder="Phone Number" />
                         <span class="text-warning">
@@ -81,7 +81,7 @@
                         </span>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="email">Email</label>
+                        <label for="email">Email<span style="color: red; margin-left: 5px;">*</span></label>
                         <input class="form-control" id="email" name="email" type="email"
                             value="{{ old('email', $systemSetting?->email) }}" placeholder="Email" />
                         <span class="text-warning">
@@ -182,7 +182,7 @@
                     </div>
                 </div>
                 <div class="form-group col-md-12">
-                    <label for="footer_description">Footer Description</label>
+                    <label for="footer_description">Footer Description<span style="color: red; margin-left: 5px;">*</span></label>
                    <textarea name="footer_description" id="editor" cols="30" rows="10">{{old('footer_description',$systemSetting?->footer_description)}}</textarea>
                     <span class="text-warning">
                         @error('footer_description')

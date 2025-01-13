@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('lecture_hr')->nullable();
             $table->string('tution_hr')->nullable();
             $table->string('lab_hr')->nullable();
+            $table->string('total_hr')->nullable();
             $table->string('slug')->nullable();
             $table->string('position');
             $table->softDeletes();

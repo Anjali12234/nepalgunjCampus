@@ -3,22 +3,33 @@
 use App\Http\Controllers\FileController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Student\StudentAuthController;
+use App\Http\Controllers\Student\TeacherController;
 use App\Http\Controllers\UploadController;
 use Illuminate\Support\Facades\Route;
 
 
 Route::controller(FrontendController::class)->group(function () {
     Route::get('/', 'index')->name('welcome');
-    Route::get('aboutus', 'aboutUs')->name('aboutus'); 
-    Route::get('mission', 'mission')->name('mission'); 
-    Route::get('whyNcmt', 'whyNcmt')->name('whyNcmt'); 
-    Route::get('contact', 'contact')->name('contact'); 
-    Route::get('programme/{programme:slug}','programme')->name('programme');
-    Route::get('semester/{semester:slug}','semester')->name('semester');
-    Route::get('teacher/{slug}', 'teacher')->name('teacher');
-    Route::post('/rate-teacher', 'rateTeacher');
+    Route::get('aboutus', 'aboutUs')->name('aboutus');
+    Route::get('mission', 'mission')->name('mission');
+    Route::get('whyNcmt', 'whyNcmt')->name('whyNcmt');
+    Route::get('contact', 'contact')->name('contact');
+    Route::get('programme/{programme:slug}', 'programme')->name('programme');
+    Route::get('semester/{semester:slug}', 'semester')->name('semester');
+    Route::get('teacher/{teacher:slug}', 'teacher')->name('teacher');
 
 });
+Route::controller(StudentAuthController::class)->group(function () {
+    Route::get('studentRegister', 'registerPage')->name('studentRegister');
+    Route::get('studentLogin', 'loginPage')->name('studentLogin');
+    Route::post('studentRegister', 'studentRegister')->name('studentRegister');
+    Route::post('studentLogin', 'studentLogin')->name('studentLogin');
+    
+});
+
+
+
 Route::post('upload', [UploadController::class, 'store'])->name('upload');
 
 Route::middleware('auth')->group(function () {
@@ -29,4 +40,4 @@ Route::middleware('auth')->group(function () {
 Route::prefix('file')->as('file.')->controller(FileController::class)->group(function () {
     Route::delete('{file}/delete', 'destroy')->name('destroy');
 });
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

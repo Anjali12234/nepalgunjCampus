@@ -43,7 +43,7 @@
                 <div class="col-md-12 row">
 
                     <div class="form-group col-md-6">
-                        <label for="teacher_name">Teacher Name</label>
+                        <label for="teacher_name">Teacher Name <span style="color: red; margin-left: 5px;">*</span></label>
 
                         <input class="form-control" id="teacher_name" name="teacher_name" type="text"
                             value="{{ old('teacher_name') }}" />
@@ -54,9 +54,9 @@
                         </span>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="image">Image</label>
+                        <label for="image">Image<span style="color: red; margin-left: 5px;">*</span></label>
 
-                       <input type="file" name="image" id="image" class="">
+                       <input type="file" name="image" id="image" class="form-control">
                         <span class="text-warning">
                             @error('image')
                                 {{ $message }}
@@ -64,7 +64,7 @@
                         </span>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="faculty_name">Faculty Name</label>
+                        <label for="faculty_name">Faculty Name<span style="color: red; margin-left: 5px;">*</span></label>
 
                         <input class="form-control" id="faculty_name" name="faculty_name" type="text"
                             value="{{ old('faculty_name') }}" />
@@ -74,14 +74,66 @@
                             @enderror
                         </span>
                     </div>
+                    <div class="form-group col-md-6">
+                        <label for="email">Email</label>
+
+                        <input class="form-control" id="email" name="email" type="email"
+                            value="{{ old('email') }}" />
+                        <span class="text-warning">
+                            @error('email')
+                                {{ $message }}
+                            @enderror
+                        </span>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="phone_number">Phone Number</label>
+
+                        <input class="form-control" id="phone_number" name="phone_number" type="number"
+                            value="{{ old('phone_number') }}" />
+                        <span class="text-warning">
+                            @error('phone_number')
+                                {{ $message }}
+                            @enderror
+                        </span>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="address">Address</label>
+
+                        <input class="form-control" id="address" name="address" type="text"
+                            value="{{ old('address') }}" />
+                        <span class="text-warning">
+                            @error('address')
+                                {{ $message }}
+                            @enderror
+                        </span>
+                    </div>
                    
 
 
                 </div>
                 <div class="col-md-12 row">
-
                     <div class="form-group col-md-12">
-                        <label for="description">Description</label>
+                        <label for="facebook_url">Facebook Url</label>
+                        <input class="form-control" id="facebook_url" name="facebook_url" type="text"
+                        value="{{ old('facebook_url') }}" />
+                        <span class="text-warning">
+                            @error('facebook_url')
+                                {{ $message }}
+                            @enderror
+                        </span>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="instagram_url">Instagram Url</label>
+                        <input class="form-control" id="instagram_url" name="instagram_url" type="text"
+                        value="{{ old('instagram_url') }}" />
+                        <span class="text-warning">
+                            @error('instagram_url')
+                                {{ $message }}
+                            @enderror
+                        </span>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="description">Description<span style="color: red; margin-left: 5px;">*</span></label>
                         <textarea name="description" id="editor" cols="50" rows="10">{{ old('description') }}</textarea>
                         <span class="text-warning">
                             @error('description')
@@ -89,6 +141,7 @@
                             @enderror
                         </span>
                     </div>
+                  
                     
 
                 </div>

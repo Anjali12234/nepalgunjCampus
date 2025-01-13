@@ -20,6 +20,7 @@ class UpdateCourseRequest extends FormRequest
             'course_pdf' => ['nullable','mimes:png,jpg,jpeg,pdf,jfif'],
             'credit_hr' => ['nullable'],
             'lecture_hr' => ['nullable'],
+            'total_hr' => ['nullable'],
             'tution_hr' => ['nullable'],
             'lab_hr' => ['nullable'],
             'semester_id' => ['required', 'string'],

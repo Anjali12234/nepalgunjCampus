@@ -36,7 +36,7 @@
                 <div class="col-md-12 row">
 
                     <div class="form-group col-md-6">
-                        <label for="title">Title</label>
+                        <label for="title">Title<span style="color: red; margin-left: 5px;">*</span></label>
 
                         <input class="form-control" id="title" name="title" type="text"
                             value="{{ old('title') }}" />
@@ -58,7 +58,7 @@
                         </span>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="image">Image</label>
+                        <label for="image">Image<span style="color: red; margin-left: 5px;">*</span></label>
 
                         <input class="form-control" id="image" name="image" type="file"
                             value="{{ old('image') }}" />
@@ -74,7 +74,7 @@
                 <div class="col-md-12 row">
 
                     <div class="form-group col-md-12">
-                        <label for="title">Description</label>
+                        <label for="title">Description<span style="color: red; margin-left: 5px;">*</span></label>
                         <textarea name="description" id="editor" cols="50" rows="10">{{ old('description') }}</textarea>
                         <span class="text-warning">
                             @error('title')
