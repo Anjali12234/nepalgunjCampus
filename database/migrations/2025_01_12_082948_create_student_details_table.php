@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('facebook_url')->nullable();
             $table->string('instagram_url')->nullable();
             $table->longText('description');
+            $table->string('image')->nullable();
            $table->softDeletes();
             $table->timestamps();
         });

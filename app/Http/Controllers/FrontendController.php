@@ -27,7 +27,7 @@ class FrontendController extends Controller
     }
     public function aboutUs()
     {
-        $teachers = Teacher::with('ratings')->get();
+        $teachers = Teacher::with('ratings')->limit(3)->get();
         $about = About::latest()->first();
         return view('frontend.aboutus', compact('about', 'teachers'));
     }
@@ -49,12 +49,12 @@ class FrontendController extends Controller
     public function teacher(Teacher $teacher)
     {
         $student = Auth::guard('student')->user();
-        $averageRating = (int) TeacherRating::where('teacher_id', $teacher->id)->avg('rating');
-        $averageTeachingSkillRating = (int) TeacherRating::where('teacher_id', $teacher->id)->avg('teaching_skill');
-        $averageCommunicationSkillRating = (int) TeacherRating::where('teacher_id', $teacher->id)->avg('communication_skill');
-        $averageSubjectKnowledgeRating = (int) TeacherRating::where('teacher_id', $teacher->id)->avg('subject_knowledge');
-        $averageClassPerformanceRating = (int) TeacherRating::where('teacher_id', $teacher->id)->avg('class_performance');
-        $averageInteractiveTeachingRating = (int) TeacherRating::where('teacher_id', $teacher->id)->avg('interactive_teaching');
+        $averageRating = TeacherRating::where('teacher_id', $teacher->id)->avg('rating');
+        $averageTeachingSkillRating = TeacherRating::where('teacher_id', $teacher->id)->avg('teaching_skill');
+        $averageCommunicationSkillRating = TeacherRating::where('teacher_id', $teacher->id)->avg('communication_skill');
+        $averageSubjectKnowledgeRating = TeacherRating::where('teacher_id', $teacher->id)->avg('subject_knowledge');
+        $averageClassPerformanceRating = TeacherRating::where('teacher_id', $teacher->id)->avg('class_performance');
+        $averageInteractiveTeachingRating = TeacherRating::where('teacher_id', $teacher->id)->avg('interactive_teaching');
         $totalAverageRating = (
             $averageTeachingSkillRating +
             $averageCommunicationSkillRating +
@@ -62,9 +62,6 @@ class FrontendController extends Controller
             $averageClassPerformanceRating +
             $averageInteractiveTeachingRating
         ) / 5;
-
-        // Round the total average to a whole number
-        $totalAverageRating = round($totalAverageRating);
 
         $studentRatings = TeacherRating::where('teacher_id', $teacher->id)
             ->where('student_id', $student?->id) // Ensure it's for the authenticated student
@@ -97,19 +94,15 @@ class FrontendController extends Controller
     public function programme(Programme $programme)
     {
         $programme->load('semesters');
-
         $generalQuestions = GeneralQuestion::where('type', $programme->id)->get();
-
         $programmes = Programme::all();
 
-        return view(
-            'frontend.programme.programmeList',
+        return view('frontend.programme.programmeList',
             compact('programme', 'programmes', 'generalQuestions')
         );
     }
     public function semester(Semester $semester)
     {
-
         $semesters = Semester::with('programme')
             ->whereHas('programme', function ($query) use ($semester) {
                 $query->where('programme_short_name', $semester->programme->programme_short_name);
@@ -121,23 +114,9 @@ class FrontendController extends Controller
         $totalTutorialHr = $semester->courses->sum('tutorial_hr');
         $totalLabHr = $semester->courses->sum('lab_hr');
         $totalHr = $semester->courses->sum('total_hr');
-        return view(
-            'frontend.programme.semester',
+        return view('frontend.programme.semester',
             compact('semester', 'generalQuestions', 'semesters', 'totalCreditHr', 'totalLectureHr', 'totalTutorialHr', 'totalLabHr', 'totalHr')
         );
     }
 
-    public function rateTeacher(Request $request)
-    {
-        $validated = $request->validate([
-            'teacher_id' => 'required|exists:teachers,id',
-            'rating' => 'required|integer|min:1|max:5',
-        ]);
-
-        TeacherRating::updateOrCreate(
-            ['teacher_id' => $validated['teacher_id']],
-            ['rating' => $validated['rating']]
-        );
-        return response()->json(['message' => 'Rating submitted successfully.']);
-    }
 }

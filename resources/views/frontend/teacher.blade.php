@@ -15,32 +15,32 @@
                     {{ $teacher->teacher_name }}
                     <span class="text-yellow-500 font-extrabold">___</span>
                 </h2>
-                <h2>{{ auth()->guard('student')->user()?->name }}</h2>
+                {{-- <h2>{{ auth()->guard('student')->user()?->name }}</h2> --}}
 
                 <!-- Content -->
                 <div class="flex flex-col lg:flex-row gap-10 items-start">
                     <div class="lg:w-1/2">
-                        <img src="{{ $teacher->image }}" alt="About Image"
+                        <img src="{{ $teacher->image }}" alt=" {{ $teacher->teacher_name }}"
                             class="rounded-lg shadow-md object-cover w-full h-[39rem]">
                     </div>
                     <div class="lg:w-1/2 text-lg text-gray-800">
                         <h3 class="text-base md:text-xl font-bold text-gray-800 mb-3">
-                            Faculty : <span class="text-red-500">{{ $teacher->faculty_name }}
+                            Faculty : <span class="text-red-500 font-semibold">{{ $teacher->faculty_name }}
                             </span>
 
                         </h3>
                         <h3 class="text-base md:text-xl font-bold text-gray-800 mb-3">
-                            Email : <span class="text-red-500">{{ $teacher?->email }}
+                            Email : <span class="text-red-500 font-semibold">{{ $teacher?->email }}
                             </span>
 
                         </h3>
                         <h3 class="text-base md:text-xl font-bold text-gray-800 mb-3">
-                            Phone Number : <span class="text-red-500">{{ $teacher->phone_number }}
+                            Phone Number : <span class="text-red-500 font-semibold">{{ $teacher->phone_number }}
                             </span>
 
                         </h3>
                         <h3 class="text-base md:text-xl font-bold text-gray-800 mb-3">
-                            Address : <span class="text-red-500">{{ $teacher->address }}
+                            Address : <span class="text-red-500 font-semibold">{{ $teacher->address }}
                             </span>
 
                         </h3>
@@ -53,31 +53,29 @@
                                     <svg class="w-6 h-6 text-yellow-400" xmlns="http://www.w3.org/2000/svg"
                                         fill="currentColor" viewBox="0 0 22 20">
                                         <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0
-                                                0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532
-                                                1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.53
-                                                7 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                                    0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532
+                                                    1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.53
+                                                    7 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
                                     </svg>
                                     <p class="text-lg font-medium text-gray-500">{{ $totalAverageRating }} / 5</p>
                                 </div>
                             </div>
 
-                            <!-- Ratings Sections -->
-                            <!-- Progress Bar Section -->
                             <div class="space-y-4 mt-3">
                                 @foreach ([
-            'Teaching Skill' => $averageTeachingSkillRating,
-            'Communication Skill' => $averageCommunicationSkillRating,
-            'Subject Knowledge' => $averageSubjectKnowledgeRating,
-            'Class Performance' => $averageClassPerformanceRating,
-            'Interactive Teaching' => $averageInteractiveTeachingRating,
-        ] as $label => $rating)
+                                            'Teaching Skill' => $averageTeachingSkillRating,
+                                            'Communication Skill' => $averageCommunicationSkillRating,
+                                            'Subject Knowledge' => $averageSubjectKnowledgeRating,
+                                            'Class Performance' => $averageClassPerformanceRating,
+                                            'Interactive Teaching' => $averageInteractiveTeachingRating,
+                                            ] as $label => $rating)
                                     <div class="flex flex-col ">
                                         <!-- Label -->
-                                        <div class="absolute inset-0 flex items-center justify-center">
+                                        {{-- <div class="absolute inset-0 flex items-center justify-center">
                                             <span class="text-sm font-medium text-gray-800">
                                                 {{ $rating }} / 5
                                             </span>
-                                        </div>
+                                        </div> --}}
                                         <h3 class="text-lg font-semibold text-gray-800">
                                             {{ $label }}:
                                         </h3>
@@ -138,19 +136,13 @@
                                 @endif
                             </div>
                         </div>
-
-
-
-                        <!-- Image -->
-
                     </div>
-
                 </div>
                 <div class="mb-6 mt-5">
                     <!-- Social Links -->
                     <div class="mb-4 flex">
-                        <a href="{{$teacher?->facebook_url}}" class="text-blue-600 hover:text-blue-800 mr-4" target="_blank"
-                            rel="noopener noreferrer">
+                        <a href="{{ $teacher?->facebook_url }}" class="text-blue-600 hover:text-blue-800 mr-4"
+                            target="_blank" rel="noopener noreferrer">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round"
@@ -184,8 +176,8 @@
                                 <path d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z" />
                             </svg>
                         </a>
-                        <a href="{{$teacher?->instagram_url}}" class="text-pink-600 hover:text-pink-800 mr-4" target="_blank"
-                            rel="noopener noreferrer">
+                        <a href="{{ $teacher?->instagram_url }}" class="text-pink-600 hover:text-pink-800 mr-4"
+                            target="_blank" rel="noopener noreferrer">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round"
@@ -203,11 +195,6 @@
                         {!! $teacher->description !!}
                     </div>
                 </div>
-
-
             </div>
-
-
-
     </section>
 @endsection

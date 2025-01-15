@@ -19,7 +19,6 @@ class StudentRegisterRequest extends FormRequest
         return [
             'name' => ['required', 'string'],
             'roll_no' => ['required', 'string'],
-            'image' => ['required', 'image'],
             'email' => ['required', Rule::unique('students', 'email')],
             'password' => ['required', 'confirmed'],
         ];

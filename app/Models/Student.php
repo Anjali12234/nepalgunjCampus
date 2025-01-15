@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -21,7 +22,6 @@ class Student extends Authenticatable
         'name',
         'roll_no',
         'status',
-        'image',
         'email',
         'password',
         'slug',
@@ -44,13 +44,7 @@ class Student extends Authenticatable
         }
     }
   
-    protected function image(): Attribute
-    {
-        return Attribute::make(
-            get: fn(?string $value) => $value ? Storage::disk('public')->url($value) : null,
-            set: fn($value) => $value ? $value->store('student', 'public') : null,
-        );
-    }
+   
     public function sluggable(): array
     {
         return [
@@ -72,8 +66,8 @@ class Student extends Authenticatable
     {
         return $this->hasOne(TeacherRating::class);
     }
-    public function studentDetail(): HasMany
+    public function studentDetail(): HasOne
     {
-        return $this->hasMany(StudentDetail::class);
+        return $this->hasOne(StudentDetail::class);
     }
 }

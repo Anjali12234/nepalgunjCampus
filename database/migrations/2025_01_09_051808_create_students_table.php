@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('roll_no');
-            $table->string('image')->nullable();
             $table->boolean('status')->default(true);
             $table->boolean('is_registered')->default(0);
             $table->string('email');

@@ -6,7 +6,7 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class StoreStudentDetailRequest extends FormRequest
 {
-    public function authorize()
+    public function authorize(): bool
     {
         return true; 
     }
@@ -21,6 +21,7 @@ class StoreStudentDetailRequest extends FormRequest
             'facebook_url' => ['nullable','url'],
             'instagram_url' => ['nullable','url'],
             'description' => ['nullable'],
+            'image' => ['nullable','image']
         ];
     }
 }

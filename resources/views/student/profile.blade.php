@@ -25,13 +25,13 @@
                 <div class="pd-20 card-box height-100-p">
                     <div class="profile-photo">
 
-                        <img src="{{ asset('assets/backend/vendors/images/photo1.jpg') }}" alt=""
-                            class="avatar-photo" />
+                        <img src="{{ $studentDetail?->image }}"
+                            alt="{{ auth()->guard('student')->user()->name }}" class="avatar-photo" />
                         <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel"
                             aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered" role="document">
                                 <div class="modal-content">
-                                    <form method="post" action="{{route('student.profile.destroy')}}" class="p-6">
+                                    <form method="post" action="{{ route('student.profile.destroy') }}" class="p-6">
                                         @csrf
                                         @method('delete')
 
@@ -88,62 +88,87 @@
                             <div class="tab-content">
                                 <div class="tab-pane fade show active" id="profile-information" role="tabpanel">
                                     <div class="profile-setting">
-                                        {{-- <form method="post" action="{{ route('student.studentDetail.store') }}" enctype="multipart/form-data">
+                                        <form method="post" action="{{ route('student.studentDetail.store') }}"
+                                            enctype="multipart/form-data">
                                             @csrf
                                             <div class="col-md-12 row">
                                                 <div class="form-group col-md-6">
                                                     <label for="image">Image</label>
                                                     <input class="form-control" name="image" type="file" />
                                                     <span class="text-warning">
-                                                        @error('image') {{ $message }} @enderror
+                                                        @error('image')
+                                                            {{ $message }}
+                                                        @enderror
                                                     </span>
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label for="name">Name</label>
                                                     <input class="form-control" id="name" name="name" type="text"
-                                                           value="{{ old('name', Auth::guard('student')->user()->name) }}" />
+                                                        value="{{ old('name', Auth::guard('student')->user()->name) }}" />
                                                     <span class="text-warning">
-                                                        @error('name') {{ $message }} @enderror
+                                                        @error('name')
+                                                            {{ $message }}
+                                                        @enderror
                                                     </span>
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label for="address">Address</label>
                                                     <input class="form-control" name="address" type="text"
-                                                           value="{{ old('address', Auth::guard('student')->user()->studentDetail?->address) }}" />
+                                                        value="{{ old('address', $studentDetail?->address) }}" />
                                                     <span class="text-warning">
-                                                        @error('address') {{ $message }} @enderror
+                                                        @error('address')
+                                                            {{ $message }}
+                                                        @enderror
+                                                    </span>
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <label for="email">Email</label>
+                                                    <input class="form-control" name="email" type="text"
+                                                        value="{{ old('email', $student?->email) }}" />
+                                                    <span class="text-warning">
+                                                        @error('email')
+                                                            {{ $message }}
+                                                        @enderror
                                                     </span>
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label for="phone_number">Phone No</label>
                                                     <input class="form-control" name="phone_number" type="number"
-                                                           value="{{ old('phone_number', Auth::guard('student')->user()->studentDetail?->phone_number) }}" />
+                                                        value="{{ old('phone_number', $studentDetail?->phone_number) }}" />
                                                     <span class="text-warning">
-                                                        @error('phone_number') {{ $message }} @enderror
+                                                        @error('phone_number')
+                                                            {{ $message }}
+                                                        @enderror
                                                     </span>
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label for="roll_no">Roll No</label>
                                                     <input class="form-control" name="roll_no" type="number"
-                                                           value="{{ old('roll_no', Auth::guard('student')->user()->roll_no) }}" />
+                                                        value="{{ old('roll_no', $student->roll_no) }}" />
                                                     <span class="text-warning">
-                                                        @error('roll_no') {{ $message }} @enderror
+                                                        @error('roll_no')
+                                                            {{ $message }}
+                                                        @enderror
                                                     </span>
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label for="faculty_name">Faculty</label>
                                                     <input class="form-control" name="faculty_name" type="text"
-                                                           value="{{ old('faculty_name', Auth::guard('student')->user()->studentDetail?->faculty_name) }}" />
+                                                        value="{{ old('faculty_name', $studentDetail?->faculty_name) }}" />
                                                     <span class="text-warning">
-                                                        @error('faculty_name') {{ $message }} @enderror
+                                                        @error('faculty_name')
+                                                            {{ $message }}
+                                                        @enderror
                                                     </span>
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label for="registration_no">Registration No</label>
                                                     <input class="form-control" name="registration_no" type="number"
-                                                           value="{{ old('registration_no', Auth::guard('student')->user()->studentDetail?->registration_no) }}" />
+                                                        value="{{ old('registration_no', $studentDetail?->registration_no) }}" />
                                                     <span class="text-warning">
-                                                        @error('registration_no') {{ $message }} @enderror
+                                                        @error('registration_no')
+                                                            {{ $message }}
+                                                        @enderror
                                                     </span>
                                                 </div>
                                             </div>
@@ -151,34 +176,34 @@
                                                 <div class="form-group">
                                                     <label>Facebook Url</label>
                                                     <input class="form-control" name="facebook_url" type="text"
-                                                           value="{{ old('facebook_url', Auth::guard('student')->user()->studentDetail?->facebook_url) }}" />
+                                                        value="{{ old('facebook_url', $studentDetail?->facebook_url) }}" />
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label>Instagram Url</label>
                                                     <input class="form-control" name="instagram_url" type="text"
-                                                           value="{{ old('instagram_url', Auth::guard('student')->user()->studentDetail?->instagram_url) }}" />
+                                                        value="{{ old('instagram_url', $studentDetail?->instagram_url) }}" />
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label>Description</label>
-                                                    <textarea name="description" class="form-control">{{ old('description', Auth::guard('student')->user()->studentDetail?->description) }}</textarea>
+                                                    <textarea name="description" class="form-control">{{ old('description', $studentDetail?->description) }}</textarea>
                                                 </div>
                                             </div>
                                             <div class="m-5">
                                                 <button class="btn btn-danger" type="submit">Submit</button>
                                             </div>
-                                        </form> --}}
-                                        
+                                        </form>
+
                                     </div>
                                 </div>
-                                
+
 
                                 <div class="tab-pane fade" id="update-password" role="tabpanel">
                                     <div class="profile-setting">
-                                       
+
                                         <form method="post" action="{{ route('student.password.update') }}"
                                             class="mt-6 space-y-6">
                                             @csrf
@@ -186,13 +211,11 @@
 
                                             <ul class="profile-edit-list">
                                                 <li class="weight-500 col-md-6">
-                                                    {{ auth()->guard('student')->user()->password }}
                                                     <div class="form-group">
                                                         <label>Current Password</label>
                                                         <input class="form-control form-control-lg"
-                                                            name="current_password"
-                                                            value=""
-                                                            type="password" autocomplete="current-password" />
+                                                            name="current_password" value="" type="password"
+                                                            autocomplete="current-password" />
                                                     </div>
 
                                                     <div class="form-group">

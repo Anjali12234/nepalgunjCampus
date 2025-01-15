@@ -5,46 +5,44 @@ namespace App\Http\Controllers\Student;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StudentDetail\StoreStudentDetailRequest;
 use App\Models\Student;
+use App\Models\StudentDetail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class StudentDetailController extends Controller
 {
     public function create()
-    {
-       
+{
+    $student = Auth::guard('student')->user();
 
-        return view('student.profile');
-    }
+    // Retrieve the related StudentDetail
+    $studentDetail = StudentDetail::with('student')->where('student_id', $student->id)->first();
 
-    public function storeOrUpdate(StoreStudentDetailRequest $request)
+    return view('student.profile', compact('student', 'studentDetail'));
+}
+
+
+    public function store(StoreStudentDetailRequest $request)
     {
-        $student = Auth::guard('student')->user();
-    
-        if ($request->hasFile('image') && $image = $student->getRawOriginal('image')) {
-            $this->deleteFile($image);
-        }
-    
-        $student->update([
-            'name' => $request->input('name'),
-            'email' => $request->input('email'),
-            'roll_no' => $request->input('roll_no'),
-        ]);
-    
-        $student->studentDetail->updateOrCreate(
-            ['student_id' => $student->id], 
-            $request->only([
-                'address',
-                'phone_number',
-                'faculty_name',
-                'registration_no',
-                'facebook_url',
-                'instagram_url',
-                'description',
-            ])
-        );
-    
-        return redirect()->back()->with('success', 'Profile updated successfully.');
+        $student = Auth::guard('student')->user()->load('studentDetail');
+        if ($student) {
+           
+            if ($request->hasFile('image') && $student?->image) {
+                $this->deleteFile($student?->image);
+            }
+            $studentDetail = studentDetail::updateOrCreate(
+                ['student_id' => $student->id],
+                $request->validated()
+            );
+            $studentUpdatedData = [
+                'name' => $request->input('name'),
+                'email' => $request->input('email'),
+                'roll_no' => $request->input('roll_no'),
+                'gender' => $request->input('gender'),
+            ];
+            $student->update($studentUpdatedData);
+            return redirect()->back()->with('status', 'You have successfully addedd your detail. To add post wait until the your account is not verified. For other information contact on the given contact on the site.');
+         }
     }
     
 
