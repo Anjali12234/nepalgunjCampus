@@ -31,7 +31,9 @@ class SliderController extends Controller
 
     public function update(UpdateSliderRequest $request, Slider $slider)
     {
-
+        if ($request->hasFile('image') && $slider->image) {
+            $this->deleteFile($slider->image);
+        }
         $slider->update($request->validated());
         Alert::success('Slider updated successfully');
         return redirect(route('admin.slider.create'));

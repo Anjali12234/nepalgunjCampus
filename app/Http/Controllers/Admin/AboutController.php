@@ -31,7 +31,9 @@ class AboutController extends Controller
 
     public function update(UpdateAboutRequest $request, about $about)
     {
-
+        if ($request->hasFile('image') && $about->image) {
+            $this->deleteFile($about->image);
+        } 
         $about->update($request->validated());
         Alert::success('about updated successfully');
         return redirect(route('admin.about.create'));

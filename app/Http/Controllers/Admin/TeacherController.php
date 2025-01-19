@@ -14,7 +14,7 @@ class TeacherController extends Controller
     public function index()
     {
         $teachers = Teacher::latest()->paginate(10);
-        return view ('admin.teacher.index',compact('teachers'));
+        return view('admin.teacher.index', compact('teachers'));
     }
 
     public function create()
@@ -22,7 +22,7 @@ class TeacherController extends Controller
         return view('admin.teacher.create');
     }
 
-     public function store(StoreTeacherRequest $request)
+    public function store(StoreTeacherRequest $request)
     {
         Teacher::create($request->validated());
         Alert::success('Teacher added successfully');
@@ -30,16 +30,14 @@ class TeacherController extends Controller
     }
     public function edit(Teacher $teacher)
     {
-        return view('admin.teacher.edit',compact('teacher'));
+        return view('admin.teacher.edit', compact('teacher'));
     }
 
     public function update(UpdateTeacherRequest $request, Teacher $teacher)
     {
-            if ($request->hasFile('image') && $image = $teacher->getRawOriginal('image')) {
-                $this->deleteFile($image);
-            }
-         
-       
+        if ($request->hasFile('image') && $image = $teacher->getRawOriginal('image')) {
+            $this->deleteFile($image);
+        }
         $teacher->update($request->validated());
         Alert::success('Teacher updated successfully');
         return redirect(route('admin.teacher.index'));
