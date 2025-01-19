@@ -4,8 +4,8 @@ namespace App;
 
 enum QuestionType:string
 {
-    case Programme = 'programme';
-    case Index = 'index';
+    case WhyNCMT = 'whyNCMT';
+ 
 
     public function label(): string
     {
@@ -15,8 +15,8 @@ enum QuestionType:string
     public static function getLabel(self $value): string
     {
         return match ($value) {
-            self::Programme => 'programme',
-            self::Index => 'Index',
+            self::WhyNCMT => 'whyNCMT',
+           
         };
     }
 

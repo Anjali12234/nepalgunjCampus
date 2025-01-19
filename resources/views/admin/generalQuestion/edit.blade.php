@@ -38,7 +38,8 @@
                     </ul>
                 </div>
             @endif
-            <form method="post" action="{{ route('admin.generalQuestion.update',$generalQuestion) }}" enctype="multipart/form-data">
+            <form method="post" action="{{ route('admin.generalQuestion.update', $generalQuestion) }}"
+                enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <div class="col-md-12 row">
@@ -47,7 +48,7 @@
                         <label for="title">Title</label>
 
                         <input class="form-control" id="title" name="title" type="text"
-                            value="{{ old('title',$generalQuestion->title) }}" />
+                            value="{{ old('title', $generalQuestion->title) }}" />
                         <span class="text-warning">
                             @error('title')
                                 {{ $message }}
@@ -58,11 +59,17 @@
                         <label>Type</label>
                         <select class="custom-select2 form-control" name="type" style="width: 100%; height: 38px">
                             <option value="">Type</option>
-                            @foreach(\App\QuestionType::cases() as $case)
-                            <option value="{{ $case->value }}" 
-                                {{old('type',$generalQuestion->type)==$case->value ? 'selected':''}}>
-                            {{ $case->label() }}
-                        </option>
+                            @foreach (\App\QuestionType::cases() as $case)
+                                <option value="{{ $case->value }}"
+                                    {{ old('type', $generalQuestion->type) == $case->value ? 'selected' : '' }}>
+                                    {{ $case->label() }}
+                                </option>
+                            @endforeach
+                            @foreach ($programmes as $programme)
+                                <option value="{{ $programme->id }}"
+                                    {{ old('type', $generalQuestion->type) == $programme->id ? 'selected' : '' }}>
+                                    {{ $programme->programme_short_name }}
+                                </option>
                             @endforeach
                         </select>
                         <span class="text-warning">
@@ -78,24 +85,24 @@
 
                     <div class="form-group col-md-12">
                         <label for="description">Description</label>
-                        <textarea name="description" id="editor" cols="50" rows="10">{{ old('description',$generalQuestion->description) }}</textarea>
+                        <textarea name="description" id="editor" cols="50" rows="10">{{ old('description', $generalQuestion->description) }}</textarea>
                         <span class="text-warning">
                             @error('description')
                                 {{ $message }}
                             @enderror
                         </span>
                     </div>
-                    
+
 
                 </div>
-                
+
                 <div>
                     <button class="btn btn-danger" type="submit">Submit</button>
                 </div>
             </form>
 
         </div>
-       
+
 
     </div>
 @endsection

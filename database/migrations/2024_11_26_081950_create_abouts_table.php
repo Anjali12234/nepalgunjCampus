@@ -14,7 +14,7 @@ return new class extends Migration
             $table->string('title');
             $table->longText('description');
             $table->string('image');
-            $table->string('video_url');
+            $table->string('video_url')->nullable();
             $table->string('slug')->nullable();
             $table->string('position');
             $table->softDeletes();

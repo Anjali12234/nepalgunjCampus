@@ -21,7 +21,7 @@ class CourseController extends Controller
     }
     public function create()
     {
-        $semesters = Semester::all();
+        $semesters = Semester::with('programme')->get();
         return view('admin.course.create',compact('semesters'));
     }
     
@@ -34,7 +34,7 @@ class CourseController extends Controller
 
     public function edit(Course $course)
     {
-        $semesters = Semester::all();
+        $semesters = Semester::with('programme')->get();
 
         return view('admin.course.edit',compact('semesters','course'));
     }
@@ -48,7 +48,7 @@ class CourseController extends Controller
        
         $course->update($request->validated());
         Alert::success('File updated successfully');
-        return redirect(route('admin.course.create'));
+        return redirect(route('admin.course.index'));
     }
 
     public function destroy(Course $course)

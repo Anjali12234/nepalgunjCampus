@@ -50,7 +50,7 @@
                         @foreach ($courses as $key => $course)
                             <tr>
                                 <td class="table-plus">{{ $loop->iteration }}</td>                               
-                                <td>{{ $course->semester->programme->title }}</td>
+                                <td>{{ $course->semester->programme->programme_short_name }}</td>
                                 <td>{{ $course->semester->title }}</td>
                                 <td>{{ $course->course_title }}</td>
                                 <td>

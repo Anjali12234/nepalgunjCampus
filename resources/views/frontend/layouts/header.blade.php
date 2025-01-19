@@ -100,7 +100,7 @@
                 <div
                     class="absolute hidden group-hover:block group-focus-within:block bg-black text-gray-500 py-2 mt-4 shadow-lg w-48">
                     @foreach (teachers() as $teacher)
-                        <a href="{{ route('teacher', ['slug' => $teacher->slug]) }}"
+                        <a href="{{ route('teacher', $teacher) }}"
                             class="block px-4 py-2 hover:bg-[#FFC315]
                              hover:text-black">{{ $teacher->teacher_name }}</a>
                     @endforeach
@@ -193,7 +193,7 @@
             </button>
             <div id="teacher-dropdown" class="hidden bg-gray-800 text-gray-300 mt-2 rounded-lg shadow-md">
                 @foreach (teachers() as $teacher)
-                    <a href="{{ route('teacher', ['slug' => $teacher->slug]) }}"
+                    <a href="{{ route('teacher', $teacher) }}"
                         class="block px-4 py-2 hover:bg-yellow-400
                          hover:text-gray-900 rounded-t-md transition-colors
                           duration-300">{{ $teacher->teacher_name }}</a>

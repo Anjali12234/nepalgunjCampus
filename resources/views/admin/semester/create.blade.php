@@ -35,7 +35,7 @@
                 @csrf
                 <div class="col-md-12 row">
                     <div class="form-group col-md-6">
-                        <label>Programme</label>
+                        <label>Programme<span style="color: red; margin-left: 5px;">*</span></label>
                         <select class="custom-select2 form-control" name="programme_id"
                             style="width: 100%; height: 38px">
                             <option value="" >Choose Programme</option>
@@ -52,7 +52,7 @@
                         </span>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="title">Title</label>
+                        <label for="title">Title<span style="color: red; margin-left: 5px;">*</span></label>
 
                         <input class="form-control" id="title" name="title" type="text"
                             value="{{ old('title') }}" />

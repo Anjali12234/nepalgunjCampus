@@ -15,7 +15,13 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->nullable()->constrained()->onDelete('cascade');
             $table->foreignId('teacher_id')->nullable()->constrained()->onDelete('cascade');
-            $table->integer('rating');
+            $table->foreignId('student_id')->nullable()->constrained()->onDelete('cascade');
+            $table->integer('rating')->nullable();
+            $table->integer('teaching_skill')->nullable();
+            $table->integer('communication_skill')->nullable();
+            $table->integer('subject_knowledge')->nullable();
+            $table->integer('class_performance')->nullable();
+            $table->integer('interactive_teaching')->nullable();
             $table->timestamps();
         });
     }

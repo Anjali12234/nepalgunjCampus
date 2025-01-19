@@ -14,7 +14,7 @@
             </div>
         </div>
     </div>
-    <div class="row">
+    {{-- <div class="row">
         <div class="col-xl-3 mb-30">
             <div class="card-box height-100-p widget-style1">
                 <div class="d-flex flex-wrap align-items-center">
@@ -67,7 +67,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
    
 
 @endsection

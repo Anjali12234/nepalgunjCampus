@@ -43,7 +43,7 @@
                 <div class="col-md-12 row">
 
                     <div class="form-group col-md-6">
-                        <label for="title">Title</label>
+                        <label for="title">Title<span style="color: red; margin-left: 5px;">*</span></label>
 
                         <input class="form-control" id="title" name="title" type="text"
                             value="{{ old('title') }}" />
@@ -54,11 +54,14 @@
                         </span>
                     </div>
                     <div class="form-group col-md-6">
-                        <label>Type</label>
+                        <label>Type<span style="color: red; margin-left: 5px;">*</span></label>
                         <select class="custom-select2 form-control" name="type" style="width: 100%; height: 38px">
                             <option value="">Type</option>
                             @foreach(\App\QuestionType::cases() as $case)
                             <option value="{{$case->value}}" >{{$case->label()}}</option>
+                            @endforeach
+                            @foreach($programmes as $programme)
+                            <option value="{{$programme->id}}" >{{$programme->programme_short_name}}</option>
                             @endforeach
                         </select>
                         <span class="text-warning">
@@ -73,7 +76,7 @@
                 <div class="col-md-12 row">
 
                     <div class="form-group col-md-12">
-                        <label for="title">Description</label>
+                        <label for="title">Description<span style="color: red; margin-left: 5px;">*</span></label>
                         <textarea name="description" id="editor" cols="50" rows="10">{{ old('description') }}</textarea>
                         <span class="text-warning">
                             @error('title')

@@ -36,7 +36,7 @@
 
                 <div class="col-md-12 row">
                     <div class="form-group col-md-6">
-                        <label for="title">Title</label>
+                        <label for="title">Title<span style="color: red; margin-left: 5px;">*</span></label>
                         <input class="form-control" id="title" name="title" type="text"
                             value="{{ old('title') }}" />
                         <span class="text-warning">
@@ -47,7 +47,7 @@
                     </div>
                     
                     <div class="form-group col-md-6">
-                        <label for="image">Gallery Image</label>
+                        <label for="image">Gallery Image<span style="color: red; margin-left: 5px;">*</span></label>
 
                         <input class="form-control" id="files" type="file" name="files[]" multiple>
                         <span class="text-warning">

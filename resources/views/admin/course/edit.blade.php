@@ -49,7 +49,7 @@
                             @foreach ($semesters as $semester)
                                 <option
                                     value="{{ $semester->id }}"{{ old('semester_id', $course->semester_id) == $semester->id ? 'selected' : '' }}>
-                                    {{ $semester->title }}</option>
+                                    {{ $semester->title }}/{{ $semester?->programme?->programme_short_name }}</option>
                             @endforeach
                         </select>
                         <span class="text-warning">
@@ -114,7 +114,7 @@
                         </span>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="tution_hr">Tution Hr</label>
+                        <label for="tution_hr">Tutorial Hr</label>
 
                         <input class="form-control" id="tution_hr" name="tution_hr" type="number"
                             value="{{ old('tution_hr', $course->tution_hr) }}" />
@@ -131,6 +131,17 @@
                             value="{{ old('lab_hr', $course->lab_hr) }}" />
                         <span class="text-warning">
                             @error('lab_hr')
+                                {{ $message }}
+                            @enderror
+                        </span>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="total_hr">Total Hr</label>
+
+                        <input class="form-control" id="total_hr" name="total_hr" type="number"
+                            value="{{ old('total_hr', $course->total_hr) }}" />
+                        <span class="text-warning">
+                            @error('total_hr')
                                 {{ $message }}
                             @enderror
                         </span>

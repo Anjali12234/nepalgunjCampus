@@ -19,39 +19,40 @@ class NoticeController extends Controller
         return view('admin.notice.index', compact('notices'));
     }
 
-  
+
     public function store(StoreNoticeRequest $request)
     {
         Notice::create($request->validated());
-        Alert::success('Notice submitted successfully');      
-      
+        Alert::success('Notice submitted successfully');
+
         return redirect(route('admin.notice.index'));
     }
 
-   
+
     public function show(Notice $notice)
     {
         $notice->load('files');
         return view("admin.notice.show", compact('notice'));
     }
 
-   
+
     public function edit(Notice $notice)
     {
-        return view('admin.notice.edit',compact('notice'));
-    }   
-
-   
-    public function update(UpdateNoticeRequest $request, Notice $notice)
-    {
-       
-            $notice->update($request->validated());
-            toast('Notice updated successfully', 'success');
-            return redirect(route('admin.notice.index'));
-       
+        return view('admin.notice.edit', compact('notice'));
     }
 
-    
+
+    public function update(UpdateNoticeRequest $request, Notice $notice)
+    {
+        if ($request->hasFile('image') && $notice->image) {
+            $this->deleteFile($notice->image);
+        }
+        $notice->update($request->validated());
+        toast('Notice updated successfully', 'success');
+        return redirect(route('admin.notice.index'));
+    }
+
+
     public function destroy(notice $notice)
     {
         foreach ($notice->files as $file) {

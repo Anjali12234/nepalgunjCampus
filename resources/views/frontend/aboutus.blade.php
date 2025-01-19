@@ -101,17 +101,17 @@
             <div class="w-full md:w-2/3">
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
                     <!-- Team Member 1 -->
-                    <div class="flex flex-col items-center text-center">
-                        <img src="{{ asset('assets/frontend/images/chief.jpg') }}" alt="Mr. Nishant Shankya" class="w-[270px] h-[180px] object-cover  mb-4">
-                        <h3 class="text-xl font-semibold text-gray-900 hover:text-[#FFC315]">Mr. Nishant Shankya <span>_____</span></h3>
-                        <p class="text-sm text-gray-500">Our Campus Chief</p>
-                    </div>
-                    <div class="flex flex-col items-center text-center">
-                        <img src="{{ asset('assets/frontend/images/chief.jpg') }}" alt="Mr. Nishant Shankya" class="w-[270px] h-[180px] object-cover  mb-4">
-                        <h3 class="text-xl font-semibold text-gray-900 hover:text-[#FFC315]">Mr. Nishant Shankya  <span>_____</span></h3>
-                        <p class="text-sm text-gray-500">Our Campus Chief</p>
-                    </div>
-
+                    @foreach ($teachers as $teacher)
+                    <a href="{{route('teacher',$teacher)}}">
+                        <div class="flex flex-col items-center text-center">
+                            <img src="{{ $teacher->image }}" alt="{{$teacher->teacher_name}}"
+                                class="w-[270px] h-[180px] object-cover  mb-4">
+                            <h3 class="text-xl font-semibold text-gray-900 hover:text-[#FFC315]">Mr. {{$teacher->teacher_name}}
+                                <span>_____</span></h3>
+                            <p class="text-sm text-gray-500">{{$teacher->faculty_name}}</p>
+                        </div>
+                    </a>
+                    @endforeach
 
                 </div>
             </div>

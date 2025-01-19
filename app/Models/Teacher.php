@@ -19,7 +19,11 @@ class Teacher extends Model
         'status',
         'slug',
         'image',
-        'position',
+        'email',
+        'phone_number',
+        'address',
+        'facebook_url',
+        'instagram_url',
         'description'
     ];
 
@@ -48,7 +52,7 @@ class Teacher extends Model
         });
     }
 
-    public function teacherRating()
+    public function ratings()
     {
         return $this->hasOne(TeacherRating::class);
     }

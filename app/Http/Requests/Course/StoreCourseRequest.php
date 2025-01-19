@@ -21,6 +21,7 @@ class StoreCourseRequest extends FormRequest
             'credit_hr' => ['nullable'],
             'lecture_hr' => ['nullable'],
             'tution_hr' => ['nullable'],
+            'total_hr' => ['nullable'],
             'lab_hr' => ['nullable'],
             'semester_id' => ['required', 'string'],
         ];

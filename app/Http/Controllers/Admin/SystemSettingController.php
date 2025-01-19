@@ -31,7 +31,7 @@ class SystemSettingController extends Controller
         } else {
             SystemSetting::create($request->validated());
         }
-        Alert::success('File added successfully');
+        Alert::success('Setting added successfully');
         Cache::forget('systemSetting');
         return back();
     }

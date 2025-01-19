@@ -36,7 +36,7 @@
                 <div class="col-md-12 row">
 
                     <div class="form-group col-md-6">
-                        <label for="title">Title</label>
+                        <label for="title">Title<span style="color: red; margin-left: 5px;">*</span></label>
 
                         <input class="form-control" id="title" name="title" type="text"
                             value="{{ old('title') }}" />
@@ -47,7 +47,7 @@
                         </span>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="image">Notice</label>
+                        <label for="image">Notice<span style="color: red; margin-left: 5px;">*</span></label>
 
                         <input class="form-control" id="image" type="file" name="image" />
                         <span class="text-warning">

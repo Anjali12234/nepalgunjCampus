@@ -76,48 +76,7 @@
                 </a>
             </div>
         </div>
-        {{-- <div class="user-notification">
-            <div class="dropdown">
-                <a class="dropdown-toggle no-arrow" href="#" role="button" data-toggle="dropdown"
-                    aria-haspopup="false" aria-expanded="false" id="noti-tour">
-                    <i @class([
-                        'ring-bell' => count(auth()->user()->unreadNotifications ?? []) > 0,
-                        'dw dw-notification',
-                        'noti-icon',
-                    ])></i>
-                    <span
-                        class="badge {{ count(auth()->user()->unreadNotifications ?? []) > 0 ? 'bg-danger d-block' : 'd-none' }} rounded-circle noti-icon-badge text-white"
-                        style="height: 15px; width: 15px; padding:2px;">
-                        {{ count(auth()->user()->unreadNotifications ?? []) }}
-                    </span>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right">
-                    <div class="notification-list mx-h-350 customscroll">
-                        <ul>
-                           @forelse (auth()->user()->unreadNotifications as $notification)
-
-                            <li class="row flex">
-                                <a href="#">
-                                    <img src="{{ asset('assets/backend/vendors/images/logo.png') }}" alt="" />
-                                    <h3>{{ $notification->data['username'] }}</h3>
-                                    <p>
-                                        register in system
-                                    </p>
-                                </a>
-                                <a class="float-right" href="{{ route('admin.markasread',$notification->id) }}"> <i class="icon-copy bi bi-x"></i></a>
-                            </li>
-                            @empty
-                            <li>
-                                <p>
-                                    No records
-                                </p>
-                            </li>
-                        @endforelse
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div> --}}
+        
         <div class="user-info-dropdown">
             <div class="dropdown">
                 <a
@@ -127,7 +86,7 @@
                     data-toggle="dropdown"
                 >
                     <span class="user-icon" >
-                        <img class="" src="{{systemSetting()?->logo1}}" height="100" width="100" alt="" />
+                        <img class="mt-2" src="{{systemSetting()?->logo2}}" height="100" width="100" alt="" />
 
                         {{-- <img src="{{ asset('assets/backend/vendors/images/photo1.jpg')}}" alt="" /> --}}
                     </span>

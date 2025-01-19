@@ -221,8 +221,7 @@
                                 @foreach ($programme->semesters as $semester)
                                     <div class="my-4 mt-12">
                                         <a href="{{ route('semester', $semester) }}"
-                                            class="bg-[#FFC315] hover:bg-transparent border hover:border-1 hover:text-[#FFC315] motion-ease-in hover:border-[#FFC315] text-black px-14 py-4 tracking-wider rounded-full transition-all duration-300 font-semibold">
-                                            {{ $semester->title }}
+                                            class="bg-[#FFC315]  hover:bg-transparent border hover:border-1 hover:text-[#FFC315] motion-ease-in hover:border-[#FFC315] text-black px-14 py-4 tracking-wider rounded-full transition-all duration-300 font-semibold">                                            {{ $semester->title }}
                                         </a>
                                     </div>
                                 @endforeach
