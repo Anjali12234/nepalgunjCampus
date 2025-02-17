@@ -52,9 +52,6 @@
         </a>
 
     </div>
-
-
-
     <div id="apply-box" class="fixed right-0 top-1/2 transform -translate-y-1/2 z-50 hidden md:flex flex-col items-center ">
         <!-- Hanging Box -->
         <div class="relative w-48 bg-white border border-gray-300 shadow-md p-4">
@@ -71,12 +68,6 @@
             </div>
         </div>
     </div>
-
-
-
-
-
-
     <div class="fixed left-4 bottom-4 z-50">
         <a href="https://wa.me/{{ systemSetting()?->phone_no }}" target="_blank"
             class="block bg-green-500 text-white motion-preset-shake  rounded-full p-4 shadow-lg hover:bg-green-600 transition">
