@@ -21,7 +21,7 @@ class UpdateCourseRequest extends FormRequest
             'credit_hr' => ['nullable'],
             'lecture_hr' => ['nullable'],
             'total_hr' => ['nullable'],
-            'tution_hr' => ['nullable'],
+            'tutorial_hr' => ['nullable'],
             'lab_hr' => ['nullable'],
             'semester_id' => ['required', 'string'],
         ];

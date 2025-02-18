@@ -20,7 +20,7 @@ class StoreCourseRequest extends FormRequest
             'course_pdf' => ['required','mimes:png,jpg,jpeg,pdf,jfif'],
             'credit_hr' => ['nullable'],
             'lecture_hr' => ['nullable'],
-            'tution_hr' => ['nullable'],
+            'tutorial_hr' => ['nullable'],
             'total_hr' => ['nullable'],
             'lab_hr' => ['nullable'],
             'semester_id' => ['required', 'string'],

@@ -113,12 +113,12 @@
                         </span>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="tution_hr">Tutorial Hr</label>
+                        <label for="tutorial_hr">Tutorial Hr</label>
 
-                        <input class="form-control" id="tution_hr" name="tution_hr" type="number"
-                            value="{{ old('tution_hr') }}" />
+                        <input class="form-control" id="tutorial_hr" name="tutorial_hr" type="number"
+                            value="{{ old('tutorial_hr') }}" />
                         <span class="text-warning">
-                            @error('tution_hr')
+                            @error('tutorial_hr')
                                 {{ $message }}
                             @enderror
                         </span>
