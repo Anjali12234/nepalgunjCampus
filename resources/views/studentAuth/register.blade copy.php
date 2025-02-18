@@ -1,12 +1,19 @@
 <x-guest-layout>
-    <form method="POST" action="{{ route('register') }}">
+    <form method="POST" action="{{ route('studentRegister') }}" enctype="multipart/form-data">
         @csrf
 
         <!-- Name -->
-        <div>
+       
+        
+        <div class="mt-4">
             <x-input-label for="name" :value="__('Name')" />
             <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
             <x-input-error :messages="$errors->get('name')" class="mt-2" />
+        </div>
+        <div class="mt-4">
+            <x-input-label for="roll_no" :value="__('Roll No')" />
+            <x-text-input id="roll_no" class="block mt-1 w-full" type="text" name="roll_no" :value="old('roll_no')" required autofocus autocomplete="roll_no" />
+            <x-input-error :messages="$errors->get('roll_no')" class="mt-2" />
         </div>
 
         <!-- Email Address -->
@@ -40,8 +47,8 @@
         </div>
 
         <div class="flex items-center justify-end mt-4">
-            <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('login') }}">
-                {{ __('Already registered?') }}
+            <a href="{{route('studentLogin')}}" class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="">
+                {{ __('Already registered Login?') }}
             </a>
 
             <x-primary-button class="ms-4">
