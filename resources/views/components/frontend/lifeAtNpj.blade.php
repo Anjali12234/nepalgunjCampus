@@ -1,7 +1,7 @@
 @props(['galleries'])
 
 <div class="bg-gray-100 py-12 sm:py-16 ">
-    <div class="max-w-8xl mx-auto  sm:px-6 lg:px-8">
+    <div class="max-w-6xl mx-auto  sm:px-6 lg:px-6">
         <div class="text-center">
             <h2 class="text-2xl font-medium text-gray-900 sm:text-3xl">Life at Nepalgunj Campus <span
                     class="text-[#FFC315] font-bold">___</span> <span class="text-base">
