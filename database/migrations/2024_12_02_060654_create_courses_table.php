@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('course_pdf');
             $table->string('credit_hr')->nullable();
             $table->string('lecture_hr')->nullable();
-            $table->string('tution_hr')->nullable();
+            $table->string('tutorial_hr')->nullable();
             $table->string('lab_hr')->nullable();
             $table->string('total_hr')->nullable();
             $table->string('slug')->nullable();

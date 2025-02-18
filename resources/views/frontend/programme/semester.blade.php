@@ -213,7 +213,7 @@
                                                                         </td>
                                                                         <td
                                                                             class="px-6 py-4 whitespace-nowrap text-base text-gray-800 dark:text-neutral-200">
-                                                                            {{ empty($course->tution_hr) ? '-' : $course->tution_hr }}
+                                                                            {{ empty($course->tutorial_hr) ? '-' : $course->tutorial_hr }}
                                                                         </td>
                                                                         <td
                                                                             class="px-6 py-4 whitespace-nowrap text-base text-gray-800 dark:text-neutral-200">

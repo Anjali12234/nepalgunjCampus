@@ -111,7 +111,7 @@ class FrontendController extends Controller
         $generalQuestions = GeneralQuestion::where('type', $semester->programme->id)->get();
         $totalCreditHr = $semester->courses->sum('credit_hr');
         $totalLectureHr = $semester->courses->sum('lecture_hr');
-        $totalTutorialHr = $semester->courses->sum('tution_hr');
+        $totalTutorialHr = $semester->courses->sum('tutorial_hr');
         $totalLabHr = $semester->courses->sum('lab_hr');
         $totalHr = $semester->courses->sum('total_hr');
         return view('frontend.programme.semester',
