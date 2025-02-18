@@ -1,59 +1,102 @@
-<x-guest-layout>
-    <form method="POST" action="{{ route('studentRegister') }}" enctype="multipart/form-data">
-        @csrf
+<!DOCTYPE html>
+<html>
 
-        <!-- Name -->
-       
-        
-        <div class="mt-4">
-            <x-input-label for="name" :value="__('Name')" />
-            <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-            <x-input-error :messages="$errors->get('name')" class="mt-2" />
+<head>
+    <!-- Basic Page Info -->
+    <meta charset="utf-8" />
+    <title>Nepalgunj Campus Of Management And Technology</title>
+
+    <!-- Site favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/backend/vendors/images/treadmark.png') }}" />
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="{{ asset('assets/backend/vendors/images/treadmark.png') }}" />
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="{{ asset('assets/backend/vendors/images/treadmark.png') }}" />
+
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/backend/vendors/styles/core.css') }}" />
+    <link rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/backend/vendors/styles/style.css') }}" />
+
+
+</head>
+
+<body class="login-page">
+    <div class="login-header box-shadow">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+            <div class="brand-logo">
+                <a href="{{ route('studentLogin') }}">
+                    <h3>Nepalgunj Campus Of Management And Technology</h3>
+                </a>
+            </div>
+            <div class="login-menu">
+                <ul>
+                    <li><a href="{{ route('studentRegister') }}">Register</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="mt-4">
-            <x-input-label for="roll_no" :value="__('Roll No')" />
-            <x-text-input id="roll_no" class="block mt-1 w-full" type="text" name="roll_no" :value="old('roll_no')" required autofocus autocomplete="roll_no" />
-            <x-input-error :messages="$errors->get('roll_no')" class="mt-2" />
+    </div>
+    <div class="login-wrap d-flex align-items-center flex-wrap justify-content-center">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 col-lg-7">
+                    <img src="{{ asset('assets/backend/vendors/images/login-page-img.png') }}" alt="" />
+                </div>
+                <div class="col-md-6 col-lg-5">
+                    <div class="login-box bg-white box-shadow border-radius-10">
+                        <div class="login-title">
+                            <h2 class="text-center text-primary">Student Login</h2>
+                        </div>
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+                        <form action="{{ route('login') }}" method="POST">
+                            @csrf
+
+                            <div class="input-group custom">
+                                <input type="text" class="form-control form-control-lg" name="email"
+                                    placeholder="Email" />
+                                <div class="input-group-append custom">
+                                    <span class="input-group-text"><i class="icon-copy dw dw-user1"></i></span>
+                                </div>
+                            </div>
+                            <div class="input-group custom">
+                                <input type="password" name="password" class="form-control form-control-lg"
+                                    placeholder="**********" />
+                                <div class="input-group-append custom">
+                                    <span class="input-group-text"><i class="dw dw-padlock1"></i></span>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="input-group mb-0">
+
+                                        <button class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
+    </div>
 
-        <!-- Email Address -->
-        <div class="mt-4">
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
-        </div>
 
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
+</body>
 
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="new-password" />
-
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
-
-        <!-- Confirm Password -->
-        <div class="mt-4">
-            <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
-
-            <x-text-input id="password_confirmation" class="block mt-1 w-full"
-                            type="password"
-                            name="password_confirmation" required autocomplete="new-password" />
-
-            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
-        </div>
-
-        <div class="flex items-center justify-end mt-4">
-            <a href="{{route('studentLogin')}}" class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="">
-                {{ __('Already registered Login?') }}
-            </a>
-
-            <x-primary-button class="ms-4">
-                {{ __('Register') }}
-            </x-primary-button>
-        </div>
-    </form>
-</x-guest-layout>
+</html>
