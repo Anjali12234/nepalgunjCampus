@@ -19,7 +19,7 @@ class FrontendController extends Controller
     public function index()
     {
         session()->flash('showPopup', true);
-        $galleries = Gallery::latest()->limit(6)->get();
+        $galleries = Gallery::orderBy('position','asc')->limit(6)->get();
         $about = About::latest()->first();
         $sliders = Slider::all();
         $notices = Notice::where('status', 1)->get();
