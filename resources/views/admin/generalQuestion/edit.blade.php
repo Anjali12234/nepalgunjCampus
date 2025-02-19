@@ -59,12 +59,12 @@
                         <label>Type</label>
                         <select class="custom-select2 form-control" name="type" style="width: 100%; height: 38px">
                             <option value="">Type</option>
-                            @foreach (\App\QuestionType::cases() as $case)
+                            {{-- @foreach (\App\QuestionType::cases() as $case)
                                 <option value="{{ $case->value }}"
                                     {{ old('type', $generalQuestion->type) == $case->value ? 'selected' : '' }}>
                                     {{ $case->label() }}
                                 </option>
-                            @endforeach
+                            @endforeach --}}
                             @foreach ($programmes as $programme)
                                 <option value="{{ $programme->id }}"
                                     {{ old('type', $generalQuestion->type) == $programme->id ? 'selected' : '' }}>

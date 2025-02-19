@@ -14,7 +14,7 @@ class GeneralQuestionController extends Controller
 {
     public function index()
     {
-        $generalQuestions = GeneralQuestion::paginate(10);
+        $generalQuestions = GeneralQuestion::with('program')->paginate(10);
         return view("admin.generalQuestion.index", compact("generalQuestions"));
     }
     public function create()

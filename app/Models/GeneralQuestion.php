@@ -37,5 +37,8 @@ class GeneralQuestion extends Model
             $gallery->position = static::max('position') + 1;
         });
     }
-   
+    public function program()
+    {
+        return $this->belongsTo(Programme::class, 'type');
+    }
 }

@@ -40,6 +40,7 @@
                     <tr>
                         <th class="table-plus datatable-nosort">S.No</th>
                         <th>Title </th>
+                        <th>Program </th>
                         <th>Action</th>
                     </tr>
                     </thead>
@@ -48,6 +49,7 @@
                         <tr>
                             <td class="table-plus">{{ $loop->iteration }}</td>
                             <td>{{ $generalQuestion?->title }}</td>
+                            <td>{{ $generalQuestion?->program?->programme_short_name }}</td>
                             <td>
                                 <div class="dropdown">
                                     <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle"
