@@ -57,9 +57,9 @@
                         <label>Type<span style="color: red; margin-left: 5px;">*</span></label>
                         <select class="custom-select2 form-control" name="type" style="width: 100%; height: 38px">
                             <option value="">Type</option>
-                            @foreach(\App\QuestionType::cases() as $case)
+                            {{-- @foreach(\App\QuestionType::cases() as $case)
                             <option value="{{$case->value}}" >{{$case->label()}}</option>
-                            @endforeach
+                            @endforeach --}}
                             @foreach($programmes as $programme)
                             <option value="{{$programme->id}}" >{{$programme->programme_short_name}}</option>
                             @endforeach
