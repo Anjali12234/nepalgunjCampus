@@ -136,12 +136,23 @@
                         </span>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="total_hr">Total Hr</label>
+                        <label for="full_marks">Full Marks</label>
 
-                        <input class="form-control" id="total_hr" name="total_hr" type="number"
-                            value="{{ old('total_hr', $course->total_hr) }}" />
+                        <input class="form-control" id="full_marks" name="total_hr" type="number"
+                            value="{{ old('total_hr',$course->total_hr) }}" />
                         <span class="text-warning">
                             @error('total_hr')
+                                {{ $message }}
+                            @enderror
+                        </span>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="position">Position</label>
+
+                        <input class="form-control" id="position" name="position" type="number"
+                            value="{{ old('position', $course->position) }}" />
+                        <span class="text-warning">
+                            @error('position')
                                 {{ $message }}
                             @enderror
                         </span>
