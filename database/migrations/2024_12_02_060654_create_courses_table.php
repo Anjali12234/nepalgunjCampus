@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('semester_id')->nullable()->constrained()->cascadeOnDelete();
             $table->string('course_title');
             $table->string('course_code');
-            $table->string('course_pdf');
+            $table->string('course_pdf')->nullable();
             $table->string('credit_hr')->nullable();
             $table->string('lecture_hr')->nullable();
             $table->string('tutorial_hr')->nullable();

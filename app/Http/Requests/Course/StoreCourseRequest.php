@@ -17,7 +17,7 @@ class StoreCourseRequest extends FormRequest
         return [
             'course_title' => ['required', 'string'],
             'course_code' => ['required', 'string'],
-            'course_pdf' => ['required','mimes:png,jpg,jpeg,pdf,jfif'],
+            'course_pdf' => ['nullable','mimes:png,jpg,jpeg,pdf,jfif'],
             'credit_hr' => ['nullable'],
             'lecture_hr' => ['nullable'],
             'tutorial_hr' => ['nullable'],
