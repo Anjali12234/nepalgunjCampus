@@ -51,7 +51,7 @@
             </button>
             <!-- YouTube Video -->
             <iframe width="800" height="400" src="{{$about->video_url}}"
-                title="Career Counseling on Data Analytics, Machine Learning, Data Science & AL using Python"
+                title="{{$about->title}}"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
