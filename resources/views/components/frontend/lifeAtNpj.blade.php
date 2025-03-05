@@ -1,4 +1,4 @@
-@props(['galleries'])
+@props(['galleries','about'])
 
 <div class="bg-gray-100 py-12 sm:py-16 ">
     <div class="max-w-6xl mx-auto  sm:px-6 lg:px-6">
@@ -89,8 +89,8 @@
                                 </svg>
                             </button>
                             <!-- YouTube Video -->
-                            <iframe width="800" height="400" src="https://www.youtube.com/embed/xc-4R5uJ-mI"
-                                title="Career Counseling on Data Analytics, Machine Learning, Data Science & AL using Python"
+                            <iframe width="800" height="400" src="{{$about->video_url}}"
+                                title="{{$about->title}}"
                                 frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                 referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>

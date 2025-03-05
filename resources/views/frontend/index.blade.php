@@ -45,7 +45,7 @@
         <x-frontend.indexAboutus :about="$about" />
     </section>
     <section>
-        <x-frontend.lifeAtNpj :galleries="$galleries"  />
+        <x-frontend.lifeAtNpj :galleries="$galleries" :about="$about"  />
     </section>
 
     @if ($notices->count() > 0)
