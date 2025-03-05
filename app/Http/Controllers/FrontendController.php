@@ -119,4 +119,11 @@ class FrontendController extends Controller
         );
     }
 
+    public function galleryList(Gallery $gallery)
+    {
+        $gallery->load('files');
+        
+        return view("frontend.gallery", compact('gallery'));
+    }
+
 }

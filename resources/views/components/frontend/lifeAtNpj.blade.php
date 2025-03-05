@@ -17,12 +17,14 @@
         <div class="mt-10 space-y-10 sm:space-y-0 sm:grid sm:grid-cols-3 sm:gap-x-6 sm:gap-y-10">
 
             @foreach ($galleries as $gallery)
+          
                 <div class=" group">
                     <div class="flex items-center text-white">
-                        <img src="{{ count($gallery->files) > 0 ? $gallery->files?->random()->file_url : '' }}"
+                       <a href="{{ route('galleryList',$gallery) }}"> <img src="{{ count($gallery->files) > 0 ? $gallery->files?->random()->file_url : '' }}"
                             alt=""
                             class="h-72 w-[23rem] transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 border border-b-[3px] border-b-[#FFC315]">
-                    </div>
+                       </a>
+                        </div>
                     <h3 class="mt-3 text-lg font-medium hover:text-[#FFC315] text-gray-900">{{ $gallery->title }}</h3>
                     <div
                         class=" mt-2 h-[3px] w-10 bg-gray-400 font-bold  transition-all duration-300 group-hover:w-full group-hover:bg-[#FFC315]">

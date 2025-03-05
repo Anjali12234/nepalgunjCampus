@@ -18,7 +18,7 @@ Route::controller(FrontendController::class)->group(function () {
     Route::get('programme/{programme:slug}', 'programme')->name('programme');
     Route::get('semester/{semester:slug}', 'semester')->name('semester');
     Route::get('teacher/{teacher:slug}', 'teacher')->name('teacher');
-
+    ROute::get('galleryList/{gallery:slug}','galleryList')->name('galleryList');
 });
 Route::controller(StudentAuthController::class)->group(function () {
     Route::get('studentRegister', 'registerPage')->name('studentRegister');
