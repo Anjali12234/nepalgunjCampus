@@ -21,7 +21,8 @@
 
         <!-- Video Section -->
         <div class="relative flex justify-center">
-            <img src="{{ asset('assets/frontend/images/1686739936video-img.jpg') }}" alt="About Us Video" class="rounded-lg shadow-md cursor-pointer" id="video-img">
+            {{-- <img src="{{ asset('assets/frontend/images/1686739936video-img.jpg') }}" alt="About Us Video" class="rounded-lg shadow-md cursor-pointer" id="video-img"> --}}
+            <img src="{{$about->image}}" alt="About Us Video" class="rounded-lg shadow-md cursor-pointer" id="video-img">
     
             <!-- Play Button -->
             <button
@@ -49,7 +50,7 @@
                 </svg>
             </button>
             <!-- YouTube Video -->
-            <iframe width="800" height="400" src="https://www.youtube.com/embed/xc-4R5uJ-mI"
+            <iframe width="800" height="400" src="{{$about->video_url}}"
                 title="Career Counseling on Data Analytics, Machine Learning, Data Science & AL using Python"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
