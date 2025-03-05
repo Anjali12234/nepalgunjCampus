@@ -39,4 +39,5 @@ class Gallery extends Model
     {
         return $this->morphMany(File::class, 'model');
     }
+    
 }
