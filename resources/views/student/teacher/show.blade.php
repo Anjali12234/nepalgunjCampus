@@ -1,4 +1,6 @@
 @extends('student.layouts.master')
+@section('title',  $teacher->teacher_name )
+
 @section('container')
     <div class="min-height-200px">
         <div class="page-header">

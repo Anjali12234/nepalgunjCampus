@@ -1,4 +1,5 @@
 @extends('frontend.layouts.master')
+@section('title', $programme->programme_full_name)
 @section('content')
     {{-- <x-frontend.hero-component image="{{ asset('assets/frontend/images/background/9.jpg') }}"
         heading="{{ $programme->programme_full_name }}" /> --}}

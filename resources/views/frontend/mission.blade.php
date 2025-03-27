@@ -1,4 +1,6 @@
 @extends('frontend.layouts.master')
+@section('title', 'Mission And Vision Of NCMT')
+
 @section('content')
     <x-frontend.hero-component image="{{ asset('assets/frontend/images/background/4.jpg') }}" heading="Mission & Vision" />
 
