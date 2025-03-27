@@ -2,7 +2,7 @@
 @section('content')
     <section>
         <x-frontend.slider :sliders="$sliders" />
-
+@if($notices->first()?->status == 1)
         <div id="exampleModal" class="fixed inset-0 z-50 flex  justify-center bg-black bg-opacity-50 hidden">
             <div class="bg-white rounded-lg shadow-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
                 <button id="closeModalButton"
@@ -35,6 +35,7 @@
             </div>
 
         </div>
+        @endif
     </section>
     <section>
         <x-frontend.indexAboutus :about="$about" />
