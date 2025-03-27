@@ -22,7 +22,7 @@
                 <!-- Modal Body -->
                 <div class="p-4">
                     <div class="relative">
-                        <img src="{{ $notice->image }}" alt="Notice Image">
+                        <img src="{{ $notice?->image }}" alt="Notice Image">
 
 
                     </div>
