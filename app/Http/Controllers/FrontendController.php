@@ -22,8 +22,8 @@ class FrontendController extends Controller
         $galleries = Gallery::orderBy('position','asc')->limit(6)->get();
         $about = About::latest()->first();
         $sliders = Slider::all();
-        $notice = Notice::where('status', 1)->first();
-        return view('frontend.index', compact('notice','sliders', 'about', 'galleries'));
+        $notices = Notice::where('status', 1)->get();
+        return view('frontend.index', compact('notices','sliders', 'about', 'galleries'));
     }
     public function aboutUs()
     {
