@@ -11,7 +11,7 @@ return new class extends Migration
     {
         Schema::create('galleries', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
+            $table->string('title');            
             $table->string('slug')->nullable();
             $table->string('position');
             $table->softDeletes();

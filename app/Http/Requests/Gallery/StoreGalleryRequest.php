@@ -16,8 +16,7 @@ class StoreGalleryRequest extends FormRequest
     {
         return [
             'title' => ['required', 'string'],
-            'files' => ['required', 'array'],
-            'files.*' => ['mimes:png,jpg,jpeg,pdf,jfif'],
+            'image' => ['required', 'image'],
         ];
     }
 }

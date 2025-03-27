@@ -21,18 +21,8 @@ class GalleryController extends Controller
     
     public function store(StoreGalleryRequest $request, Gallery $gallery)
     {
-        
-        DB::transaction(function () use ($request) {
-            $gallery = Gallery::create($request->validated());
-            foreach ($request->validated(['files']) as $file) {
-                $gallery->files()->create([
-                    'file_name' => $file->getClientOriginalName(),
-                    'file' => $file->store('gallerys/' . STR::slug($request->input('title'), '_'), 'public'),
-                    'size' => $file->getSize(),
-                    'extension' => $file->getClientOriginalExtension()
-                ]);
-            }
-        });
+        Gallery::create($request->validated());
+
         Alert::success('File added successfully');
         return back();
     }
@@ -45,17 +35,10 @@ class GalleryController extends Controller
 
     public function update(UpdateGalleryRequest $request, Gallery $gallery)
     {
-        if ($request->hasFile('files')) {
-            foreach ($request->file('files') as $file) {
-                $gallery->files()->create([
-                    'file_name' => $file->getClientOriginalName(),
-                    'file' => $file->store('galleries/' . Str::slug($request->input('title'), '_'), 'public'),
-                    'size' => $file->getSize(),
-                    'extension' => $file->getClientOriginalExtension()
-                ]);
-            }
+        if ($request->hasFile('image') && $gallery->image) {
+            $this->deleteFile($gallery->image);
         }
-        $gallery->update($request->validated());
+            $gallery->update($request->validated());
         Alert::success('File updated successfully');
         return redirect(route('admin.gallery.create'));
     }

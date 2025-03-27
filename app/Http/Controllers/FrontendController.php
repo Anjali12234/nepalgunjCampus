@@ -121,7 +121,7 @@ class FrontendController extends Controller
 
     public function galleryList(Gallery $gallery)
     {
-        $gallery->load('files');
+        $gallery->load('galleryPhotos.files');
         
         return view("frontend.gallery", compact('gallery'));
     }

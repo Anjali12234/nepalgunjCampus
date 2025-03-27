@@ -48,12 +48,7 @@
                     </a>
 
                 </li>
-                <li class="dropdown">
-                    <a href="{{route('admin.gallery.create')}}" class="dropdown-toggle no-arrow">
-                        <span class="micon bi bi-command"></span><span class="mtext">Gallery</span>
-                    </a>
-
-                </li>
+               
                 <li class="dropdown">
                     <a href="{{route('admin.generalQuestion.index')}}" class="dropdown-toggle no-arrow">
                         <span class="micon bi bi-pie-chart"></span><span class="mtext">GeneralQuestion</span>
@@ -65,6 +60,15 @@
                         <span class="micon bi bi-pie-chart"></span><span class="mtext">Contact Messages</span>
                     </a>
 
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">
+                        <span class="micon bi bi-command"></span><span class="mtext">Gallery</span>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="{{route('admin.gallery.create')}}">Gallery Category</a></li>
+                        <li><a href="{{route('admin.galleryPhoto.create')}}">Gallery List</a></li>
+                    </ul>
                 </li>
                 <li class="dropdown">
                     <a href="javascript:;" class="dropdown-toggle">
