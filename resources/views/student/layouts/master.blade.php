@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Nepalgunj Campus</title>
+    <title>@yield('title', 'Student|Welcome to NCMT')</title>
+
 
 
     <!-- Site favicon -->

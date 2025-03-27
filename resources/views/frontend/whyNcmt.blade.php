@@ -1,4 +1,6 @@
 @extends('frontend.layouts.master')
+@section('title', 'WHY NCMT')
+
 @section('content')
     <x-frontend.hero-component image="{{ asset('assets/frontend/images/background/background-image.jpg') }}"
         heading="Why Nepalgunj Campus" />

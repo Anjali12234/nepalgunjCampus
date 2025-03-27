@@ -1,4 +1,5 @@
 @extends('frontend.layouts.master')
+@section('title', 'Contact at NCMT')
 @section('content')
 
     <x-frontend.hero-component image="{{ asset('assets/frontend/images/background/4.jpg') }}" heading="Get In Touch" />
