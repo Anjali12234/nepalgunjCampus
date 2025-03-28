@@ -13,6 +13,7 @@ Route::controller(FrontendController::class)->group(function () {
     Route::get('/', 'index')->name('welcome');
     Route::get('aboutus', 'aboutUs')->name('aboutus');
     Route::get('mission', 'mission')->name('mission');
+    Route::get('gallery', 'gallery')->name('gallery');
     Route::get('whyNcmt', 'whyNcmt')->name('whyNcmt');
     Route::get('contact', 'contact')->name('contact');
     Route::get('programme/{programme:slug}', 'programme')->name('programme');
