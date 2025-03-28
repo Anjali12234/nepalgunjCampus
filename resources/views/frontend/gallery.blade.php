@@ -22,9 +22,6 @@
         @endif --}}
         @if ($gallery->galleryPhotos->isNotEmpty())
             @foreach ($gallery->galleryPhotos as $galleryPhoto)
-                <h1 class="font-bold text-4xl mt-10 text-center " >{{ $galleryPhoto->title }}</h1>
-                <hr class="w-52 border-t-9 mt-4 border-red-700">
-
                 <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
 
 
@@ -34,6 +31,8 @@
                                 <img src="{{ $file->file_url }}" alt="Gallery Image"
                                     class="w-full h-48 shadow-xl shadow-neutral-900 object-cover transition-transform duration-300 hover:scale-105">
                             </a>
+                            <h1 class="font-semibold text-2xl mt-5 text-center ">{{ $galleryPhoto->title }}</h1>
+
                         </div>
                     @endforeach
                 </div>
