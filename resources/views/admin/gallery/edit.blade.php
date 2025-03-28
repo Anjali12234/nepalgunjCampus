@@ -54,12 +54,13 @@
                     </div>
                     <div class="form-group col-md-6">
                         <label for="image">Gallery Image</label>
-
-                        <input class="form-control" id="files" type="file" name="files[]" multiple>
+                        <img src="{{ $gallery->image }}" height="100" width="100" alt="{{ $gallery->title }}">
+                        <input class="form-control" id="image" type="file"
+                            name="image">
                         <span class="text-warning">
-                            @error('image')
-                                {{ $message }}
-                            @enderror
+                        @error('image')
+                            {{ $message }}
+                        @enderror
                         </span>
                     </div>
 
@@ -73,26 +74,7 @@
                 </div>
             </form>
 
-            <div class="grid grid-cols-4 gap-2" style="margin-top:30px;">
-                <div class="col-md-12 row">
-                    @foreach ($gallery->files as $file)
-                        <div class="col-md-3 d-flex flex-column align-items-center mb-4">
-                            <img src="{{ $file->file_url }}" height="200" width="200" alt=""
-                                class="rounded shadow mb-3">
-                            <form action="{{ route('file.destroy', $file) }}" method="post" style="display: inline;">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger d-flex align-items-center"
-                                    onclick="return confirm('Are you sure you want to delete this file?')">
-                                    <i class="fas fa-trash-alt me-2"></i> Delete
-                                </button>
-                            </form>
-                        </div>
-                    @endforeach
-                </div>
-
-
-            </div>
+         
         </div>
 
     </div>

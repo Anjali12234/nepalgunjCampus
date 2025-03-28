@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-md-6 col-sm-12">
                     <div class="title">
-                        <h4>Gallery</h4>
+                        <h4>Gallery List</h4>
                     </div>
                     <nav aria-label="breadcrumb" role="navigation">
                         <ol class="breadcrumb">
@@ -13,7 +13,7 @@
                                 <a href="{{ route('admin.dashboard') }}">Home</a>
                             </li>
                             <li class="breadcrumb-item active" aria-current="page">
-                                Gallery
+                                Gallery List
                             </li>
                         </ol>
                     </nav>
@@ -31,7 +31,7 @@
                     </ul>
                 </div>
             @endif
-            <form method="post" action="{{ route('admin.gallery.store') }}" enctype="multipart/form-data">
+            <form method="post" action="{{ route('admin.galleryPhoto.store') }}" enctype="multipart/form-data">
                 @csrf
 
                 <div class="col-md-12 row">
@@ -45,11 +45,27 @@
                             @enderror
                         </span>
                     </div>
-                    
+                    <div class="form-group col-md-6">
+                        <label>Gallery Category<span style="color: red; margin-left: 5px;">*</span></label>
+                        <select class="custom-select2 form-control" name="gallery_id"
+                            style="width: 100%; height: 38px">
+                            <option value="" >Choose gallery</option>
+                                @foreach ($galleries as $gallery)
+                                    <option value="{{ $gallery->id }}">{{ $gallery->title }}</option>
+                                @endforeach
+
+
+                        </select>
+                        <span class="text-warning">
+                            @error('gallery_id')
+                                {{ $message }}
+                            @enderror
+                        </span>
+                    </div>
                     <div class="form-group col-md-6">
                         <label for="image">Gallery Image<span style="color: red; margin-left: 5px;">*</span></label>
 
-                        <input class="form-control" id="image" type="file" name="image" >
+                        <input class="form-control" id="files" type="file" name="files[]" multiple>
                         <span class="text-warning">
                             @error('image')
                                 {{ $message }}
@@ -66,24 +82,22 @@
         </div>
         <div class="pd-20 card-box mb-30">
             <div class="pd-20">
-                <h4 class="text-blue h4">Gallery Category List</h4>
+                <h4 class="text-blue h4">Gallery  List</h4>
             </div>
             <div class="pb-20">
                 <table class="data-table table stripe hover nowrap">
                     <thead>
                         <tr>
                             <th class="table-plus datatable-nosort">S.No</th>                           
-                            <th>Image </th>
                             <th>Title </th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($galleries as $key => $gallery)
+                        @foreach ($galleryPhotos as $key => $galleryPhoto)
                             <tr>
                                 <td class="table-plus">{{ $loop->iteration }}</td>                               
-                                <td> <img src="{{$gallery->image}}" height="100" width="100" alt="{{$gallery->title}}"> </td>
-                                <td>{{ $gallery->title }}</td>
+                                <td>{{ $galleryPhoto->title }}</td>
                                 <td>
                                     <div class="dropdown">
                                         <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle"
@@ -92,10 +106,10 @@
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
                                             <a class="dropdown-item"
-                                                href="{{ route('admin.gallery.edit', $gallery) }}"><i
+                                                href="{{ route('admin.galleryPhoto.edit', $galleryPhoto) }}"><i
                                                     class="dw dw-edit2"></i> Edit</a>
 
-                                            <form action="{{ route('admin.gallery.destroy', $gallery) }}"
+                                            <form action="{{ route('admin.galleryPhoto.destroy', $galleryPhoto) }}"
                                                 method="post" style="display: inline">
                                                 @csrf
                                                 @method('DELETE')
@@ -112,7 +126,7 @@
 
                     </tbody>
                 </table>
-                {{ $galleries->links() }}
+                {{ $galleryPhotos->links() }}
             </div>
         </div>
 

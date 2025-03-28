@@ -20,8 +20,12 @@
           
                 <div class=" group">
                     <div class="flex items-center text-white">
-                       <a href="{{ route('galleryList',$gallery) }}"> <img src="{{ count($gallery->files) > 0 ? $gallery->files?->random()->file_url : '' }}"
+                       {{-- <a href="{{ route('galleryList',$gallery) }}"> <img src="{{ count($gallery->files) > 0 ? $gallery->files?->random()->file_url : '' }}"
                             alt=""
+                            class="h-72 w-[23rem] transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 border border-b-[3px] border-b-[#FFC315]">
+                       </a> --}}
+                       <a href="{{ route('galleryList',$gallery) }}"> <img src="{{ $gallery?->image }}"
+                            alt="{{$gallery->title}}"
                             class="h-72 w-[23rem] transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 border border-b-[3px] border-b-[#FFC315]">
                        </a>
                         </div>
@@ -89,8 +93,8 @@
                                 </svg>
                             </button>
                             <!-- YouTube Video -->
-                            <iframe width="800" height="400" src="{{$about->video_url}}"
-                                title="{{$about->title}}"
+                            <iframe width="800" height="400" src="{{$about?->video_url}}"
+                                title="{{$about?->title}}"
                                 frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                 referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>

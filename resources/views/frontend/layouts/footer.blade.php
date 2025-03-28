@@ -21,7 +21,7 @@
                 <li><a href="{{ route('welcome') }}" class="hover:text-yellow-500">Home</a></li>
                 <li><a href="{{ route('aboutus') }}" class="hover:text-yellow-500">About Us</a></li>
                 <li><a href="{{ route('whyNcmt') }}" class="hover:text-yellow-500">Why NCMT</a></li>
-                <li><a href="{{ route('contact') }}" class="hover:text-yellow-500">Request Call Back</a></li>
+                <li><a href="{{ route('gallery') }}" class="hover:text-yellow-500">Our Galleries</a></li>
                 <li><a href="{{ route('contact') }}" class="hover:text-yellow-500">Contact Us</a></li>
             </ul>
         </div>

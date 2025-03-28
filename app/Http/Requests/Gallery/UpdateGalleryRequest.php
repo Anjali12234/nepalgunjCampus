@@ -16,8 +16,7 @@ class UpdateGalleryRequest extends FormRequest
     {
         return [
             'title' => ['required', 'string'],
-            'files' => ['nullable', 'array'],
-            'files.*' => ['mimes:png,jpg,jpeg,pdf,jfif'],
+            'image' => ['nullable', 'image'],
         ];
     }
 }
