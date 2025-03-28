@@ -3,6 +3,7 @@
 namespace App\Http\Requests\GallerPhoto;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class UpdateGalleryPhotoRequest extends FormRequest
 {
@@ -23,6 +24,8 @@ class UpdateGalleryPhotoRequest extends FormRequest
     {
         return [
             'title' => ['required', 'string'],
+            'gallery_id' => ['required', Rule::exists('galleries','id')->withoutTrashed()],
+
             'files' => ['nullable', 'array'],
             'files.*' => ['mimes:png,jpg,jpeg,pdf,jfif'],
         ];
