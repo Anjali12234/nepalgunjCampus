@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-md-6 col-sm-12">
                     <div class="title">
-                        <h4>Teacher</h4>
+                        <h4>Team</h4>
                     </div>
                     <nav aria-label="breadcrumb" role="navigation">
                         <ol class="breadcrumb">
@@ -13,7 +13,7 @@
                                 <a href="{{ route('admin.dashboard') }}">Home</a>
                             </li>
                             <li class="breadcrumb-item active" aria-current="page">
-                                Teacher
+                                Team
                             </li>
                         </ol>
                     </nav>
@@ -31,7 +31,7 @@
 
         <div class="pd-20 card-box mb-30">
             <div class="pd-20">
-                <h4 class="text-blue h4">Teacher List</h4>
+                <h4 class="text-blue h4">Team List</h4>
 
             </div>
             <div class="pb-20">
@@ -39,7 +39,10 @@
                     <thead>
                         <tr>
                             <th class="table-plus datatable-nosort">S.No</th>
-                            <th>Teacher Name </th>
+                            <th>Image</th>
+                            <th>Name </th>
+                            <th>Department </th>
+                            <th>Post </th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -47,7 +50,10 @@
                         @foreach ($teachers as $key => $teacher)
                             <tr>
                                 <td class="table-plus">{{ $loop->iteration }}</td>
+                                <td>{{ $teacher?->image }}</td>
                                 <td>{{ $teacher?->teacher_name }}</td>
+                                <td>{{ $teacher?->department->label() }}</td>
+                                <td>{{ $teacher?->post }}</td>
                                 <td>
                                     <div class="dropdown">
                                         <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle"

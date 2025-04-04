@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-md-6 col-sm-12">
                     <div class="title">
-                        <h4>Teacher </h4>
+                        <h4>Our Team</h4>
                     </div>
                     <nav aria-label="breadcrumb" role="navigation">
                         <ol class="breadcrumb">
@@ -13,7 +13,7 @@
                                 <a href="{{ route('admin.dashboard') }}">Home</a>
                             </li>
                             <li class="breadcrumb-item active" aria-current="page">
-                                Teacher 
+                                Our Team
                             </li>
                         </ol>
                     </nav>

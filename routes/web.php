@@ -16,7 +16,7 @@ Route::controller(FrontendController::class)->group(function () {
     Route::get('gallery', 'gallery')->name('gallery');
     Route::get('whyncmt', 'whyncmt')->name('whyncmt');
     Route::get('contact', 'contact')->name('contact');
-    Route::get('tacher/facultyMember/{teacher:department}', 'facultyMember')->name('tacher.facultyMember');
+    Route::get('team/{department}', 'facultyMember')->name('team');
     Route::get('programme/{programme:slug}', 'programme')->name('programme');
     Route::get('semester/{semester:slug}', 'semester')->name('semester');
     Route::get('teacher/{teacher:slug}', 'teacher')->name('teacher');

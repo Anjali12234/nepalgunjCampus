@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\DepartmentEnum;
 use App\Models\About;
 use App\Models\Gallery;
 use App\Models\GalleryPhoto;
@@ -134,10 +135,10 @@ class FrontendController extends Controller
         return view('frontend.allGallery',compact('galleries'));
     }
    
-    public function facultyMember(Teacher $teacher)
+    public function facultyMember(DepartmentEnum $department)
     {
-        $teachers = Teacher::orderBy('position','ASC')->where('department',$teacher->department)->get();
-        return view('frontend.faculty_member',compact('teachers'));
+        $teachers = Teacher::orderBy('position','ASC')->where('department',$department)->get();
+        return view('frontend.faculty_member',compact('teachers','department'));
     }
 
 }
