@@ -44,7 +44,7 @@
                 </li>
                 <li class="dropdown">
                     <a href="{{route('admin.teacher.index')}}" class="dropdown-toggle no-arrow">
-                        <span class="micon bi bi-calendar4-week"></span><span class="mtext">Teacher</span>
+                        <span class="micon bi bi-calendar4-week"></span><span class="mtext">Our Team</span>
                     </a>
 
                 </li>

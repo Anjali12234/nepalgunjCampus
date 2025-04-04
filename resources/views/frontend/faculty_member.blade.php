@@ -1,8 +1,8 @@
 @extends('frontend.layouts.master')
-@section('title', 'Expert Teacher of NCMT')
+@section('title', 'Our Team')
 
 @section('content')
-    <x-frontend.hero-component image="{{ asset('assets/frontend/images/background/4.jpg') }}" heading="{{$teachers->first()->department->label()}}" />
+    <x-frontend.hero-component image="{{ asset('assets/frontend/images/background/4.jpg') }}" heading="{{$department->label()}}" />
 
 
     <x-frontend.bread-crum heading="Our Team" />

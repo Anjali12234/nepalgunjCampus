@@ -100,11 +100,11 @@
                     Our Team</button>
                 <div
                     class="absolute hidden group-hover:block group-focus-within:block bg-black text-gray-500 py-2 mt-4 shadow-lg w-48">
-                    @foreach (\App\DepartmentEnum::cases() as $teacher)
-                    <a href="{{ route('tacher.facultyMember',$teacher) }}"
+                    @foreach (\App\DepartmentEnum::cases() as $department)
+                     <a href="{{ route('team',$department) }}"
                         class="block px-4 py-2 hover:bg-yellow-400
                          hover:text-gray-900 rounded-t-md transition-colors
-                          duration-300">{{ $teacher->label() }}</a>
+                          duration-300">{{ $department->label() }}</a>
                 @endforeach
                 </div>
             </div>
@@ -193,11 +193,11 @@
                 <i id="programme-icon" class="ti ti-chevron-up transform transition-transform duration-300"></i>
             </button>
             <div id="teacher-dropdown" class="hidden bg-gray-800 text-gray-300 mt-2 rounded-lg shadow-md">
-                @foreach (\App\DepartmentEnum::cases() as $teacher)
-                    <a href="{{ route('tacher.facultyMember',$teacher) }}"
+                @foreach (\App\DepartmentEnum::cases() as $department)
+                    <a href="{{ route('team',$department) }}"
                         class="block px-4 py-2 hover:bg-yellow-400
                          hover:text-gray-900 rounded-t-md transition-colors
-                          duration-300">{{ $teacher->label() }}</a>
+                          duration-300">{{ $department->label() }}</a>
                 @endforeach
             </div>
             

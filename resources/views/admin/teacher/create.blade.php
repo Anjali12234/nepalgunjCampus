@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-md-6 col-sm-12">
                     <div class="title">
-                        <h4>Teacher</h4>
+                        <h4>Our Team</h4>
                     </div>
                     <nav aria-label="breadcrumb" role="navigation">
                         <ol class="breadcrumb">
@@ -13,7 +13,7 @@
                                 <a href="{{ route('admin.dashboard') }}">Home</a>
                             </li>
                             <li class="breadcrumb-item active" aria-current="page">
-                                Teacher
+                                Our Team
                             </li>
                         </ol>
                     </nav>
@@ -43,12 +43,12 @@
                 <div class="col-md-12 row">
 
                     <div class="form-group col-md-6">
-                        <label for="teacher_name">Teacher Name <span style="color: red; margin-left: 5px;">*</span></label>
+                        <label for="name">Name <span style="color: red; margin-left: 5px;">*</span></label>
 
-                        <input class="form-control" id="teacher_name" name="teacher_name" type="text"
+                        <input class="form-control" id="name" name="teacher_name" type="text"
                             value="{{ old('teacher_name') }}" />
                         <span class="text-warning">
-                            @error('teacher_name')
+                            @error('name')
                                 {{ $message }}
                             @enderror
                         </span>
