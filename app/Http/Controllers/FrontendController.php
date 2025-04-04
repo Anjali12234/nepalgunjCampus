@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\About;
 use App\Models\Gallery;
+use App\Models\GalleryPhoto;
 use App\Models\GeneralQuestion;
 use App\Models\Notice;
 use App\Models\Programme;
@@ -25,7 +26,7 @@ class FrontendController extends Controller
         $notices = Notice::where('status', 1)->get();
         return view('frontend.index', compact('notices','sliders', 'about', 'galleries'));
     }
-    public function aboutUs()
+    public function about()
     {
         $teachers = Teacher::with('ratings')->limit(3)->get();
         $about = About::latest()->first();
@@ -36,7 +37,7 @@ class FrontendController extends Controller
 
         return view('frontend.mission');
     }
-    public function whyNcmt()
+    public function whyncmt()
     {
 
         return view('frontend.whyNcmt');
@@ -125,11 +126,18 @@ class FrontendController extends Controller
         
         return view("frontend.gallery", compact('gallery'));
     }
+    
 
     public function gallery()
     {
         $galleries = Gallery::all();
         return view('frontend.allGallery',compact('galleries'));
+    }
+   
+    public function facultyMember(Teacher $teacher)
+    {
+        $teachers = Teacher::orderBy('position','ASC')->where('department',$teacher->department)->get();
+        return view('frontend.faculty_member',compact('teachers'));
     }
 
 }

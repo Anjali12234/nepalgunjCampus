@@ -54,6 +54,23 @@
                         </span>
                     </div>
                     <div class="form-group col-md-6">
+                        <label for="department">Department<span style="color: red; margin-left: 5px;">*</span></label>
+                        <select class="custom-select2 form-control" name="department" id="department"
+                            style="width: 100%; height: 38px">
+                            <option value="" >Choose department</option>
+                                @foreach (\App\DepartmentEnum::cases() as $case)
+                                    <option value="{{ $case->value }}">{{ $case->label() }}</option>
+                                @endforeach
+
+
+                        </select>
+                        <span class="text-warning">
+                            @error('department')
+                                {{ $message }}
+                            @enderror
+                        </span>
+                    </div>
+                    <div class="form-group col-md-6">
                         <label for="image">Image<span style="color: red; margin-left: 5px;">*</span></label>
 
                        <input type="file" name="image" id="image" class="form-control">
@@ -64,12 +81,34 @@
                         </span>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="faculty_name">Faculty Name<span style="color: red; margin-left: 5px;">*</span></label>
+                        <label for="post">Post<span style="color: red; margin-left: 5px;">*</span></label>
 
-                        <input class="form-control" id="faculty_name" name="faculty_name" type="text"
-                            value="{{ old('faculty_name') }}" />
+                        <input class="form-control" id="post" name="post" type="text"
+                            value="{{ old('post') }}" />
                         <span class="text-warning">
-                            @error('faculty_name')
+                            @error('post')
+                                {{ $message }}
+                            @enderror
+                        </span>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="experience">Experience<span style="color: red; margin-left: 5px;">*</span></label>
+
+                        <input class="form-control" id="experience" name="experience" type="number"
+                            value="{{ old('experience') }}" />
+                        <span class="text-warning">
+                            @error('experience')
+                                {{ $message }}
+                            @enderror
+                        </span>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="qualification">Qualification<span style="color: red; margin-left: 5px;">*</span></label>
+
+                        <input class="form-control" id="qualification" name="qualification" type="text"
+                            value="{{ old('qualification') }}" />
+                        <span class="text-warning">
+                            @error('qualification')
                                 {{ $message }}
                             @enderror
                         </span>

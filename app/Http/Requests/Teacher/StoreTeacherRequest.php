@@ -17,7 +17,10 @@ class StoreTeacherRequest extends FormRequest
     {
         return [
             'teacher_name' => ['required','string'],
-            'faculty_name' => ['required','string'],
+            'department' => ['required','string'],
+            'post' => ['required','string'],
+            'experience' => ['required','string'],
+            'qualification' => ['required','string'],
             'image' => ['required','image'],
             'email' => ['nullable'],
             'phone_number' => ['nullable'],
@@ -25,6 +28,7 @@ class StoreTeacherRequest extends FormRequest
             'facebook_url' => ['nullable'],
             'instagram_url' => ['nullable'],
             'description' => ['required'],
+
         ];
     }
 }

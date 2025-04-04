@@ -55,6 +55,23 @@
                         </span>
                     </div>
                     <div class="form-group col-md-6">
+                        <label for="department">Department<span style="color: red; margin-left: 5px;">*</span></label>
+                        <select class="custom-select2 form-control" name="department" id="department"
+                            style="width: 100%; height: 38px">
+                            <option value="" >Choose department</option>
+                                @foreach (\App\DepartmentEnum::cases() as $case)
+                                    <option value="{{ $case->value }}"{{old('department',$teacher->department->value) == $case->value?'selected':''}}>{{ $case->label() }}</option>
+                                @endforeach
+
+
+                        </select>
+                        <span class="text-warning">
+                            @error('department')
+                                {{ $message }}
+                            @enderror
+                        </span>
+                    </div>
+                    <div class="form-group col-md-6">
                         <label for="image">Image</label>
                         <img src="{{ $teacher->image }}" height="100" width="100" alt="">
                         <input type="file" name="image" id="image" class="form-control">
@@ -65,12 +82,34 @@
                         </span>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="faculty_name">Faculty Name</label>
+                        <label for="post">Post<span style="color: red; margin-left: 5px;">*</span></label>
 
-                        <input class="form-control" id="faculty_name" name="faculty_name" type="text"
-                            value="{{ old('faculty_name', $teacher->faculty_name) }}" />
+                        <input class="form-control" id="post" name="post" type="text"
+                            value="{{ old('post',$teacher->post) }}" />
                         <span class="text-warning">
-                            @error('faculty_name')
+                            @error('post')
+                                {{ $message }}
+                            @enderror
+                        </span>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="experience">Experience<span style="color: red; margin-left: 5px;">*</span></label>
+
+                        <input class="form-control" id="experience" name="experience" type="number"
+                            value="{{ old('experience',$teacher->experience) }}" />
+                        <span class="text-warning">
+                            @error('experience')
+                                {{ $message }}
+                            @enderror
+                        </span>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="qualification">Qualification<span style="color: red; margin-left: 5px;">*</span></label>
+
+                        <input class="form-control" id="qualification" name="qualification" type="text"
+                            value="{{ old('qualification',$teacher->qulification) }}" />
+                        <span class="text-warning">
+                            @error('qualification')
                                 {{ $message }}
                             @enderror
                         </span>
@@ -93,6 +132,17 @@
                             value="{{ old('phone_number', $teacher->phone_number) }}" />
                         <span class="text-warning">
                             @error('phone_number')
+                                {{ $message }}
+                            @enderror
+                        </span>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="position">Position</label>
+
+                        <input class="form-control" id="position" name="position" type="number"
+                            value="{{ old('position', $teacher->position) }}" />
+                        <span class="text-warning">
+                            @error('position')
                                 {{ $message }}
                             @enderror
                         </span>

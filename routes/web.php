@@ -11,15 +11,17 @@ use Illuminate\Support\Facades\Route;
 
 Route::controller(FrontendController::class)->group(function () {
     Route::get('/', 'index')->name('welcome');
-    Route::get('aboutus', 'aboutUs')->name('aboutus');
+    Route::get('about', 'about')->name('about');
     Route::get('mission', 'mission')->name('mission');
     Route::get('gallery', 'gallery')->name('gallery');
-    Route::get('whyNcmt', 'whyNcmt')->name('whyNcmt');
+    Route::get('whyncmt', 'whyncmt')->name('whyncmt');
     Route::get('contact', 'contact')->name('contact');
+    Route::get('tacher/facultyMember/{teacher:department}', 'facultyMember')->name('tacher.facultyMember');
     Route::get('programme/{programme:slug}', 'programme')->name('programme');
     Route::get('semester/{semester:slug}', 'semester')->name('semester');
     Route::get('teacher/{teacher:slug}', 'teacher')->name('teacher');
-    ROute::get('galleryList/{gallery:slug}','galleryList')->name('galleryList');
+    Route::get('galleryList/{gallery:slug}','galleryList')->name('galleryList');
+
 });
 Route::controller(StudentAuthController::class)->group(function () {
     Route::get('studentRegister', 'registerPage')->name('studentRegister');
@@ -32,7 +34,6 @@ Route::controller(StudentAuthController::class)->group(function () {
 
 
 Route::post('upload', [UploadController::class, 'store'])->name('upload');
-
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

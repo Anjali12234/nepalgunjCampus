@@ -2,10 +2,10 @@
 @section('title', 'Expert Teacher of NCMT')
 
 @section('content')
-    <x-frontend.hero-component image="{{ asset('assets/frontend/images/background/4.jpg') }}" heading="Teacher Rating" />
+    <x-frontend.hero-component image="{{ asset('assets/frontend/images/background/4.jpg') }}" heading="Student Rating" />
 
 
-    <x-frontend.bread-crum heading="Teacher" />
+    <x-frontend.bread-crum heading="{{ $teacher->teacher_name }}" />
 
     <section>
 
@@ -17,9 +17,7 @@
                     {{ $teacher->teacher_name }}
                     <span class="text-yellow-500 font-extrabold">___</span>
                 </h2>
-                {{-- <h2>{{ auth()->guard('student')->user()?->name }}</h2> --}}
-
-                <!-- Content -->
+               
                 <div class="flex flex-col lg:flex-row gap-10 items-start">
                     <div class="lg:w-1/2">
                         <img src="{{ $teacher->image }}" alt=" {{ $teacher->teacher_name }}"
@@ -27,7 +25,7 @@
                     </div>
                     <div class="lg:w-1/2 text-lg text-gray-800">
                         <h3 class="text-base md:text-xl font-bold text-gray-800 mb-3">
-                            Faculty : <span class="text-red-500 font-semibold">{{ $teacher->faculty_name }}
+                            Post : <span class="text-red-500 font-semibold">{{ $teacher->post }}
                             </span>
 
                         </h3>
@@ -43,6 +41,21 @@
                         </h3>
                         <h3 class="text-base md:text-xl font-bold text-gray-800 mb-3">
                             Address : <span class="text-red-500 font-semibold">{{ $teacher->address }}
+                            </span>
+
+                        </h3>
+                        <h3 class="text-base md:text-xl font-bold text-gray-800 mb-3">
+                            Department : <span class="text-red-500 font-semibold">{{ $teacher->department->label() }}
+                            </span>
+
+                        </h3>
+                        <h3 class="text-base md:text-xl font-bold text-gray-800 mb-3">
+                            Experience : <span class="text-red-500 font-semibold">{{ $teacher->experience }} years
+                            </span>
+
+                        </h3>
+                        <h3 class="text-base md:text-xl font-bold text-gray-800 mb-3">
+                            Qualification : <span class="text-red-500 font-semibold">{{ $teacher->qualification }} 
                             </span>
 
                         </h3>
@@ -72,12 +85,7 @@
                                             'Interactive Teaching' => $averageInteractiveTeachingRating,
                                             ] as $label => $rating)
                                     <div class="flex flex-col ">
-                                        <!-- Label -->
-                                        {{-- <div class="absolute inset-0 flex items-center justify-center">
-                                            <span class="text-sm font-medium text-gray-800">
-                                                {{ $rating }} / 5
-                                            </span>
-                                        </div> --}}
+                                      
                                         <h3 class="text-lg font-semibold text-gray-800">
                                             {{ $label }}:
                                         </h3>

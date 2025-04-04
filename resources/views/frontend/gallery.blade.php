@@ -10,21 +10,22 @@
 
     <div class="container mx-auto px-4 py-8">
         @if ($gallery->galleryPhotos->isNotEmpty())
-            <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
-                @foreach ($gallery->galleryPhotos as $galleryPhoto)
-                    @foreach ($galleryPhoto->files as $file)
-                        <div class="overflow-hidden rounded-lg shadow-md">
-                            <a href="{{ $file->file_url }}" target="_blank">
-                                <img src="{{ $file->file_url }}" alt="Gallery Image"
-                                    class="w-full h-48 shadow-xl shadow-neutral-900 object-cover transition-transform duration-300 hover:scale-105">
-                            </a>
-                            <h1 class="font-semibold text-2xl mt-5 text-center">
-                                {{ $galleryPhoto->title }}
-                            </h1>
-                        </div>
+            @foreach ($gallery->galleryPhotos as $galleryPhoto)
+                <div class="p-4">
+                    <h1 class="text-xl font-semibold text-center text-gray-800 underline">
+                        {{ $galleryPhoto->title }}
+                    </h1>
+                </div>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-5">
+                    @foreach ($galleryPhoto->files as $file)    
+                        <a href="{{ $file->file_url }}" target="_blank">
+                            <img src="{{ $file->file_url }}" style="height: 200px;" 
+                                class="w-full h-52 object-cover rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-2xl" 
+                                alt="{{ $galleryPhoto->title }}">
+                        </a>
                     @endforeach
-                @endforeach
-            </div>
+                </div>
+            @endforeach
         @else
             <p class="text-center text-gray-500">No images available</p>
         @endif

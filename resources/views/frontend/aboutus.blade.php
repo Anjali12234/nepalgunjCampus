@@ -1,5 +1,5 @@
 @extends('frontend.layouts.master')
-@section('title', $about->title)
+@section('title', $about?->title)
 @section('content')
     <x-frontend.hero-component image="{{ asset('assets/frontend/images/background/4.jpg') }}" heading="About Us" />
 
@@ -90,8 +90,8 @@
 
     <x-frontend.gallery-slider />
 
-    <section class="py-7 px-7  md:px-5  bg-white">
-        <div class="flex flex-wrap">
+    <section class=" py-7 px-7  md:px-28  bg-white">
+        <div class="">
             <div class="w-full md:w-1/3">
                 <div class="pb-10 text-center">
                     <h2 class="text-4xl font-bold   text-gray-900">Our Team</h2>
@@ -100,7 +100,7 @@
             </div>
 
             <div class="w-full md:w-2/3">
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-10">
                     <!-- Team Member 1 -->
                     @foreach ($teachers as $teacher)
                     <a href="{{route('teacher',$teacher)}}">
@@ -109,7 +109,7 @@
                                 class="w-[270px] h-[180px] object-cover  mb-4">
                             <h3 class="text-xl font-semibold text-gray-900 hover:text-[#FFC315]">Mr. {{$teacher->teacher_name}}
                                 <span>_____</span></h3>
-                            <p class="text-sm text-gray-500">{{$teacher->faculty_name}}</p>
+                            <p class="text-sm text-gray-500">{{$teacher->post}}</p>
                         </div>
                     </a>
                     @endforeach

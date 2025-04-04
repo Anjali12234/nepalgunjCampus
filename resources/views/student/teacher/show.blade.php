@@ -1,5 +1,5 @@
 @extends('student.layouts.master')
-@section('title',  $teacher->teacher_name )
+@section('title', $teacher->teacher_name)
 
 @section('container')
     <div class="min-height-200px">
@@ -32,28 +32,47 @@
 
                     </div>
                     <h5 class="text-center h5 mb-0">{{ $teacher->teacher_name }}</h5>
-                    <div class="d-flex text-center ">
+                    <div class="d-flex ml-3 ">
 
                         <h5 class="h5 mb-0">
-                          Faculty :</h5>  <p class="text-center text-muted font-14 ml-3">
-                              {{ $teacher->faculty_name }}
-                          </p>
+                            Post :</h5>
+                        <p class="text-center text-muted font-14 ml-3">
+                            {{ $teacher->post }}
+                        </p>
+
+                    </div>
+                    <div class="d-flex ml-3 ">
+
+                        <h5 class="h5 mb-0">
+                            Department :</h5>
+                        <p class="text-center text-muted font-14 ml-3">
+                            {{ $teacher->department->label() }}
+                        </p>
+
                     </div>
                     <div class="profile-info">
                         <h5 class="mb-20 h5 text-blue">Contact Information</h5>
                         <ul>
                             <li>
                                 <span>Email Address:</span>
-                                {{$teacher->email}}
+                                {{ $teacher->email }}
+                            </li>
+                            <li>
+                                <span>Qualification:</span>
+                                {{ $teacher->qualification }}
+                            </li>
+                            <li>
+                                <span>Experience:</span>
+                                {{ $teacher->experience }} years
                             </li>
                             <li>
                                 <span>Phone Number:</span>
-                               {{$teacher->phone_number}}
+                                {{ $teacher->phone_number }}
                             </li>
-                           
+
                             <li>
                                 <span>Address:</span>
-                               {{$teacher->address}}
+                                {{ $teacher->address }}
                             </li>
                         </ul>
                     </div>
@@ -61,8 +80,8 @@
                         <h5 class="mb-20 h5 text-blue">Social Links</h5>
                         <ul class="clearfix">
                             <li>
-                                <a href="{{$teacher->facebook_url}}" class="btn" data-bgcolor="#3b5998" data-color="#ffffff"><i
-                                        class="fa fa-facebook"></i></a>
+                                <a href="{{ $teacher->facebook_url }}" class="btn" data-bgcolor="#3b5998"
+                                    data-color="#ffffff"><i class="fa fa-facebook"></i></a>
                             </li>
                             <li>
                                 <a href="#" class="btn" data-bgcolor="#1da1f2" data-color="#ffffff"><i
@@ -73,13 +92,13 @@
                                         class="fa fa-linkedin"></i></a>
                             </li>
                             <li>
-                                <a href="{{$teacher->instagram_url}}" class="btn" data-bgcolor="#f46f30" data-color="#ffffff"><i
-                                        class="fa fa-instagram"></i></a>
+                                <a href="{{ $teacher->instagram_url }}" class="btn" data-bgcolor="#f46f30"
+                                    data-color="#ffffff"><i class="fa fa-instagram"></i></a>
                             </li>
-                          
+
                         </ul>
                     </div>
-                  
+
                 </div>
             </div>
             <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 mb-30">
@@ -88,8 +107,8 @@
                         <div class="tab height-100-p">
                             <ul class="nav nav-tabs customtab" role="tablist">
                                 <li class="nav-item">
-                                    <a class="nav-link active" data-toggle="tab" href="#timeline"
-                                        role="tab">Teaching Description</a>
+                                    <a class="nav-link active" data-toggle="tab" href="#timeline" role="tab">Teaching
+                                        Description</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" data-toggle="tab" href="#tasks" role="tab">Teacher
@@ -122,7 +141,7 @@
                                             </div>
                                             <div class="profile-task-list pb-30">
                                                 <ul>
-                                                   
+
                                                     <li>
                                                         <p>Rate Teaching Skill</p>
                                                         <div id="star-rating" class="d-flex align-items-center">
@@ -254,55 +273,59 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const skillRatings = [
-                { 
+            const skillRatings = [{
                     stars: document.querySelectorAll('.star'),
                     form: document.getElementById('rating-form'),
                     input: document.getElementById('rating-value'),
                     currentRating: {{ $rating ?? 0 }}
                 },
-                { 
+                {
                     stars: document.querySelectorAll('.teachingSkillStar'),
                     form: document.getElementById('rating-teaching-skill-form'),
                     input: document.getElementById('rating-teaching-skill-value'),
                     currentRating: {{ $teacherSkillRating ?? 0 }}
                 },
-                { 
+                {
                     stars: document.querySelectorAll('.communicationSkillStar'),
                     form: document.getElementById('rating-communication-skill-form'),
                     input: document.getElementById('rating-communication-skill-value'),
                     currentRating: {{ $communicationSkillRating ?? 0 }}
                 },
-                { 
+                {
                     stars: document.querySelectorAll('.subjectKnowledgeStar'),
                     form: document.getElementById('rating-subject-knowledge-form'),
                     input: document.getElementById('rating-subject-knowledge-value'),
                     currentRating: {{ $subjectKnowledgeRating ?? 0 }}
                 },
-                { 
+                {
                     stars: document.querySelectorAll('.classPerformanceStar'),
                     form: document.getElementById('rating-class-performance-form'),
                     input: document.getElementById('rating-class-performance-value'),
                     currentRating: {{ $classPerformaceRating ?? 0 }}
                 },
-                { 
+                {
                     stars: document.querySelectorAll('.interactiveTeachingStar'),
                     form: document.getElementById('rating-interactive-teaching-form'),
                     input: document.getElementById('rating-interactive-teaching-value'),
                     currentRating: {{ $interactiveTeachingRating ?? 0 }}
                 }
             ];
-    
+
             function handleStars(skill) {
-                const { stars, form, input, currentRating } = skill;
+                const {
+                    stars,
+                    form,
+                    input,
+                    currentRating
+                } = skill;
                 let activeRating = currentRating;
-    
+
                 function highlightStars(rating) {
                     stars.forEach((star, index) => {
                         star.style.color = index < rating ? 'yellow' : '#0d6efd';
                     });
                 }
-    
+
                 stars.forEach((star, index) => {
                     star.addEventListener('mouseover', () => highlightStars(index + 1));
                     star.addEventListener('mouseout', () => highlightStars(activeRating));
@@ -312,14 +335,14 @@
                         form.submit();
                     });
                 });
-    
+
                 // Initialize the current rating
                 highlightStars(currentRating);
             }
-    
+
             // Apply the logic to all skill ratings
             skillRatings.forEach(skill => handleStars(skill));
         });
     </script>
-    
+
 @endsection
