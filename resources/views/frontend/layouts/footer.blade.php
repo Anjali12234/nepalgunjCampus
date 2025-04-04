@@ -19,8 +19,8 @@
             </h3>
             <ul class="text-gray-400 space-y-2 text-base">
                 <li><a href="{{ route('welcome') }}" class="hover:text-yellow-500">Home</a></li>
-                <li><a href="{{ route('aboutus') }}" class="hover:text-yellow-500">About Us</a></li>
-                <li><a href="{{ route('whyNcmt') }}" class="hover:text-yellow-500">Why NCMT</a></li>
+                <li><a href="{{ route('about') }}" class="hover:text-yellow-500">About Us</a></li>
+                <li><a href="{{ route('whyncmt') }}" class="hover:text-yellow-500">Why NCMT</a></li>
                 <li><a href="{{ route('gallery') }}" class="hover:text-yellow-500">Our Galleries</a></li>
                 <li><a href="{{ route('contact') }}" class="hover:text-yellow-500">Contact Us</a></li>
             </ul>

@@ -11,7 +11,7 @@
                 {!! Str::limit(strip_tags($about?->description), 800, '...') !!}
             </p>
 
-            <a href="{{route('aboutus')}}"
+            <a href="{{route('about')}}"
                 class="mt-4 bg-[#FFC315] hover:text-[#FFC315] text-black py-3 px-9 rounded-full font-semibold  hover:border-[#FFC315]
                  hover:bg-transparent border hover:border-1 transition duration-300 text-2xl">
                 Know more about us

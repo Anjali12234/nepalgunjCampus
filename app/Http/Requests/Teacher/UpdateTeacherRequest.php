@@ -16,12 +16,16 @@ class UpdateTeacherRequest extends FormRequest
     {
         return [
             'teacher_name' => ['required','string'],
-            'faculty_name' => ['required','string'],
+            'department' => ['required','string'],
+            'post' => ['required','string'],
+            'experience' => ['required','string'],
+            'qualification' => ['required','string'],
             'image' => ['nullable','image'],
            'email' => ['nullable'],
             'phone_number' => ['nullable'],
             'address' => ['nullable'],
             'facebook_url' => ['nullable'],
+            'position' => ['required','numeric'],
             'instagram_url' => ['nullable'],
             'description' => ['required'],
         ];

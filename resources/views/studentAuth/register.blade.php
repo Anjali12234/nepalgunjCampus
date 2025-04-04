@@ -37,7 +37,7 @@
             </div>
             <div class="login-menu">
                 <ul>
-                    <li><a href="{{ route('studentRegister') }}">Register</a></li>
+                    <li><a href="{{ route('studentLogin') }}">Alreaady Have An Account</a></li>
                 </ul>
             </div>
         </div>
@@ -51,7 +51,7 @@
                 <div class="col-md-6 col-lg-5">
                     <div class="login-box bg-white box-shadow border-radius-10">
                         <div class="login-title">
-                            <h2 class="text-center text-primary">Student Login</h2>
+                            <h2 class="text-center text-primary">Student Register</h2>
                         </div>
                         @if ($errors->any())
                             <div class="alert alert-danger">
@@ -62,19 +62,40 @@
                                 </ul>
                             </div>
                         @endif
-                        <form action="{{ route('login') }}" method="POST">
+                        <form action="{{ route('studentRegister') }}" method="POST">
                             @csrf
 
                             <div class="input-group custom">
-                                <input type="text" class="form-control form-control-lg" name="email"
-                                    placeholder="Email" />
+                                <input type="text" class="form-control form-control-lg" name="name"
+                                    placeholder="Write your name" />
+                                <div class="input-group-append custom">
+                                    <span class="input-group-text"><i class="icon-copy dw dw-user1"></i></span>
+                                </div>
+                            </div>
+                            <div class="input-group custom">
+                                <input type="text" class="form-control form-control-lg" name="roll_no"
+                                    placeholder="Write your RollNo or SymbolNo" />
+                                <div class="input-group-append custom">
+                                    <span class="input-group-text"><i class="icon-copy dw dw-user1"></i></span>
+                                </div>
+                            </div>
+                            <div class="input-group custom">
+                                <input type="email" class="form-control form-control-lg" name="email"
+                                    placeholder="Write your Email" />
                                 <div class="input-group-append custom">
                                     <span class="input-group-text"><i class="icon-copy dw dw-user1"></i></span>
                                 </div>
                             </div>
                             <div class="input-group custom">
                                 <input type="password" name="password" class="form-control form-control-lg"
-                                    placeholder="**********" />
+                                    placeholder="Write Password" />
+                                <div class="input-group-append custom">
+                                    <span class="input-group-text"><i class="dw dw-padlock1"></i></span>
+                                </div>
+                            </div>
+                            <div class="input-group custom">
+                                <input type="password" name="password_confirmation" class="form-control form-control-lg"
+                                    placeholder="Confirm Password" />
                                 <div class="input-group-append custom">
                                     <span class="input-group-text"><i class="dw dw-padlock1"></i></span>
                                 </div>

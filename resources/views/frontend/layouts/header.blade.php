@@ -68,15 +68,16 @@
                     We Are</button>
                 <div
                     class="absolute hidden group-hover:block group-focus-within:block bg-black text-gray-500 py-2 mt-4 shadow-lg w-48">
-                    <a href="{{ route('aboutus') }}" class="block px-4 py-2 hover:bg-[#FFC315] hover:text-black">About
+                    <a href="{{ route('about') }}" class="block px-4 py-2 hover:bg-[#FFC315] hover:text-black">About
                         Us</a>
                     <a href="{{ route('mission') }}"
                         class="block px-4 py-2 hover:bg-[#FFC315] hover:text-black">Mission
                         & Vision</a>
+
                 </div>
             </div>
 
-            <a href="{{ route('whyNcmt') }}"
+            <a href="{{ route('whyncmt') }}"
                 class="hover:text-yellow-500 relative after:content-['|'] after:ml-6 after:text-gray-500">Why
                 NCMT</a>
 
@@ -95,15 +96,16 @@
             </div>
             <div class="relative group">
                 <button
-                    class="hover:text-yellow-500 focus:outline-none after:content-['|'] after:ml-6 after:text-gray-500">Our
-                    Teacher</button>
+                    class="hover:text-yellow-500 focus:outline-none after:content-['|'] after:ml-6 after:text-gray-500">
+                    Our Team</button>
                 <div
                     class="absolute hidden group-hover:block group-focus-within:block bg-black text-gray-500 py-2 mt-4 shadow-lg w-48">
-                    @foreach (teachers() as $teacher)
-                        <a href="{{ route('teacher', $teacher) }}"
-                            class="block px-4 py-2 hover:bg-[#FFC315]
-                             hover:text-black">{{ $teacher->teacher_name }}</a>
-                    @endforeach
+                    @foreach (\App\DepartmentEnum::cases() as $teacher)
+                    <a href="{{ route('tacher.facultyMember',$teacher) }}"
+                        class="block px-4 py-2 hover:bg-yellow-400
+                         hover:text-gray-900 rounded-t-md transition-colors
+                          duration-300">{{ $teacher->label() }}</a>
+                @endforeach
                 </div>
             </div>
 
@@ -157,7 +159,7 @@
                 <i id="who-we-are-icon" class="ti ti-chevron-up transform transition-transform duration-300"></i>
             </button>
             <div id="who-we-are-dropdown" class="hidden bg-gray-800 text-gray-300 mt-2 rounded-lg shadow-md">
-                <a href="{{ route('aboutus') }}"
+                <a href="{{ route('about') }}"
                     class="block px-4 py-2 hover:bg-yellow-400 hover:text-gray-900 rounded-t-md transition-colors duration-300">About
                     Us</a>
                 <a href="{{ route('mission') }}"
@@ -167,7 +169,7 @@
         </div>
 
 
-        <a href="{{ route('whyNcmt') }}"
+        <a href="{{ route('whyncmt') }}"
             class="hover:text-yellow-400 text-lg font-medium tracking-wide transition-colors duration-300">Why NCMT</a>
 
         <div>
@@ -187,18 +189,18 @@
         <div>
             <button
                 class="w-full text-left flex justify-between items-center hover:text-yellow-400 text-lg font-medium tracking-wide transition-colors duration-300"
-                onclick="toggleDropdown('teacher-dropdown')">
-                Teacher
+                onclick="toggleDropdown('teacher-dropdown')">Our Team
                 <i id="programme-icon" class="ti ti-chevron-up transform transition-transform duration-300"></i>
             </button>
             <div id="teacher-dropdown" class="hidden bg-gray-800 text-gray-300 mt-2 rounded-lg shadow-md">
-                @foreach (teachers() as $teacher)
-                    <a href="{{ route('teacher', $teacher) }}"
+                @foreach (\App\DepartmentEnum::cases() as $teacher)
+                    <a href="{{ route('tacher.facultyMember',$teacher) }}"
                         class="block px-4 py-2 hover:bg-yellow-400
                          hover:text-gray-900 rounded-t-md transition-colors
-                          duration-300">{{ $teacher->teacher_name }}</a>
+                          duration-300">{{ $teacher->label() }}</a>
                 @endforeach
             </div>
+            
         </div>
 
         <a href="#"
