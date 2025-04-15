@@ -20,7 +20,7 @@ class StoreSystemSettingRequest extends FormRequest
             'footer_description' => ['required'],
             'phone_number' => ['required', 'string'],
             'telephone_number' => ['required', 'string'],
-            'email' => ['required', 'email'],
+            'email' => ['required', 'string'],
             'logo1' => ['nullable', 'image'],
             'logo2' => ['nullable', 'image'],
             'map_url' => ['nullable', 'url'],

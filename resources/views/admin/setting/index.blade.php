@@ -82,7 +82,7 @@
                     </div>
                     <div class="form-group col-md-6">
                         <label for="email">Email<span style="color: red; margin-left: 5px;">*</span></label>
-                        <input class="form-control" id="email" name="email" type="email"
+                        <input class="form-control" id="email" name="email" type="text"
                             value="{{ old('email', $systemSetting?->email) }}" placeholder="Email" />
                         <span class="text-warning">
                             @error('email')
