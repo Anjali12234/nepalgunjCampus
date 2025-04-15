@@ -8,7 +8,7 @@
 
     <section>
         <div>
-            <iframe src="{{ systemSetting()->map_url }}" class="w-full h-[30rem] object-cover" style="border:0;"
+            <iframe src="{{ systemSetting()?->map_url }}" class="w-full h-[30rem] object-cover" style="border:0;"
                 allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
         <div class="bg-gray-50 py-7 px-4 sm:px-6">
@@ -76,7 +76,6 @@
                     </div>
 
                     <div class="mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
-                        @foreach (['Address', 'Email', 'Phone'] as $info)
                             <div
                                 class="flex flex-col items-center group bg-stone-100 border shadow-sm hover:shadow-lg transition 
                                 h-80 sm:h-96 p-6">
@@ -86,13 +85,43 @@
                                         src="{{ asset('assets/frontend/images/location.jpg') }}" alt="Card Image">
                                 </div>
                                 <div class="p-4 text-center mt-6">
-                                    <h3 class="text-2xl text-gray-800">{{ $info }}:</h3>
+                                    <h3 class="text-2xl text-gray-800">Address:</h3>
                                     <p class="mt-2 text-base">
-                                        {{ systemSetting()->{strtolower($info)} }}
+                                        {{ systemSetting()?->address}}
                                     </p>
                                 </div>
                             </div>
-                        @endforeach
+                            <div
+                                class="flex flex-col items-center group bg-stone-100 border shadow-sm hover:shadow-lg transition 
+                                h-80 sm:h-96 p-6">
+                                <div
+                                    class="relative w-36 h-36 rounded-full overflow-hidden border-8 border-white group-hover:border-[#FFC315] shadow-md">
+                                    <img class="w-full h-full object-cover group-hover:scale-110 transition-transform"
+                                        src="{{ asset('assets/frontend/images/location.jpg') }}" alt="Card Image">
+                                </div>
+                                <div class="p-4 text-center mt-6">
+                                    <h3 class="text-2xl text-gray-800">Email:</h3>
+                                    <p class="mt-2 text-base">
+                                        {{ systemSetting()?->email}}
+                                    </p>
+                                </div>
+                            </div>
+                            <div
+                                class="flex flex-col items-center group bg-stone-100 border shadow-sm hover:shadow-lg transition 
+                                h-80 sm:h-96 p-6">
+                                <div
+                                    class="relative w-36 h-36 rounded-full overflow-hidden border-8 border-white group-hover:border-[#FFC315] shadow-md">
+                                    <img class="w-full h-full object-cover group-hover:scale-110 transition-transform"
+                                        src="{{ asset('assets/frontend/images/location.jpg') }}" alt="Card Image">
+                                </div>
+                                <div class="p-4 text-center mt-6">
+                                    <h3 class="text-2xl text-gray-800">Phone Number:</h3>
+                                    <p class="mt-2 text-base">
+                                        {{ systemSetting()?->phone_number}},
+                                        {{ systemSetting()?->telephone_number}}
+                                    </p>
+                                </div>
+                            </div>
                     </div>
                 </div>
             </div>
