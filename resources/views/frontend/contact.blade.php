@@ -117,7 +117,8 @@
                                 <div class="p-4 text-center mt-6">
                                     <h3 class="text-2xl text-gray-800">Phone Number:</h3>
                                     <p class="mt-2 text-base">
-                                        {{ systemSetting()?->phone_number}}
+                                        {{ systemSetting()?->phone_number}},
+                                        {{ systemSetting()?->telephone_number}}
                                     </p>
                                 </div>
                             </div>
