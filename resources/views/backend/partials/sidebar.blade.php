@@ -62,6 +62,12 @@
 
                 </li>
                 <li class="dropdown">
+                    <a href="{{route('admin.enrollmentForm.index')}}" class="dropdown-toggle no-arrow">
+                        <span class="micon bi bi-pie-chart"></span><span class="mtext">Enrollment Form</span>
+                    </a>
+
+                </li>
+                <li class="dropdown">
                     <a href="#" class="dropdown-toggle">
                         <span class="micon bi bi-command"></span><span class="mtext">Gallery</span>
                     </a>

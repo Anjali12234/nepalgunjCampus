@@ -16,13 +16,7 @@ class ContactController extends Controller
         $contacts=Contact::latest()->paginate();
         return view('admin.contact.index',compact('contacts'));
     }
-    public function store(StoreContactRequest $request)
-    {
-
-        Contact::create($request->validated());
-        Alert::success('Message submitted successfully');
-        return back();
-    }
+   
     public function show(Contact $contact)
     {  
         return view('admin.contact.show',compact('contact'));

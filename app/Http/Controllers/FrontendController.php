@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\DepartmentEnum;
+use App\Http\Requests\Contact\StoreContactRequest;
+use App\Http\Requests\EnrollmentForm\StoreEnrollmentForm;
 use App\Models\About;
+use App\Models\Contact;
+use App\Models\EnrollmentForm;
 use App\Models\Gallery;
 use App\Models\GalleryPhoto;
 use App\Models\GeneralQuestion;
@@ -15,6 +19,7 @@ use App\Models\Teacher;
 use App\Models\TeacherRating;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class FrontendController extends Controller
 {
@@ -139,6 +144,20 @@ class FrontendController extends Controller
     {
         $teachers = Teacher::orderBy('position','ASC')->where('department',$department)->get();
         return view('frontend.faculty_member',compact('teachers','department'));
+    }
+
+    public function submitEnrollmentForm(StoreEnrollmentForm $request)
+    {
+        EnrollmentForm::create($request->validated());
+        Alert::success('Form submitted successfully');
+        return back();
+    }
+    public function submitContactForm(StoreContactRequest $request)
+    {
+
+        Contact::create($request->validated());
+        Alert::success('Message submitted successfully');
+        return back();
     }
 
 }

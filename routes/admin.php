@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\CourseController;
+use App\Http\Controllers\Admin\EnrollmentFormController;
 use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\GalleryPhotoController;
 use App\Http\Controllers\Admin\GeneralQuestionController;
@@ -25,6 +26,8 @@ Route::resource('gallery', GalleryController::class);
 Route::resource('galleryPhoto', GalleryPhotoController::class);
 Route::resource('generalQuestion', GeneralQuestionController::class);
 Route::resource('contact', ContactController::class);
+Route::resource('enrollmentForm', EnrollmentFormController::class);
+Route::put('enrollmentForm/{enrollmentForm}/updateStatus', [EnrollmentFormController::class, 'updateStatus'])->name('enrollmentForm.updateStatus');
 Route::resource('teacher', TeacherController::class);
 Route::resource('notice', NoticeController::class);
 Route::put('notice/{notice}/updateStatus', [NoticeController::class, 'updateStatus'])->name('notice.updateStatus');
