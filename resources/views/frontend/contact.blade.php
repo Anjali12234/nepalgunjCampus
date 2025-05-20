@@ -18,12 +18,97 @@
                     <span class="text-[#FFC315] font-extrabold">_________</span>
 
                     <div class="mt-12 sm:mt-8 text-gray-800">
+                        <h1 class="text-3xl sm:text-2xl">Enrollment Form</h1>
+                        <p class="text-lg mt-5 sm:mt-3"> 
+                            <span>Get All time support for emergency.</span>
+                        </p>
+                        <form action="{{ route('enrollmentForm') }}" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            @if ($errors->any())
+                                <div class="alert alert-danger text-red-500">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-5">
+                                <div>
+                                    <input type="text" name="name" value="{{old('name')}}"
+                                        class="py-3 px-4 w-full border-gray-200 rounded-lg text-lg focus:ring-2 
+                                        focus:ring-blue-500 focus:outline-none"
+                                        placeholder="Your Name *">
+                                </div>
+                                <div>
+                                    <input type="text" name="email" value="{{old('email')}}"
+                                        class="py-3 px-4 w-full border-gray-200 rounded-lg text-lg focus:ring-2 
+                                        focus:ring-blue-500 focus:outline-none"
+                                        placeholder="Your Email *">
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-5">
+                                <div>
+                                    <input type="text" name="phone_no" value="{{old(key: 'phone_no')}}"
+                                        class="py-3 px-4 w-full border-gray-200 rounded-lg text-lg focus:ring-2 
+                                        focus:ring-blue-500 focus:outline-none"
+                                        placeholder="Your Phone Number *">
+                                </div>
+                                <div>
+                                    <input type="text" name="address" value="{{old('address')}}"
+                                        class="py-3 px-4 w-full border-gray-200 rounded-lg text-lg focus:ring-2 
+                                        focus:ring-blue-500 focus:outline-none"
+                                        placeholder="Your Address *">
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-5">
+                                <div>
+                                    <input type="text" name="college_name" value="{{old('college_name')}}"
+                                        class="py-3 px-4 w-full border-gray-200 rounded-lg text-lg focus:ring-2 
+                                        focus:ring-blue-500 focus:outline-none"
+                                        placeholder="Your College Name of +2 *">
+                                </div>
+                                <div>
+                                    <input type="text" name="faculty" value="{{old('faculty')}}"
+                                        class="py-3 px-4 w-full border-gray-200 rounded-lg text-lg focus:ring-2 
+                                        focus:ring-blue-500 focus:outline-none"
+                                        placeholder="Faculty *">
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-5">
+                                <div>
+                                    <label for="photo_of_id_card">Photo of your ID Card</label>
+                                    <input type="file" name="photo_of_id_card"
+                                        class="py-3 px-4 w-full border-gray-200 rounded-lg text-lg focus:ring-2 
+                                        focus:ring-blue-500 focus:outline-none">
+                                </div>
+                                <div>
+                                    <label for="photo_of_post_shared">Photo of Fb Post shared</label>
+
+                                    <input type="file" name="photo_of_post_shared"
+                                        class="py-3 px-4 w-full border-gray-200 rounded-lg text-lg focus:ring-2 
+                                        focus:ring-blue-500 focus:outline-none">
+                                </div>
+                            </div>
+                            <div class="mt-5">
+                                <textarea name="message" 
+                                    class="py-3 px-4 w-full border-gray-200 rounded-lg text-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                                    placeholder="Your Message*">{{old('message')}}</textarea>
+                                <div class="mt-4">
+                                    <input type="submit" value="Submit"
+                                        class="bg-[#FFC315] text-neutral-800 font-bold px-12 py-3 rounded-full hover:bg-white 
+                                        hover:text-[#FFC315] border hover:border-[#FFC315] cursor-pointer">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="mt-44 sm:mt-24 text-gray-800">
                         <h1 class="text-3xl sm:text-2xl">Make a Contact</h1>
                         <p class="text-lg mt-5 sm:mt-3"> 
                             <span>Get All time support for emergency.</span>
                             <span class="text-red-600">Get Connected with us for any urgency.</span>
                         </p>
-                        <form action="{{ route('admin.contact.store') }}" method="POST">
+                        <form action="{{ route('contactForm') }}" method="POST">
                             @csrf
                             @if ($errors->any())
                                 <div class="alert alert-danger text-red-500">
