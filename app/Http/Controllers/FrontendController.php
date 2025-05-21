@@ -53,6 +53,11 @@ class FrontendController extends Controller
 
         return view('frontend.contact');
     }
+    public function registrationForm()
+    {
+
+        return view('frontend.registrationForm');
+    }
     public function teacher(Teacher $teacher)
     {
         $student = Auth::guard('student')->user();
@@ -150,7 +155,13 @@ class FrontendController extends Controller
     {
         EnrollmentForm::create($request->validated());
         Alert::success('Form submitted successfully');
-        return back();
+       return response()->json(['message' => 'Enrollment submitted successfully']);
+    }
+    public function submitRegistrationForm(StoreEnrollmentForm $request)
+    {
+        EnrollmentForm::create($request->validated());
+        Alert::success('Form submitted successfully');
+       return back();
     }
     public function submitContactForm(StoreContactRequest $request)
     {

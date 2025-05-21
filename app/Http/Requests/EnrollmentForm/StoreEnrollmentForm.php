@@ -20,7 +20,7 @@ class StoreEnrollmentForm extends FormRequest
         return [
             'name' => ['required', 'string'],
             'email' => ['required', 'email'],
-            'phone_no' => ['required', 'string', 'regex:/^(?:\+977[- ]?)?(97|98)\d{8}$/'],
+            'phone_no' => ['required', 'numeric', 'regex:/^(?:\+977[- ]?)?(97|98)\d{8}$/'],
             'message' => ['required', 'string'],
             'address' => ['required', 'string'],
             'college_name' => ['required', 'string'],
