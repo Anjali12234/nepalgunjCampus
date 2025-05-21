@@ -50,7 +50,7 @@
                         @foreach ($teachers as $key => $teacher)
                             <tr>
                                 <td class="table-plus">{{ $loop->iteration }}</td>
-                                <td>{{ $teacher?->image }}</td>
+                                <td><img src="{{ $teacher->image }}" height="100" width="100" alt=""></td>
                                 <td>{{ $teacher?->teacher_name }}</td>
                                 <td>{{ $teacher?->department->label() }}</td>
                                 <td>{{ $teacher?->post }}</td>

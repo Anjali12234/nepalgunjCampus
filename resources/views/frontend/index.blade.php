@@ -14,7 +14,7 @@
                 </button>
                 <div class="flex justify-between items-center border-t  p-4">
 
- <h2 class="text-2xl font-semibold text-gray-800">
+                    <h2 class="text-2xl font-semibold text-gray-800">
                         CEH Class Registration Form
                         <span class="text-yellow-500 font-extrabold">___</span>
                     </h2>
@@ -22,114 +22,94 @@
                 <!-- Modal Body -->
                 <div class="p-4 ">
                     <div class="relative">
-                        <form id="popupForm" action="{{ route('enrollmentForm') }}" method="POST" enctype="multipart/form-data">
+                        <form id="popupForm" action="{{ route('enrollmentForm') }}" method="POST"
+                            enctype="multipart/form-data">
                             @csrf
- @csrf
-                            @if ($errors->any())
-                                <div class="alert alert-danger text-red-500">
-                                    <ul>
-                                        @foreach ($errors->all() as $error)
-                                            <li>{{ $error }}</li>
-                                        @endforeach
-                                    </ul>
-                                </div>
-                            @endif
+
                             <!-- Name -->
                             <div class="mb-4">
                                 <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
-                                <input type="text" name="name" id="name" required
-                                    class="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
-                                @error('name')
-                                    <span class="text-sm text-red-600">{{ $message }}</span>
-                                @enderror
+                                <input type="text" name="name" id="name"
+                                    class="mt-1 p-2 block w-full border border-gray-300 rounded-md">
+                                <span class="text-sm text-red-600 error-text" data-name="name"></span>
                             </div>
 
                             <!-- Email -->
                             <div class="mb-4">
                                 <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-                                <input type="email" name="email" id="email" required
-                                    class="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
-                                @error('email')
-                                    <span class="text-sm text-red-600">{{ $message }}</span>
-                                @enderror
+                                <input type="email" name="email" id="email"
+                                    class="mt-1 p-2 block w-full border border-gray-300 rounded-md">
+                                <span class="text-sm text-red-600 error-text" data-name="email"></span>
                             </div>
 
-                            <!-- Phone Number -->
+                            <!-- Phone -->
                             <div class="mb-4">
-                                <label for="phone_no" class="block text-sm font-medium text-gray-700">Phone
-                                    Number</label>
-                                <input type="text" name="phone_no" id="phone_no" required
-                                    class="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
-                                @error('phone_no')
-                                    <span class="text-sm text-red-600">{{ $message }}</span>
-                                @enderror
+                                <label for="phone_no" class="block text-sm font-medium text-gray-700">Phone Number</label>
+                                <input type="text" name="phone_no" id="phone_no"
+                                    class="mt-1 p-2 block w-full border border-gray-300 rounded-md">
+                                <span class="text-sm text-red-600 error-text" data-name="phone_no"></span>
                             </div>
+
+                            <!-- Address -->
                             <div class="mb-4">
                                 <label for="address" class="block text-sm font-medium text-gray-700">Address</label>
-                                <input type="text" name="address" id="address" required
-                                    class="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
-                                @error('address')
-                                    <span class="text-sm text-red-600">{{ $message }}</span>
-                                @enderror
+                                <input type="text" name="address" id="address"
+                                    class="mt-1 p-2 block w-full border border-gray-300 rounded-md">
+                                <span class="text-sm text-red-600 error-text" data-name="address"></span>
                             </div>
+
+                            <!-- College Name -->
                             <div class="mb-4">
                                 <label for="college_name" class="block text-sm font-medium text-gray-700">College
                                     Name</label>
-                                <input type="text" name="college_name" id="college_name" required
-                                    class="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
-                                @error('college_name')
-                                    <span class="text-sm text-red-600">{{ $message }}</span>
-                                @enderror
+                                <input type="text" name="college_name" id="college_name"
+                                    class="mt-1 p-2 block w-full border border-gray-300 rounded-md">
+                                <span class="text-sm text-red-600 error-text" data-name="college_name"></span>
                             </div>
+
+                            <!-- Faculty -->
                             <div class="mb-4">
                                 <label for="faculty" class="block text-sm font-medium text-gray-700">Faculty</label>
-                                <input type="text" name="faculty" id="faculty" required
-                                    class="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
-                                @error('faculty')
-                                    <span class="text-sm text-red-600">{{ $message }}</span>
-                                @enderror
+                                <input type="text" name="faculty" id="faculty"
+                                    class="mt-1 p-2 block w-full border border-gray-300 rounded-md">
+                                <span class="text-sm text-red-600 error-text" data-name="faculty"></span>
                             </div>
+
+                            <!-- ID Card -->
                             <div class="mb-4">
-                                <label for="photo_of_id_card" class="block text-sm font-medium text-gray-700">Photo
-                                    Of Id
+                                <label for="photo_of_id_card" class="block text-sm font-medium text-gray-700">Photo Of ID
                                     Card</label>
-                                <input type="file" name="photo_of_id_card" id="photo_of_id_card" required
-                                    class="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
-                                @error('photo_of_id_card')
-                                    <span class="text-sm text-red-600">{{ $message }}</span>
-                                @enderror
+                                <input type="file" name="photo_of_id_card" id="photo_of_id_card"
+                                    class="mt-1 p-2 block w-full border border-gray-300 rounded-md">
+                                <span class="text-sm text-red-600 error-text" data-name="photo_of_id_card"></span>
                             </div>
+
+                            <!-- Facebook Post Screenshot -->
                             <div class="mb-4">
-                                <label for="photo_of_post_shared" class="block text-sm font-medium text-gray-700">Screenshot of FaceBook Post Share</label>
-                                <input type="file" name="photo_of_post_shared" id="photo_of_post_shared" required
-                                    class="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
-                                @error('photo_of_post_shared')
-                                    <span class="text-sm text-red-600">{{ $message }}</span>
-                                @enderror
+                                <label for="photo_of_post_shared" class="block text-sm font-medium text-gray-700">Screenshot
+                                    of Facebook Post Share</label>
+                                <input type="file" name="photo_of_post_shared" id="photo_of_post_shared"
+                                    class="mt-1 p-2 block w-full border border-gray-300 rounded-md">
+                                <span class="text-sm text-red-600 error-text" data-name="photo_of_post_shared"></span>
                             </div>
 
                             <!-- Message -->
                             <div class="mb-4">
                                 <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
-                                <textarea name="message" id="message" rows="4" required
-                                    class="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"></textarea>
-
-                                @error('message')
-                                    <span class="text-sm text-red-600">{{ $message }}</span>
-                                @enderror
+                                <textarea name="message" id="message" rows="4" class="mt-1 p-2 block w-full border border-gray-300 rounded-md"></textarea>
+                                <span class="text-sm text-red-600 error-text" data-name="message"></span>
                             </div>
-
-
 
                             <!-- Submit Button -->
-                            <div class="">
-                                <button type="submit" style="background-color: blue"
-                                    class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none">
+                            <div class="text-right" style="background-color: blue">
+                                <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
                                     Submit
                                 </button>
-
                             </div>
                         </form>
+
+
+
 
 
                     </div>
@@ -183,57 +163,92 @@
         
     </script> --}}
     <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const modal = document.getElementById('exampleModal');
-        modal.classList.remove('hidden');
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById('exampleModal');
+            modal.classList.remove('hidden');
 
-        const closeModalButton = document.getElementById('closeModalButton');
-        closeModalButton.addEventListener('click', () => {
-            modal.classList.add('hidden');
-        });
+            const closeModalButton = document.getElementById('closeModalButton');
+            closeModalButton.addEventListener('click', () => {
+                modal.classList.add('hidden');
+            });
 
-        const popupForm = document.getElementById('popupForm');
-        popupForm.addEventListener('submit', function () {
-            // Hide the modal instantly
-            modal.classList.add('hidden');
-        });
-    });
-</script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-    $(document).ready(function () {
-        $('#popupForm').on('submit', function (e) {
-            e.preventDefault(); // Prevent the default form submission
-
-            // Create a FormData object to handle file uploads
-            let formData = new FormData(this);
-
-            $.ajax({
-                url: $(this).attr('action'),
-                type: 'POST',
-                data: formData,
-                contentType: false,
-                processData: false,
-                headers: {
-                    'X-CSRF-TOKEN': $('input[name="_token"]').val() // CSRF token
-                },
-                success: function (response) {
-                    // Handle success (e.g., show a success message, reset form)
-                    alert('Form submitted successfully!');
-                    $('#popupForm')[0].reset();
-                },
-                error: function (xhr) {
-                    // Handle validation or server errors
-                    let errors = xhr.responseJSON.errors;
-                    $('.text-red-600').text(''); // Clear existing errors
-
-                    $.each(errors, function (key, value) {
-                        $(`[name="${key}"]`).siblings('.text-red-600').text(value[0]);
-                    });
-                }
+            const popupForm = document.getElementById('popupForm');
+            popupForm.addEventListener('submit', function() {
+                // Hide the modal instantly
+                modal.classList.add('hidden');
             });
         });
-    });
-</script>
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            const modal = $('#exampleModal');
 
+            // Show modal on page load
+            modal.removeClass('hidden');
+
+            // Close modal
+            $('#closeModalButton').on('click', function() {
+                modal.addClass('hidden');
+            });
+
+            $('#popupForm').on('submit', function(e) {
+                e.preventDefault();
+
+                const phone_no = $('#phone_no').val();
+                const phone_noRegex = /^(98|97)\d{8}$/;
+
+                if (!phone_noRegex.test(phone_no)) {
+                    alert("Phone number must start with 98 or 97 and be exactly 10 digits.");
+                    return;
+                }
+
+                const allowedExtensions = /(\.jpg|\.jpeg|\.pdf)$/i;
+
+                const idCardFile = $('#photo_of_id_card').val();
+                const postSharedFile = $('#photo_of_post_shared').val();
+
+                if (!allowedExtensions.exec(idCardFile)) {
+                    alert("ID card must be a JPG, PNG, or PDF file.");
+                    return;
+                }
+
+                if (!allowedExtensions.exec(postSharedFile)) {
+                    alert("Post shared photo must be a JPG, PNG, or PDF file.");
+                    return;
+                }
+                let form = $(this);
+                let formData = new FormData(this);
+
+                // Clear previous errors
+                $('.error-text').text('');
+
+                $.ajax({
+                    url: form.attr('action'),
+                    type: 'POST',
+                    data: formData,
+                    contentType: false,
+                    processData: false,
+                    headers: {
+                        'X-CSRF-TOKEN': $('input[name="_token"]').val()
+                    },
+                    success: function(response) {
+                        alert(response.message);
+                        form[0].reset();
+                        modal.addClass('hidden');
+                    },
+                    error: function(xhr) {
+                        if (xhr.status === 422) {
+                            let errors = xhr.responseJSON.errors;
+                            $.each(errors, function(key, value) {
+                                $(`.error-text[data-name="${key}"]`).text(value[0]);
+                            });
+                        } else {
+                            alert('Something went wrong. Please try again.');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
 @endsection

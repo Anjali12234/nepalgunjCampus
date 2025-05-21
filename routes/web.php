@@ -23,6 +23,7 @@ Route::controller(FrontendController::class)->group(function () {
     Route::get('teacher/{teacher:slug}', 'teacher')->name('teacher');
     Route::get('galleryList/{gallery:slug}', 'galleryList')->name('galleryList');
     Route::post('enrollmentForm', 'submitEnrollmentForm')->name('enrollmentForm');
+
     Route::post('registrationForm', 'submitRegistrationForm')->name('registrationForm.submit');
     Route::post('contact', 'submitContactForm')->name('contactForm');
 });
