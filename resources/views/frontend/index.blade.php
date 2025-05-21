@@ -100,8 +100,7 @@
                                 @enderror
                             </div>
                             <div class="mb-4">
-                                <label for="photo_of_post_shared" class="block text-sm font-medium text-gray-700">Photo of
-                                    Fb Post shared</label>
+                                <label for="photo_of_post_shared" class="block text-sm font-medium text-gray-700">Screenshot of FaceBook Post Share</label>
                                 <input type="file" name="photo_of_post_shared" id="photo_of_post_shared" required
                                     class="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
                                 @error('photo_of_post_shared')

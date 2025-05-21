@@ -27,6 +27,10 @@ Route::resource('galleryPhoto', GalleryPhotoController::class);
 Route::resource('generalQuestion', GeneralQuestionController::class);
 Route::resource('contact', ContactController::class);
 Route::resource('enrollmentForm', EnrollmentFormController::class);
+// Route::get('/enrollmentForms/export/csv', [EnrollmentFormController::class, 'enrollmentForm.exportCsv']);
+Route::get('/enrollmentForms/export/csv', [EnrollmentFormController::class, 'exportCsv'])
+    ->name('enrollmentForm.export.csv');
+
 Route::put('enrollmentForm/{enrollmentForm}/updateStatus', [EnrollmentFormController::class, 'updateStatus'])->name('enrollmentForm.updateStatus');
 Route::resource('teacher', TeacherController::class);
 Route::resource('notice', NoticeController::class);
