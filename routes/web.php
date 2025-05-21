@@ -16,20 +16,21 @@ Route::controller(FrontendController::class)->group(function () {
     Route::get('gallery', 'gallery')->name('gallery');
     Route::get('whyncmt', 'whyncmt')->name('whyncmt');
     Route::get('contact', 'contact')->name('contact');
+    Route::get('registrationForm', 'registrationForm')->name('registrationForm');
     Route::get('team/{department}', 'facultyMember')->name('team');
     Route::get('programme/{programme:slug}', 'programme')->name('programme');
     Route::get('semester/{semester:slug}', 'semester')->name('semester');
     Route::get('teacher/{teacher:slug}', 'teacher')->name('teacher');
-    Route::get('galleryList/{gallery:slug}','galleryList')->name('galleryList');
-Route::post('enrollmentForm','submitEnrollmentForm')->name('enrollmentForm');
-Route::post('contact','submitContactForm')->name('contactForm');
+    Route::get('galleryList/{gallery:slug}', 'galleryList')->name('galleryList');
+    Route::post('enrollmentForm', 'submitEnrollmentForm')->name('enrollmentForm');
+    Route::post('registrationForm', 'submitRegistrationForm')->name('registrationForm.submit');
+    Route::post('contact', 'submitContactForm')->name('contactForm');
 });
 Route::controller(StudentAuthController::class)->group(function () {
     Route::get('studentRegister', 'registerPage')->name('studentRegister');
     Route::get('studentLogin', 'loginPage')->name('studentLogin');
     Route::post('studentRegister', 'studentRegister')->name('studentRegister');
     Route::post('studentLogin', 'studentLogin')->name('studentLogin');
-    
 });
 
 

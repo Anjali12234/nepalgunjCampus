@@ -102,63 +102,7 @@
                             </div>
                         </form>
                     </div>
-                    <div class="mt-44 sm:mt-24 text-gray-800">
-                        <h1 class="text-3xl sm:text-2xl">Make a Contact</h1>
-                        <p class="text-lg mt-5 sm:mt-3"> 
-                            <span>Get All time support for emergency.</span>
-                            <span class="text-red-600">Get Connected with us for any urgency.</span>
-                        </p>
-                        <form action="{{ route('contactForm') }}" method="POST">
-                            @csrf
-                            @if ($errors->any())
-                                <div class="alert alert-danger text-red-500">
-                                    <ul>
-                                        @foreach ($errors->all() as $error)
-                                            <li>{{ $error }}</li>
-                                        @endforeach
-                                    </ul>
-                                </div>
-                            @endif
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-5">
-                                <div>
-                                    <input type="text" name="name"
-                                        class="py-3 px-4 w-full border-gray-200 rounded-lg text-lg focus:ring-2 
-                                        focus:ring-blue-500 focus:outline-none"
-                                        placeholder="Your Name *">
-                                </div>
-                                <div>
-                                    <input type="text" name="email"
-                                        class="py-3 px-4 w-full border-gray-200 rounded-lg text-lg focus:ring-2 
-                                        focus:ring-blue-500 focus:outline-none"
-                                        placeholder="Your Email *">
-                                </div>
-                            </div>
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-5">
-                                <div>
-                                    <input type="text" name="phone_number"
-                                        class="py-3 px-4 w-full border-gray-200 rounded-lg text-lg focus:ring-2 
-                                        focus:ring-blue-500 focus:outline-none"
-                                        placeholder="Your Phone Number *">
-                                </div>
-                                <div>
-                                    <input type="text" name="address"
-                                        class="py-3 px-4 w-full border-gray-200 rounded-lg text-lg focus:ring-2 
-                                        focus:ring-blue-500 focus:outline-none"
-                                        placeholder="Your Address *">
-                                </div>
-                            </div>
-                            <div class="mt-5">
-                                <textarea name="message"
-                                    class="py-3 px-4 w-full border-gray-200 rounded-lg text-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                                    placeholder="Your Message*"></textarea>
-                                <div class="mt-4">
-                                    <input type="submit" value="Submit"
-                                        class="bg-[#FFC315] text-neutral-800 font-bold px-12 py-3 rounded-full hover:bg-white 
-                                        hover:text-[#FFC315] border hover:border-[#FFC315] cursor-pointer">
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+                   
 
                     <div class="mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
                             <div
