@@ -155,7 +155,7 @@ class FrontendController extends Controller
     {
         EnrollmentForm::create($request->validated());
         Alert::success('Form submitted successfully');
-       return response()->json(['message' => 'Enrollment submitted successfully']);
+       return response()->json(['message' => 'Form submitted successfully']);
     }
     public function submitRegistrationForm(StoreEnrollmentForm $request)
     {
