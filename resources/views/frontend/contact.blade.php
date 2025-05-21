@@ -83,7 +83,7 @@
                                         focus:ring-blue-500 focus:outline-none">
                                 </div>
                                 <div>
-                                    <label for="photo_of_post_shared">Photo of Fb Post shared</label>
+                                    <label for="photo_of_post_shared">Screenshot of FaceBook Post Share</label>
 
                                     <input type="file" name="photo_of_post_shared"
                                         class="py-3 px-4 w-full border-gray-200 rounded-lg text-lg focus:ring-2 

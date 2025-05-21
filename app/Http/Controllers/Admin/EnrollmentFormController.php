@@ -35,4 +35,35 @@ class EnrollmentFormController extends Controller
         toast('Status updated successfully', 'success');
         return back();
     }
+     public function exportCsv()
+    {
+        $enrollmentForms = EnrollmentForm::all();
+    
+        $filename = 'enrollmentForms.csv';
+        $headers = [
+            'Content-Type' => 'text/csv',
+            'Content-Disposition' => "attachment; filename=\"$filename\"",
+        ];
+    
+        $callback = function () use ($enrollmentForms) {
+            $handle = fopen('php://output', 'w');
+            fputcsv($handle, ['ID', 'Name', 'Email','Address','College Name','Faculty','Phone Number']); // Header row
+    
+            foreach ($enrollmentForms as $enrollmentForm) {
+                fputcsv($handle, [
+                    $enrollmentForm->id,
+                    $enrollmentForm->name,
+                    $enrollmentForm->email,
+                    $enrollmentForm->address,
+                    $enrollmentForm->college_name,
+                    $enrollmentForm->faculty,
+                    $enrollmentForm->phone_no,
+                ]);
+            }
+    
+            fclose($handle);
+        };
+    
+        return response()->stream($callback, 200, $headers);
+    }
 }

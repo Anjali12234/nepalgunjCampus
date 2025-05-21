@@ -18,7 +18,15 @@
                         </ol>
                     </nav>
                 </div>
+                <div class="col-md-6 col-sm-12 text-right">
+                    <div class="dropdown">
+                        <a href="{{ route('admin.enrollmentForm.export.csv') }}" class="btn btn-success">
+                            Export CSV
+                        </a>
 
+
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -28,7 +36,7 @@
 
             </div>
             <div class="pb-20">
-                <table class="data-table table stripe hover nowrap">
+                <table class="data-table table stripe hover nowrap" id="enrollmentTable">
                     <thead>
                         <tr>
                             <th class="table-plus datatable-nosort">S.No</th>
@@ -47,9 +55,9 @@
                                 <td>{{ $enrollmentForm->name }}</td>
                                 <td>{{ $enrollmentForm->email }}</td>
                                 <td>{{ $enrollmentForm->phone_no }}</td>
-                                 <td>
-                                    <form action="{{ route('admin.enrollmentForm.updateStatus', $enrollmentForm) }}" method="post"
-                                        style="display: inline">
+                                <td>
+                                    <form action="{{ route('admin.enrollmentForm.updateStatus', $enrollmentForm) }}"
+                                        method="post" style="display: inline">
                                         @csrf
                                         @method('put')
                                         <button type="submit" style="border: none; background: none;">
@@ -75,7 +83,7 @@
                                                 @method('DELETE')
                                                 <button type="submit" class="dropdown-item"
                                                     onclick="return confirm('Are You sure want to delete')"> <i
-                                                    class="dw dw-delete-3"></i>Delete </button>
+                                                        class="dw dw-delete-3"></i>Delete </button>
 
                                             </form>
                                         </div>
@@ -91,4 +99,17 @@
         </div>
 
     </div>
+
+    <script>
+        function exportTableToExcel(filename) {
+            const table = document.getElementById("enrollmentTable");
+            const html = table.outerHTML.replace(/ /g, '%20');
+
+            const uri = 'data:application/vnd.ms-excel;charset=utf-8,' + html;
+            const link = document.createElement("a");
+            link.href = uri;
+            link.download = filename;
+            link.click();
+        }
+    </script>
 @endsection
