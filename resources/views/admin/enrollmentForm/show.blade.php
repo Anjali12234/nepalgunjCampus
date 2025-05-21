@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-md-6 col-sm-12">
                     <div class="title">
-                        <h4>Enrollment Form Details</h4>
+                        <h4>Registration Form Details</h4>
                     </div>
                     <nav aria-label="breadcrumb" role="navigation">
                         <ol class="breadcrumb">
@@ -13,10 +13,10 @@
                                 <a href="{{ route('admin.dashboard') }}">Home</a>
                             </li>
                             <li class="breadcrumb-item">
-                                <a href="{{ route('admin.enrollmentForm.index') }}">Enrollment Form Messages</a>
+                                <a href="{{ route('admin.enrollmentForm.index') }}">Registration Form Messages</a>
                             </li>
                             <li class="breadcrumb-item active" aria-current="page">
-                                Enrollment Form Details
+                                Registration Form Details
                             </li>
                         </ol>
                     </nav>
@@ -25,7 +25,7 @@
         </div>
 
         <div class="pd-20 card-box mb-30">
-            <h4 class="text-blue h4 mb-4">Enrollment Form Information</h4>
+            <h4 class="text-blue h4 mb-4">Registration Form Information</h4>
             <div class="row">
                 <div class="col-md-12">
                     <div class="card p-4 shadow">
