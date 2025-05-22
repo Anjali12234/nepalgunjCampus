@@ -26,11 +26,11 @@ class FrontendController extends Controller
     public function index()
     {
         session()->flash('showPopup', true);
-        $galleries = Gallery::orderBy('position','asc')->limit(6)->get();
+        $galleries = Gallery::orderBy('position', 'asc')->limit(6)->get();
         $about = About::latest()->first();
         $sliders = Slider::all();
         $notices = Notice::where('status', 1)->get();
-        return view('frontend.index', compact('notices','sliders', 'about', 'galleries'));
+        return view('frontend.index', compact('notices', 'sliders', 'about', 'galleries'));
     }
     public function about()
     {
@@ -109,7 +109,8 @@ class FrontendController extends Controller
         $generalQuestions = GeneralQuestion::where('type', $programme->id)->get();
         $programmes = Programme::all();
 
-        return view('frontend.programme.programmeList',
+        return view(
+            'frontend.programme.programmeList',
             compact('programme', 'programmes', 'generalQuestions')
         );
     }
@@ -126,7 +127,8 @@ class FrontendController extends Controller
         $totalTutorialHr = $semester->courses->sum('tutorial_hr');
         $totalLabHr = $semester->courses->sum('lab_hr');
         $totalHr = $semester->courses->sum('total_hr');
-        return view('frontend.programme.semester',
+        return view(
+            'frontend.programme.semester',
             compact('semester', 'generalQuestions', 'semesters', 'totalCreditHr', 'totalLectureHr', 'totalTutorialHr', 'totalLabHr', 'totalHr')
         );
     }
@@ -134,34 +136,34 @@ class FrontendController extends Controller
     public function galleryList(Gallery $gallery)
     {
         $gallery->load('galleryPhotos.files');
-        
+
         return view("frontend.gallery", compact('gallery'));
     }
-    
+
 
     public function gallery()
     {
         $galleries = Gallery::all();
-        return view('frontend.allGallery',compact('galleries'));
+        return view('frontend.allGallery', compact('galleries'));
     }
-   
+
     public function facultyMember(DepartmentEnum $department)
     {
-        $teachers = Teacher::orderBy('position','ASC')->where('department',$department)->get();
-        return view('frontend.faculty_member',compact('teachers','department'));
+        $teachers = Teacher::orderBy('position', 'ASC')->where('department', $department)->get();
+        return view('frontend.faculty_member', compact('teachers', 'department'));
     }
 
     public function submitEnrollmentForm(StoreEnrollmentForm $request)
     {
         EnrollmentForm::create($request->validated());
-        Alert::success('Form submitted successfully');
-       return response()->json(['message' => 'Form submitted successfully']);
+
+        return response()->json(Alert::success('Registration Form submitted successfully'));
     }
     public function submitRegistrationForm(StoreEnrollmentForm $request)
     {
         EnrollmentForm::create($request->validated());
-        Alert::success('Form submitted successfully');
-       return back();
+        Alert::success('Thank you for registration');
+        return back();
     }
     public function submitContactForm(StoreContactRequest $request)
     {
@@ -170,5 +172,4 @@ class FrontendController extends Controller
         Alert::success('Message submitted successfully');
         return back();
     }
-
 }

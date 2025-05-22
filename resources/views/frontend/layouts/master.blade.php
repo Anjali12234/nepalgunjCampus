@@ -61,8 +61,8 @@
             </button>
             <!-- Content -->
             <div class="text-center">
-                <h3 class="text-xl font-semibold text-[#777777]">Apply Online</h3>
-                <a href="{{route('contact')}}" class="text-[#FFC315] hover:underline font-medium">
+                <h3 class="text-xl font-semibold text-[#777777]">Registration Form</h3>
+                <a href="{{route('registrationForm')}}" class="text-[#FFC315] hover:underline font-medium">
                     Click Here
                 </a>
             </div>

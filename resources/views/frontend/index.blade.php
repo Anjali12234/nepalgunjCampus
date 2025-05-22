@@ -22,7 +22,17 @@
                 <!-- Modal Body -->
                 <div class="p-4 ">
                     <div class="relative">
-                        <form id="popupForm" action="{{ route('enrollmentForm') }}" method="POST"
+                        @include('sweetalert::alert')
+                        @if ($errors->any())
+                            <div class="alert alert-danger text-red-500">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+                        <form id="" action="{{ route('registrationForm') }}" method="POST"
                             enctype="multipart/form-data">
                             @csrf
 
@@ -70,10 +80,16 @@
                             <!-- Faculty -->
                             <div class="mb-4">
                                 <label for="faculty" class="block text-sm font-medium text-gray-700">Faculty</label>
-                                <input type="text" name="faculty" id="faculty"
+                                <select name="faculty" id="faculty"
                                     class="mt-1 p-2 block w-full border border-gray-300 rounded-md">
+                                    <option value="">Select Faculty</option>
+                                    <option value="Science">Science</option>
+                                    <option value="Management">Management</option>
+                                    <option value="Arts">Arts</option>
+                                </select>
                                 <span class="text-sm text-red-600 error-text" data-name="faculty"></span>
                             </div>
+
 
                             <!-- ID Card -->
                             <div class="mb-4">
@@ -96,22 +112,20 @@
                             <!-- Message -->
                             <div class="mb-4">
                                 <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
-                                <textarea name="message" id="message" rows="4" class="mt-1 p-2 block w-full border border-gray-300 rounded-md"></textarea>
+                                <textarea name="message" id="message" rows="4"
+                                    class="mt-1 p-2 block w-full border border-gray-300 rounded-md"></textarea>
                                 <span class="text-sm text-red-600 error-text" data-name="message"></span>
                             </div>
 
                             <!-- Submit Button -->
-                            <div class="text-right" style="background-color: blue">
-                                <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
+                            <div class="flex justify-end">
+                                <button type="submit" style="background-color:blue"
+                                    class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none">
                                     Submit
                                 </button>
+
                             </div>
                         </form>
-
-
-
-
-
                     </div>
                 </div>
                 @foreach ($notices as $notice)
@@ -233,7 +247,7 @@
                         'X-CSRF-TOKEN': $('input[name="_token"]').val()
                     },
                     success: function(response) {
-                        alert(response.message);
+                        alert(response.success);
                         form[0].reset();
                         modal.addClass('hidden');
                     },
