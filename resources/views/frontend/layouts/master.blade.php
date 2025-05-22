@@ -54,14 +54,14 @@
     </div>
     <div id="apply-box" class="fixed right-0 top-1/2 transform -translate-y-1/2 z-50 hidden md:flex flex-col items-center ">
         <!-- Hanging Box -->
-        <div class="relative w-48 bg-white border border-gray-300 shadow-md p-4">
+        <div class="relative w-48 bg-white border border-gray-300 shadow-md p-1">
             <!-- Close Button -->
             <button id="close-btn" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700 focus:outline-none">
                 &times;
             </button>
             <!-- Content -->
             <div class="text-center">
-                <h3 class="text-xl font-semibold text-[#777777]">Registration Form</h3>
+                <h3 class="text-xl font-semibold text-[#777777]"> Free CEH Registration form</h3>
                 <a href="{{route('registrationForm')}}" class="text-[#FFC315] hover:underline font-medium">
                     Click Here
                 </a>
