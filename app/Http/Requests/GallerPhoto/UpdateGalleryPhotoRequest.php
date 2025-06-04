@@ -27,7 +27,7 @@ class UpdateGalleryPhotoRequest extends FormRequest
             'gallery_id' => ['required', Rule::exists('galleries','id')->withoutTrashed()],
 
             'files' => ['nullable', 'array'],
-            'files.*' => ['mimes:png,jpg,jpeg,pdf,jfif'],
+            'files.*' => ['mimes:png,jpg,jpeg,pdf,jfif,webp'],
         ];
     }
 }
