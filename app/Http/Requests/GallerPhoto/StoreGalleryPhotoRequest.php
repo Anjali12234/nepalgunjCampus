@@ -26,7 +26,7 @@ class StoreGalleryPhotoRequest extends FormRequest
             'title' => ['required', 'string'],
             'gallery_id' => ['required', Rule::exists('galleries','id')->withoutTrashed()],
             'files' => ['required', 'array'],
-            'files.*' => ['mimes:png,jpg,jpeg,pdf,jfif'],
+            'files.*' => ['mimes:png,jpg,jpeg,pdf,jfif,webp'],
         ];
     }
 }
