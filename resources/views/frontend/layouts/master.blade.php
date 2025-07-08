@@ -20,7 +20,7 @@
 
 <body class="font-poppins">
     @include('frontend.layouts.header')
-
+    @include('sweetalert::alert')
     @yield('content')
 
     <div class="fixed left-[-15px] top-1/2 transform -translate-y-1/2 z-50 group">
@@ -61,7 +61,7 @@
             </button>
             <!-- Content -->
             <div class="text-center">
-                <h3 class="text-xl font-semibold text-[#777777]"> Free CEH Registration form</h3>
+                <h3 class="text-xl font-semibold text-[#777777]"> Entrance Class Form</h3>
                 <a href="{{route('registrationForm')}}" class="text-[#FFC315] hover:underline font-medium">
                     Click Here
                 </a>

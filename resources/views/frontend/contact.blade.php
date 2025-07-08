@@ -18,7 +18,7 @@
                     <span class="text-[#FFC315] font-extrabold">_________</span>
 
                     <div class="mt-12 sm:mt-8 text-gray-800">
-                        <h1 class="text-3xl sm:text-2xl">CEH Class Registration Form</h1>
+                        <h1 class="text-3xl sm:text-2xl">Entrance Class Form</h1>
                         <p class="text-lg mt-5 sm:mt-3">
                             <span>Get All time support for emergency.</span>
                         </p>
@@ -83,7 +83,7 @@
                                 </div>
 
                             </div>
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-5">
+                            {{-- <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-5">
                                 <div>
                                     <label for="photo_of_id_card">Photo of your ID Card</label>
                                     <input type="file" name="photo_of_id_card"
@@ -97,7 +97,7 @@
                                         class="py-3 px-4 w-full border-gray-200 rounded-lg text-lg focus:ring-2 
                                         focus:ring-blue-500 focus:outline-none">
                                 </div>
-                            </div>
+                            </div> --}}
                             <div class="mt-5">
                                 <textarea name="message"
                                     class="py-3 px-4 w-full border-gray-200 rounded-lg text-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
