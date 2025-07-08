@@ -15,7 +15,7 @@
                 <div class="flex justify-between items-center border-t  p-4">
 
                     <h2 class="text-2xl font-semibold text-gray-800">
-                        CEH Class Registration Form
+                         Entrance Class Form
                         <span class="text-yellow-500 font-extrabold">___</span>
                     </h2>
                 </div>
@@ -92,7 +92,7 @@
 
 
                             <!-- ID Card -->
-                            <div class="mb-4">
+                            {{-- <div class="mb-4">
                                 <label for="photo_of_id_card" class="block text-sm font-medium text-gray-700">Photo Of ID
                                     Card</label>
                                 <input type="file" name="photo_of_id_card" id="photo_of_id_card"
@@ -107,7 +107,7 @@
                                 <input type="file" name="photo_of_post_shared" id="photo_of_post_shared"
                                     class="mt-1 p-2 block w-full border border-gray-300 rounded-md">
                                 <span class="text-sm text-red-600 error-text" data-name="photo_of_post_shared"></span>
-                            </div>
+                            </div> --}}
 
                             <!-- Message -->
                             <div class="mb-4">

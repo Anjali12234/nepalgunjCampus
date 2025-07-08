@@ -25,8 +25,8 @@ class StoreEnrollmentForm extends FormRequest
             'address' => ['required', 'string'],
             'college_name' => ['required', 'string'],
             'faculty' => ['required', 'string'],
-            'photo_of_id_card' => ['required', 'image'],
-            'photo_of_post_shared' => ['required', 'image'],
+            'photo_of_id_card' => ['nullable', 'image'],
+            'photo_of_post_shared' => ['nullable', 'image'],
         ];
     }
 }

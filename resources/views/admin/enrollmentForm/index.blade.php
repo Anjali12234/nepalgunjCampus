@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-md-6 col-sm-12">
                     <div class="title">
-                        <h4>CEH Registration Form </h4>
+                        <h4>Entrance Class Form </h4>
                     </div>
                     <nav aria-label="breadcrumb" role="navigation">
                         <ol class="breadcrumb">
@@ -13,7 +13,7 @@
                                 <a href="{{ route('admin.dashboard') }}">Home</a>
                             </li>
                             <li class="breadcrumb-item active" aria-current="page">
-                                CEH Registration Form
+                                Entrance Class Form
                             </li>
                         </ol>
                     </nav>
@@ -32,7 +32,7 @@
 
         <div class="pd-20 card-box mb-30">
             <div class="pd-20">
-                <h4 class="text-blue h4"> CEH Registration Form Lists</h4>
+                <h4 class="text-blue h4"> Entrance Class Form Lists</h4>
 
             </div>
             <div class="pb-20">

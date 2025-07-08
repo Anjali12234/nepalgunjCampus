@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('faculty');
             $table->string('phone_no');
             $table->string('email');
-            $table->string('photo_of_id_card');
-            $table->string('photo_of_post_shared');
+            $table->string('photo_of_id_card')->nullable();
+            $table->string('photo_of_post_shared')->nullable();
             $table->text('message');
             $table->boolean('status')->default(true)->nullable();   
             $table->softDeletes();
