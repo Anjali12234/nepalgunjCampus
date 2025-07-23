@@ -135,13 +135,13 @@
                     </h2>
                     @if ($notice->status == 1)
                         <!-- Modal Header -->
-                        <div class="flex justify-between items-center border-t  p-4">
+                        {{-- <div class="flex justify-between items-center border-t  p-4">
                             <h2 class="text-2xl font-semibold text-gray-800">
                                 {{ $notice?->title }}
                                 <span class="text-yellow-500 font-extrabold">___</span>
                             </h2>
 
-                        </div>
+                        </div> --}}
                         <!-- Modal Body -->
                         <div class="p-4 ">
                             <div class="relative">
