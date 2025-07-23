@@ -2,7 +2,7 @@
 @section('content')
     <section>
         <x-frontend.slider :sliders="$sliders" />
-        {{-- @if ($notices->first()?->status == 1) --}}
+        @if ($notices->first()?->status == 1)
         <div id="exampleModal" class="fixed inset-0 z-50 flex  justify-center bg-black bg-opacity-50 hidden">
             <div class="bg-white rounded-lg shadow-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
                 <button id="closeModalButton"
@@ -12,7 +12,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
-                <div class="flex justify-between items-center border-t  p-4">
+                {{--<div class="flex justify-between items-center border-t  p-4">
 
                     <h2 class="text-2xl font-semibold text-gray-800">
                          Entrance Class Form
@@ -20,7 +20,7 @@
                     </h2>
                 </div>
                 <!-- Modal Body -->
-                <div class="p-4 ">
+                 <div class="p-4 ">
                     <div class="relative">
                         @include('sweetalert::alert')
                         @if ($errors->any())
@@ -107,7 +107,7 @@
                                 <input type="file" name="photo_of_post_shared" id="photo_of_post_shared"
                                     class="mt-1 p-2 block w-full border border-gray-300 rounded-md">
                                 <span class="text-sm text-red-600 error-text" data-name="photo_of_post_shared"></span>
-                            </div> --}}
+                            </div> 
 
                             <!-- Message -->
                             <div class="mb-4">
@@ -127,10 +127,10 @@
                             </div>
                         </form>
                     </div>
-                </div>
+                </div> --}}
                 @foreach ($notices as $notice)
                     <h2 class="text-2xl font-semibold text-gray-800">
-                        {{ $notice?->title }}
+                    Notice
                         <span class="text-yellow-500 font-extrabold">___</span>
                     </h2>
                     @if ($notice->status == 1)
@@ -155,7 +155,7 @@
             </div>
 
         </div>
-        {{-- @endif --}}
+        @endif
     </section>
     <section>
         <x-frontend.indexAboutus :about="$about" />
